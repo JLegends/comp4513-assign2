@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html>
+
+<!-- THE COMMAND TO RUN TAILWIND IN THE CLI IS:
+./tailwindcss -i input.css -o output.css --watch 
+-->
+
 <head>
     <link href="./output.css" rel="stylesheet">
+    <!--The React JS libraries -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!--Initially, we will use the babel run-time library to convert JSX in the browser --> 
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+
+<script type="text/babel">
+
+const App = () => {
+    return (
+        <div className = "bg-red-400 m-10 font-bold align-center content-center">
+
+            Testing this out
+        </div>
+    )
+}
+
+const LogInView = () => {}
+
+const Header = () => {}
+
+const Menu = () => {} // This is to be used within the Header component (needs to be dynamic)
+
+const ArtistView = () => {}
+
+const PaintingView = () => {}
+
+const GalleryView = () => {}
+
+const container = document.querySelector('#react-container');  
+ReactDOM.createRoot(container).render(<App />);    
+
+</script>
 
 </head>
 <body>
-    <h1 class="m-4 text-3xl font-bold underline p-4 bg-red-400">
-        Test Example!
-      </h1>
-
+    <div id = "react-container"></div>
 </body>
 </html>
