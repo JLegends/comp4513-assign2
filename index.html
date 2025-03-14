@@ -27,6 +27,7 @@ const App = () => {
     const handleLogin = (which) => { setLoggedIn(which) }
 
     if (!loggedIn) return <LogInView handler={handleLogin} /> // should be (!loggedIn) but use (false) is its getting in the way
+    // add the title and credits for the picture here at some point
     else {
         return (
             <article>
@@ -101,7 +102,7 @@ const Menu = (props) => {
             <h1 className="text-white font-bold uppercase"> Art Dashboard Project View </h1>
             <nav>
                 <div className="flex space-x-4">
-                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Artists  </button>
+                    <button className="bg-blue-600 hover:bg-blue-50 focus:ring-red-300 rounded-2xl p-3"> Artists  </button>
                     <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Paintings </button>
                     <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Galleries </button>
                     <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Genres </button>
