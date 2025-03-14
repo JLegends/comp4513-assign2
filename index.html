@@ -20,11 +20,11 @@ const App = () => {
     const [loggedIn, setLoggedIn] = React.useState(false);
     const handleLogin = (which) => { setLoggedIn(which) }
 
-    if (!loggedIn) return <LogInView handler={handleLogin} />
+    if (false) return <LogInView handler={handleLogin} /> // should be (!loggedIn) but changed for easier testing
     else {
         return (
             <article>
-                Hooray successful login
+                <Menu/>
             </article>
         )
     }
@@ -35,14 +35,8 @@ const LogInView = (props) => {
     const [pass, setPass] = React.useState("");
     const [msg, setMsg] = React.useState("");
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
-    }
-
-    const handlePass = (e) => {
-        setPass(e.target.value);
-    }
-
+    const handleEmail = (e) => { setEmail(e.target.value); }
+    const handlePass = (e) => { setPass(e.target.value); }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email == "test@123.com" && pass =="123") 
@@ -94,7 +88,26 @@ const LogInView = (props) => {
 
 const Header = () => {}
 
-const Menu = (props) => {} // This is to be used within the Header component (needs to be dynamic)
+const Menu = (props) => {
+    return (
+        <header className="flex justify-center pt-10 text-xl w-full bg-gray-600">
+            <img className="" alt="logo goes here"/>
+            <nav>
+                <table className="text-center items-center w-120 rounded-lg mb-2">
+                    <tbody>
+                        <tr className="">
+                            <td className="bg-blue-600 hover:bg-blue-50"> Hooray  </td>
+                            <td className="bg-blue-600 hover:bg-blue-50"> successful </td>
+                            <td className="bg-blue-600 hover:bg-blue-50"> login </td>
+                            <td className="bg-blue-600 hover:bg-blue-50"> woot </td>
+                            <td className="bg-blue-600 hover:bg-blue-50"> woot </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </nav>
+        </header>
+    );
+} // This is to be used within the Header component (needs to be dynamic)
 
 const ArtistView = () => {}
 const ArtistList = () => {}
@@ -128,6 +141,7 @@ ReactDOM.createRoot(container).render(<App />);
 </script>
 
 </head>
+
 <body>
     <div id = "react-container"></div>
 </body>

@@ -8,6 +8,7 @@
     monospace;
     --color-red-100: oklch(0.936 0.032 17.717);
     --color-red-400: oklch(0.704 0.191 22.216);
+    --color-blue-50: oklch(0.97 0.014 254.604);
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-blue-600: oklch(0.546 0.245 262.881);
     --color-blue-700: oklch(0.488 0.243 264.376);
@@ -205,8 +206,14 @@
       max-width: 96rem;
     }
   }
+  .m-4 {
+    margin: calc(var(--spacing) * 4);
+  }
   .m-10 {
     margin: calc(var(--spacing) * 10);
+  }
+  .m-40 {
+    margin: calc(var(--spacing) * 40);
   }
   .mx-auto {
     margin-inline: auto;
@@ -289,6 +296,9 @@
   .w-108 {
     width: calc(var(--spacing) * 108);
   }
+  .w-120 {
+    width: calc(var(--spacing) * 120);
+  }
   .w-124 {
     width: calc(var(--spacing) * 124);
   }
@@ -303,6 +313,9 @@
   }
   .items-center {
     align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
   }
   .items-start {
     align-items: flex-start;
@@ -351,6 +364,9 @@
   .bg-gray-500 {
     background-color: var(--color-gray-500);
   }
+  .bg-gray-600 {
+    background-color: var(--color-gray-600);
+  }
   .bg-red-100 {
     background-color: var(--color-red-100);
   }
@@ -395,6 +411,9 @@
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
   }
   .text-center {
     text-align: center;
@@ -451,10 +470,24 @@
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .hover\:bg-blue-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-50);
+      }
+    }
+  }
   .hover\:bg-blue-700 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-700);
+      }
+    }
+  }
+  .hover\:bg-gray-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-50);
       }
     }
   }
