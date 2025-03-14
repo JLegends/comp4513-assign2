@@ -2,9 +2,15 @@
 <!DOCTYPE html>
 <html>
 
-<!-- THE COMMAND TO RUN TAILWIND IN THE CLI IS:
-./tailwindcss -i input.css -o output.css --watch 
+<!-- 
+THE COMMAND TO RUN TAILWIND IN THE CLI IS:
+    ./tailwindcss -i input.css -o output.css --watch
+
+
+also maybe we should use some sort of color theory to make this? like some color palette we can use from the start to keep things the same?
 -->
+
+
 
 <head>
     <link href="./output.css" rel="stylesheet">
@@ -20,7 +26,7 @@ const App = () => {
     const [loggedIn, setLoggedIn] = React.useState(false);
     const handleLogin = (which) => { setLoggedIn(which) }
 
-    if (false) return <LogInView handler={handleLogin} /> // should be (!loggedIn) but changed for easier testing
+    if (!loggedIn) return <LogInView handler={handleLogin} /> // should be (!loggedIn) but use (false) is its getting in the way
     else {
         return (
             <article>
@@ -42,7 +48,7 @@ const LogInView = (props) => {
         if (email == "test@123.com" && pass =="123") 
             props.handler(true);
         else 
-            setMsg("Invalid");
+            setMsg("Invalid email and/or password");
     }
 
     return (
@@ -53,9 +59,9 @@ const LogInView = (props) => {
                     <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                         Sign in to your account
                     </h1>
-                    <span className= "mr-8"> Email: test@123.com </span> <span> Password: 123 </span>
+                    <div className= " flex justify-between"><span> Email: test@123.com </span> <span> Password: 123 </span></div>
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                        <span> {msg} </span> 
+                        <span className="flex justify-center"> {msg} </span> 
                         <div>
                             <label className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                             <input type="email" value={email} onChange={handleEmail} className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com"/>
@@ -90,20 +96,18 @@ const Header = () => {}
 
 const Menu = (props) => {
     return (
-        <header className="flex justify-center pt-10 text-xl w-full bg-gray-600">
+        <header className="flex justify-between items-center text-xl w-full h-20 bg-gray-600 p-4">
             <img className="" alt="logo goes here"/>
+            <h1 className="text-white font-bold uppercase"> Art Dashboard Project View </h1>
             <nav>
-                <table className="text-center items-center w-120 rounded-lg mb-2">
-                    <tbody>
-                        <tr className="">
-                            <td className="bg-blue-600 hover:bg-blue-50"> Hooray  </td>
-                            <td className="bg-blue-600 hover:bg-blue-50"> successful </td>
-                            <td className="bg-blue-600 hover:bg-blue-50"> login </td>
-                            <td className="bg-blue-600 hover:bg-blue-50"> woot </td>
-                            <td className="bg-blue-600 hover:bg-blue-50"> woot </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="flex space-x-4">
+                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Artists  </button>
+                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Paintings </button>
+                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Galleries </button>
+                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Genres </button>
+                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> Favourites </button>
+                    <button className="bg-blue-600 hover:bg-blue-50 rounded-2xl p-3"> About </button>
+                </div>
             </nav>
         </header>
     );
