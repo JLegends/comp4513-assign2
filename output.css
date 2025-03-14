@@ -300,6 +300,9 @@
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
   }
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
+  }
   .block {
     display: block;
   }
@@ -390,8 +393,14 @@
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
+  .w-1\/5 {
+    width: calc(1/5 * 100%);
+  }
   .w-2\/4 {
     width: calc(2/4 * 100%);
+  }
+  .w-2\/5 {
+    width: calc(2/5 * 100%);
   }
   .w-4 {
     width: calc(var(--spacing) * 4);
@@ -505,6 +514,10 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .rounded-b-xl {
+    border-bottom-right-radius: var(--radius-xl);
+    border-bottom-left-radius: var(--radius-xl);
   }
   .border {
     border-style: var(--tw-border-style);

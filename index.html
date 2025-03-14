@@ -40,9 +40,15 @@ const App = () => {
         return (
             <article className="bg-blue-600 h-screen flex flex-col">
                 <Header/>
-                <div className="flex flex-grow">
-                    <div className="bg-white h-full w-1/4 m-4">
-                        <h2> List of Galleries </h2>
+                <div className="flex flex-grow p-4 ">
+                    <div className="flex items-center justify-center bg-white h-full w-1/5 rounded-xl">
+                        <h2 className=""> List of Galleries </h2>
+                    </div>
+                    <div className="flex items-center justify-center bg-white h-full w-2/5 rounded-xl ml-4 mr-4">
+                        <h2 className=""> Gallery Info </h2>
+                    </div>
+                    <div className="flex items-center justify-center bg-white h-full w-2/5 rounded-xl">
+                        <h2 className=""> Gallery Painting </h2>
                     </div>
                 </div>
                 {/* <button className="p-3 bg-white text-blue-600 rounded-xl" onClick={popUpHandler}>
@@ -111,7 +117,7 @@ const LogInView = (props) => {
 }
 const Header = (props) => {
     return (
-        <header className="flex justify-between items-center text-xl w-full bg-white p-4 shadow-lg">
+        <header className="flex justify-between items-center text-xl w-full bg-white p-4 shadow-lg rounded-b-xl">
             <img className="" alt="logo"/>
             <h1 className="font-bold uppercase"> Art Dashboard Project View </h1>
             <nav>
