@@ -4,8 +4,7 @@
 
 <!-- 
 THE COMMAND TO RUN TAILWIND IN THE CLI IS:
-    ./tailwindcss -i input.css -o output.css --watch
-
+./tailwindcss -i input.css -o output.css --watch
 
 also maybe we should use some sort of color theory to make this? like some color palette we can use from the start to keep things the same?
 -->
@@ -38,7 +37,7 @@ const App = () => {
     // add the title and credits for the picture here at some point
     else {
         return (
-            <article className="bg-blue-600 h-screen flex flex-col">
+            <article className="bg-[#3324be] h-screen flex flex-col"> {/* clean up Background color EVENTUALLY */}
                 <Header/>
                 <div className="flex flex-grow p-4 ">
                     <div className="flex items-center justify-center bg-white h-full w-1/5 rounded-xl">
@@ -118,7 +117,7 @@ const LogInView = (props) => {
 const Header = (props) => {
     return (
         <header className="flex justify-between items-center text-xl w-full bg-white p-4 shadow-lg rounded-b-xl">
-            <img className="" alt="logo"/>
+            <img src="./images/rick-logo.png" className="h-8 w-8" alt="logo"/>
             <h1 className="font-bold uppercase"> Art Dashboard Project View </h1>
             <nav>
                 <div className="flex space-x-4 text-sm">
