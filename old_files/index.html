@@ -1,10 +1,16 @@
+=======
 
 <!DOCTYPE html>
 <html>
 
-<!-- THE COMMAND TO RUN TAILWIND IN THE CLI IS:
-./tailwindcss -i input.css -o output.css --watch 
+<!-- 
+THE COMMAND TO RUN TAILWIND IN THE CLI IS:
+./tailwindcss -i input.css -o output.css --watch
+
+also maybe we should use some sort of color theory to make this? like some color palette we can use from the start to keep things the same?
 -->
+
+
 
 <head>
     <link href="./output.css" rel="stylesheet">
@@ -20,11 +26,35 @@ const App = () => {
     const [loggedIn, setLoggedIn] = React.useState(false);
     const handleLogin = (which) => { setLoggedIn(which) }
 
-    if (!loggedIn) return <LogInView handler={handleLogin} />
+    const dialogRef = React.useRef(null);
+
+    const popUpHandler = () => {
+        if (dialogRef.current) {
+            dialogRef.current.showModal();  
+        }
+    }
+
+    if (false) return <LogInView handler={handleLogin} /> // should be (!loggedIn) but use (false) is its getting in the way
+    // add the title and credits for the picture here at some point
     else {
         return (
-            <article>
-                Hooray successful login
+            <article className="bg-[#3324be] h-screen flex flex-col"> {/* clean up Background color EVENTUALLY */}
+                <Header/>
+                <div className="flex flex-grow p-4 ">
+                    <div className="flex items-center justify-center bg-white h-full w-1/5 rounded-xl">
+                        <h2 className=""> List of Galleries </h2>
+                    </div>
+                    <div className="flex items-center justify-center bg-white h-full w-2/5 rounded-xl ml-4 mr-4">
+                        <h2 className=""> Gallery Info </h2>
+                    </div>
+                    <div className="flex items-center justify-center bg-white h-full w-2/5 rounded-xl">
+                        <h2 className=""> Gallery Painting </h2>
+                    </div>
+                </div>
+                {/* <button className="p-3 bg-white text-blue-600 rounded-xl" onClick={popUpHandler}>
+                    Painting Popup Testing
+                </button>
+                <PaintingPopup ref={dialogRef}/> */}
             </article>
         )
     }
@@ -35,20 +65,14 @@ const LogInView = (props) => {
     const [pass, setPass] = React.useState("");
     const [msg, setMsg] = React.useState("");
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
-    }
-
-    const handlePass = (e) => {
-        setPass(e.target.value);
-    }
-
+    const handleEmail = (e) => { setEmail(e.target.value); }
+    const handlePass = (e) => { setPass(e.target.value); }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email == "test@123.com" && pass =="123") 
             props.handler(true);
         else 
-            setMsg("Invalid");
+            setMsg("Invalid email and/or password");
     }
 
     return (
@@ -59,9 +83,9 @@ const LogInView = (props) => {
                     <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                         Sign in to your account
                     </h1>
-                    <span className= "mr-8"> Email: test@123.com </span> <span> Password: 123 </span>
+                    <div className= " flex justify-between"><span> Email: test@123.com </span> <span> Password: 123 </span></div>
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                        <span> {msg} </span> 
+                        <span className="flex justify-center"> {msg} </span> 
                         <div>
                             <label className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                             <input type="email" value={email} onChange={handleEmail} className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com"/>
@@ -91,10 +115,24 @@ const LogInView = (props) => {
         </div>
     );
 }
-
-const Header = () => {}
-
-const Menu = (props) => {} // This is to be used within the Header component (needs to be dynamic)
+const Header = (props) => {
+    return (
+        <header className="flex justify-between items-center text-xl w-full bg-white p-4 shadow-lg rounded-b-xl">
+            <img src="./images/rick-logo.png" className="h-8 w-8" alt="logo"/>
+            <h1 className="font-bold uppercase"> Art Dashboard Project View </h1>
+            <nav>
+                <div className="flex space-x-4 text-sm">
+                    <button className="shadow-xl bg-blue-600 hover:bg-blue-50 focus:ring-2 focus:bg-white focus:border-black rounded-2xl p-3"> Artists  </button>
+                    <button className="shadow-xl bg-blue-600 hover:bg-blue-50 focus:ring-2 focus:bg-white focus:border-black rounded-2xl p-3"> Paintings </button>
+                    <button className="shadow-xl bg-blue-600 hover:bg-blue-50 focus:ring-2 focus:bg-white focus:border-black rounded-2xl p-3"> Galleries </button>
+                    <button className="shadow-xl bg-blue-600 hover:bg-blue-50 focus:ring-2 focus:bg-white focus:border-black rounded-2xl p-3"> Genres </button>
+                    <button className="shadow-xl bg-blue-600 hover:bg-blue-50 focus:ring-2 focus:bg-white focus:border-black rounded-2xl p-3"> About </button>
+                    <button className="shadow-xl bg-blue-600 hover:bg-blue-50 focus:ring-2 focus:bg-white focus:border-black rounded-2xl p-3"> Favorites </button>
+                </div>
+            </nav>
+        </header>
+    );
+} // This is to be used within the Header component (needs to be dynamic)
 
 const ArtistView = () => {}
 const ArtistList = () => {}
@@ -112,7 +150,27 @@ const GenreView = () => {}
 const GenreList = () => {}
 const GenreListItem = () => {}
 
-const PaintingPopup = () => {}
+const PaintingPopup = React.forwardRef((props, ref) => {
+    return (
+        <dialog ref={ref} className="flex items-center w-108 h-108" >
+            <div className="relative flex h-64 w-96 cursor-pointer flex-col overflow-hidden rounded-lg bg-white bg-clip-border shadow-sm transition-opacity hover:opacity-90" data-dialog-target="image-dialog">
+                <img alt="nature" className="h-full w-full object-cover object-center" src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2717&amp;q=80"/>
+            </div>
+            <div data-dialog-backdrop="image-dialog" data-dialog-backdrop-close="true" className="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
+                <div className="relative m-4 w-2/4 rounded-lg bg-white shadow-sm" role="dialog" data-dialog="image-dialog">
+                    <div className="flex shrink-0 flex-wrap items-center justify-between p-4 text-blue-gray-500">
+                        <button onClick={()=>ref.current.close()} className="flex items-center rounded-md border border-slate-300 py-2 px-4 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-4 w-4 mr-1.5">
+                                <path d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z"></path>
+                            </svg>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    )
+});
 
 const FavoritesPopup = () => {}
 const FavGalleriesList = () => {}
@@ -128,6 +186,7 @@ ReactDOM.createRoot(container).render(<App />);
 </script>
 
 </head>
+
 <body>
     <div id = "react-container"></div>
 </body>
