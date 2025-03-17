@@ -1,9 +1,9 @@
 @import "tailwindcss"; 
 
-:root {
-  --primary-color: #1E3A8A;  /* Deep Blue */
-  --secondary-color: #9333EA; /* Purple */
-  --tertiary-color: #F59E0B;  /* Amber */
+@theme {
+  --color-primary: #DCC9B6;  /* Deep Blue */ 
+  --color-secondary: #A39171; /* Purple */ 
+  --color-tertiary: #6D4C3D;  /* Amber */ 
 }
 
 /*:root {

@@ -21,20 +21,20 @@ function App() {
   // add the title and credits for the picture here at some point
   else {
       return (
-          <article className="bg-[#3324be] h-screen flex flex-col"> {/* clean up Background color EVENTUALLY */}
+          <article className="bg-secondary h-screen flex flex-col"> {/* clean up Background color EVENTUALLY */}
               <Header/>
-              <div className="flex flex-grow p-4 ">
-                  <div className="flex items-center justify-center bg-white h-full w-1/5 rounded-xl">
+              <div className="flex flex-grow p-3 ">
+                  <div className="flex items-center justify-center bg-primary h-full w-1/5 rounded-xl">
                       <h2 className=""> List of Galleries </h2>
                   </div>
-                  <div className="flex items-center justify-center bg-white h-full w-2/5 rounded-xl ml-4 mr-4">
+                  <div className="flex items-center justify-center bg-primary h-full w-2/5 rounded-xl mx-3">
                       <h2 className=""> Gallery Info </h2>
                   </div>
-                  <div className="flex items-center justify-center bg-white h-full w-2/5 rounded-xl">
+                  <div className="flex items-center justify-center bg-primary h-full w-2/5 rounded-xl">
                       <h2 className=""> Gallery Painting </h2>
                   </div>
               </div>
-              {/* <button className="p-3 bg-white text-blue-600 rounded-xl" onClick={popUpHandler}>
+              {/* <button className="p-3 bg-secondary text-blue-600 rounded-xl" onClick={popUpHandler}>
                   Painting Popup Testing
               </button>
               <PaintingPopup ref={dialogRef}/> */}
