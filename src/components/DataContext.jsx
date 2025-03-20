@@ -29,7 +29,7 @@ export const DataProvider = ({ children }) => {
     // Fetch all data on mount
     useEffect(() => {
         fetchAndStore("galleries", hostURL + "/galleries", setGalleries);
-        fetchAndStore("paintings", "/paintings", setPaintings);
+        fetchAndStore("paintings", hostURL + "/paintings", setPaintings);
         fetchAndStore("artists", hostURL + "/artists", setArtists);
     }, []);
 
