@@ -40,3 +40,7 @@ export const DataProvider = ({ children }) => {
     );
 };
 
+export const useData = () => {
+    return useContext(DataContext);
+};
+
