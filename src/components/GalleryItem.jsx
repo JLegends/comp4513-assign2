@@ -3,7 +3,7 @@
 const GalleryItem = (props) => {
 
     return (
-        <div className="relative w-64 h-40 rounded-lg overflow-hidden shadow-lg">
+        <div className="relative w-full h-40 rounded-lg overflow-hidden shadow-lg">
             {/* Background Image */}
             <img src={props.image} alt={props.name} className="w-full h-full object-cover" />
 

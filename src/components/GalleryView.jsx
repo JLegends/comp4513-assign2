@@ -15,7 +15,7 @@ const GalleryView = (props) => {
                     <GalleryList list={galleries}/>
                 </div>
                     
-                <div className='flex justify-between bg-red-500 w-4/5 p-2'>
+                <div className='flex justify-between bg-red-500 w-4/5 p-2'> {/* The red is temporary just to outline the boxes*/}
                     <div className="flex bg-white items-center justify-center w-3/5 rounded-xl m-2">
                         <h2 className=""> Gallery Info </h2>
                     </div>
