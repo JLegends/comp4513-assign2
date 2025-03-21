@@ -1,3 +1,4 @@
+const imagePath = '/images/'
 
 import { useState } from 'react'
 

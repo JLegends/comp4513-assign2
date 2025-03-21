@@ -1,10 +1,13 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { useData } from './DataContext';
 
 const LogInView = (props) => {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [msg, setMsg] = useState("");
+    
+    const [isLoggingIn, setIsLoggingIn] = useState(false); // New loading state
+    const { galleries, paintings, artists } = useData();
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -17,18 +20,25 @@ const LogInView = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email == "test@123.com" && pass =="123") 
-            props.handler(true);
+            setIsLoggingIn(true); // Start login process
         else 
             setMsg("Invalid");
     }
  
+    // Effect to handle transition once data is ready
+        useEffect(() => {
+            if (isLoggingIn && galleries && paintings && artists) {
+                props.handler(true); // Proceed when data is loaded
+            }
+        }, [isLoggingIn, galleries, paintings, artists]);
+
     return (
         // Found here: https://flowbite.com/blocks/marketing/login/
         <div className = "h-screen w-full bg-[url('/images/starry-night.webp')] bg-no-repeat bg-cover flex items-center justify-center">
             <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
                 <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                        Sign in to your account
+                        {isLoggingIn ? "Loading..." : "Sign in to your account"}
                     </h1>
                     <span className= "mr-8"> Email: test@123.com </span> <span> Password: 123 </span>
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>

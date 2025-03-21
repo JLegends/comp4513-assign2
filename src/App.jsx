@@ -17,7 +17,12 @@ function App() {
       }
   }
 
-  if (!loggedIn) return <LogInView handler={handleLogin} /> // should be (!loggedIn) but use (false) is its getting in the way
+  if (!loggedIn){ // should be (!loggedIn) but use (false) is its getting in the way
+    return(
+    <DataProvider>
+      <LogInView handler={handleLogin} />
+    </DataProvider>)
+  }   
   // add the title and credits for the picture here at some point
   else {
       return (
