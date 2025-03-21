@@ -18,7 +18,7 @@ const GalleryList = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-[#E1E2E0] h-screen relative">
+    <div className="flex flex-col items-center h-full w-full relative">
       {/* Up Scroll Button */}
       <button
         onClick={() => scroll("up")}
@@ -28,10 +28,11 @@ const GalleryList = (props) => {
       </button>
 
       {/* Scrollable Gallery List */}
-      <div ref={scrollRef} className="flex flex-col align-center max-h-full snap-y snap-mandatory space-y-3 overflow-y-scroll overflow-x-hidden scrollbar-hide rounded-xl py-2">
+      <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl py-2 h-[calc(100vh-5rem)]">
         {props.list.map((g) => (
-          <div key={g.galleryId} className="w-full shrink-0 snap-start scroll-mt-4">
-            <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId}/>
+          <div key={g.galleryId} className="w-full">
+            <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry}/>
+            <hr className="bg-gray-600 h-[2px]"/>
           </div>
         ))}
       </div>

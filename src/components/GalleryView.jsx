@@ -10,12 +10,12 @@ const GalleryView = (props) => {
     return (
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}
             <Header />
-            <div className="flex flex-grow">
-                <div className="flex items-center justify-center bg-[#E1E2E0] w-1/5 -mt-20">
+            <div className="flex h-full">
+                <div className="items-center justify-center bg-[#0F0F12] w-1/5 h-full">
                     <GalleryList list={galleries}/>
                 </div>
                     
-                <div className='flex justify-between bg-red-500 w-4/5 p-2'> {/* The red is temporary just to outline the boxes*/}
+                <div className='flex justify-between bg-[#0F0F12] w-4/5 p-2'> {/* The red is temporary just to outline the boxes*/}
                     <div className="flex bg-white items-center justify-center w-3/5 rounded-xl m-2">
                         <h2 className=""> Gallery Info </h2>
                     </div>

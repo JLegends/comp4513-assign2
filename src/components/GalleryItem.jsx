@@ -10,13 +10,14 @@ const GalleryItem = (props) => {
     }
 
     return (
-        <div className="relative w-full h-40 rounded-lg overflow-hidden shadow-lg" onClick={()=>galleryHandler(props)}>
+        <div className="h-18 w-full rounded-xl shadow-lg" onClick={()=>galleryHandler(props)}>
             {/* Background Image */}
-            <img src={props.image} alt={props.name} className="w-full h-full object-cover"/>
+            <img src={props.image} alt={props.name} className="rounded-full justify-center align-center w-16 h-16 transform translate-x-1/8 translate-y-1/15 bg-red-500"/>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <h3 className="text-white text-lg font-bold">{props.name}</h3>
+            <div className="pl-21 -my-13">
+                <h3 className="text-white text-md font-bold">{props.name}</h3>
+                <p className="font-normal text-gray-500 text-md">  {`${props.city}, ${props.country}`}</p>
             </div>
         </div>
     );
