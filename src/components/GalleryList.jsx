@@ -31,7 +31,7 @@ const GalleryList = (props) => {
       <div ref={scrollRef} className="flex flex-col align-center max-h-full snap-y snap-mandatory space-y-3 overflow-y-scroll overflow-x-hidden scrollbar-hide rounded-xl py-2">
         {props.list.map((g) => (
           <div key={g.galleryId} className="w-full shrink-0 snap-start scroll-mt-4">
-            <GalleryItem image={g.image} name={g.galleryName} />
+            <GalleryItem id={g.galleryId} name={g.galleryName} />
           </div>
         ))}
       </div>
