@@ -9,7 +9,7 @@ const GalleryList = (props) => {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = 380; 
+      const scrollAmount = 1600; 
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
