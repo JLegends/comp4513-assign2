@@ -21,12 +21,12 @@ const GalleryView = (props) => {
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}
             <Header />
             <div className="flex h-full">
-                <div className="items-center justify-center bg-[#0F0F12] w-1/5 h-full">
+                <div className="items-center justify-center bg-[#000000] w-1/5 h-full">
                     <GalleryList list={galleries} galleryHandler={galleryHandler}/>
                 </div>
                     
-                <div className='flex justify-between bg-[#0F0F12] w-4/5 p-2'> {/* The red is temporary just to outline the boxes*/}
-                    <div className="flex bg-white w-3/5 rounded-xl m-2">
+                <div className='flex justify-between bg-[#000000] w-4/5 p-2'> {/* The red is temporary just to outline the boxes*/}
+                    <div className="flex bg-[#121212] w-3/5 rounded-xl m-2">
                         <GalleryInfo gallery={gallery}/>
                     </div>
                     <div className="flex bg-white items-center justify-center w-3/5 rounded-xl m-2">

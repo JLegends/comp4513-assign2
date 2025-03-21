@@ -32,7 +32,7 @@ const GalleryList = (props) => {
         {props.list.map((g) => (
           <div key={g.galleryId} className="w-full flex flex-col flex-grow">
             <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry} galleryHandler={props.galleryHandler}/>
-            <hr className="bg-gray-600 h-[2px] mx-4"/>
+            <hr className="bg-gray-600 h-[2px] ml-4"/>
           </div>
         ))}
       </div>
