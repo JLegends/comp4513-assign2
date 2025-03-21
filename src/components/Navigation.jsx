@@ -9,8 +9,8 @@ const Navigation = (props) => {
                     <button className="bg-button hover:bg-primary focus:bg-button-focus focus:text-white rounded-2xl p-3"> Paintings </button>
                 </div>
                 <div className="flex justify-end space-x-4">
-                    <button className=" hover:underline focus:bg-button-focus focus:text-white rounded-2xl"> About </button>
-                    <button className=" hover:underline focus:bg-button-focus focus:text-white rounded-2xl"> Favorites </button>
+                    <button className="hover:underline focus:underline"> About </button>
+                    <button className="hover:underline focus:underline"> Favorites </button>
                 </div>
             </div>
         </nav>

@@ -11,7 +11,7 @@ const GalleryView = (props) => {
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}
             <Header />
             <div className="flex flex-grow">
-                <div className="flex items-center justify-center bg-[#E1E2E0] w-1/5 -mt-24 pb-auto">
+                <div className="flex items-center justify-center bg-[#E1E2E0] w-1/5 -mt-20">
                     <GalleryList list={galleries}/>
                 </div>
                     

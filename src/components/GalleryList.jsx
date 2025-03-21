@@ -31,14 +31,14 @@ const GalleryList = (props) => {
       <div ref={scrollRef} className="flex flex-col align-center max-h-full snap-y snap-mandatory space-y-3 overflow-y-scroll overflow-x-hidden scrollbar-hide rounded-xl py-2">
         {props.list.map((g) => (
           <div key={g.galleryId} className="w-full shrink-0 snap-start scroll-mt-4">
-            <GalleryItem image={g.image} name={g.galleryName} />
+            <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId}/>
           </div>
         ))}
       </div>
 
       {/* Down Scroll Button */}
       <button onClick={() => scroll("down")}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 p-2 bg-gray-400 hover:bg-gray-100 rounded-full shadow-md"
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 p-2 bg-gray-400 hover:bg-gray-100 rounded-full shadow-md"
       >
         <ChevronDown size={24} />
       </button>
