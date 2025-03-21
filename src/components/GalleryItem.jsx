@@ -13,7 +13,7 @@ const GalleryItem = (props) => {
     return (
         <div className="h-18 w-full rounded-xl shadow-lg" onClick={()=>galleryHandler(props)}>
             {/* Background Image */}
-            <img src={props.image} alt={props.name} className="rounded-full justify-center align-center w-16 h-16 transform translate-x-1/8 translate-y-1/15 bg-red-500"/>
+            <img src={imagePath + props.id + '.jpg'} alt={props.name} className="rounded-full justify-center align-center w-16 h-16 transform translate-x-1/8 translate-y-1/15 bg-red-500"/>
 
             {/* Overlay */}
             <div className="pl-21 -my-13">
