@@ -18,7 +18,7 @@ const GalleryList = (props) => {
   };
 
   return (
-    <div className="flex flex-col items-center h-full w-full relative py-2">
+    <div className="flex flex-col items-center h-full w-full relative">
       {/* Up Scroll Button */}
       <button
         onClick={() => scroll("up")}

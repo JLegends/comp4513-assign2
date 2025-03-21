@@ -1,5 +1,6 @@
 import Header from './Header.jsx'
 import GalleryList from './GalleryList.jsx'
+import GalleryInfo from './GalleryInfo.jsx'
 import { useData } from "./DataContext.jsx";
 import { useState } from "react";
 
@@ -11,9 +12,8 @@ const GalleryView = (props) => {
     const [gallery, setGallery] = useState(galleries[0])
     const galleryHandler = (galIdSelected) => {
         if (gallery.galleryId != galIdSelected) {
-            const newGallery = galleries.filter(g => g.galleryId === galIdSelected)
+            const newGallery = galleries.find(g => g.galleryId === galIdSelected)
             setGallery(newGallery);
-            console.log(newGallery);
         }
     }
 
@@ -26,8 +26,8 @@ const GalleryView = (props) => {
                 </div>
                     
                 <div className='flex justify-between bg-[#0F0F12] w-4/5 p-2'> {/* The red is temporary just to outline the boxes*/}
-                    <div className="flex bg-white items-center justify-center w-3/5 rounded-xl m-2">
-                        <h2 className=""> Gallery Info </h2>
+                    <div className="flex bg-white w-3/5 rounded-xl m-2">
+                        <GalleryInfo gallery={gallery}/>
                     </div>
                     <div className="flex bg-white items-center justify-center w-3/5 rounded-xl m-2">
                         <h2 className=""> Gallery Painting </h2>
