@@ -38,7 +38,7 @@ const GalleryList = (props) => {
 
       {/* Down Scroll Button */}
       <button onClick={() => scroll("down")}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 p-2 bg-gray-400 hover:bg-gray-100 rounded-full shadow-md"
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 p-2 bg-gray-400 hover:bg-gray-100 rounded-full shadow-md"
       >
         <ChevronDown size={24} />
       </button>

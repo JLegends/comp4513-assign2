@@ -1,9 +1,17 @@
 const imagePath = '/images/'
 
+import { useState } from 'react'
+
 const GalleryItem = (props) => {
+    const [currentGallery, setCurrentGallery] = useState(props[0])
+    const galleryHandler = (gallery) => {
+        // propogate the clicked gallery up the chain (going by id?)
+        setCurrentGallery(gallery);
+        console.log(gallery);
+    }
 
     return (
-        <div className="relative w-full h-40 rounded-lg overflow-hidden shadow-lg">
+        <div className="relative w-full h-40 rounded-lg overflow-hidden shadow-lg" onClick={()=>galleryHandler(props)}>
             {/* Background Image */}
             <img src={imagePath + props.id + '.jpg'} alt={props.name} className="w-full h-full object-cover" />
             {console.log(imagePath + props.id + '.jpg')}
