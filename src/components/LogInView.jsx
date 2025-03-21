@@ -52,7 +52,7 @@ const LogInView = (props) => {
                             </div>
                             <a href="#" className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</a>
                         </div>
-                        <button type="submit" className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                        <button type="submit" className="w-full text-white bg-button-focus hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                         <p className="text-sm font-light text-gray-600">
                             Don’t have an account yet? <a href="#" className="font-medium text-primary-700 hover:underline">Sign up</a>
                         </p>
