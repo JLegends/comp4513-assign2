@@ -14,22 +14,31 @@ const PaintingFilter = (props) => {
 
     const filterPaintings = () => {
         return paintings.filter(p => {
+            console.log("Checking Painting:", p); // Debugging output
+            console.log((title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
+            (artist === "Select an artist..." || getArtistName(p.artists) === artist) &&
+            (gallery === "Select a gallery..." || p.galleries.galleryName === gallery) &&
+            (minYear === "" || p.yearOfWork >= parseInt(minYear)) &&
+            (maxYear === "" || p.yearOfWork <= parseInt(maxYear))                )
             return (
                 (title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
-                (artist === "" || getArtistName(p.artist) === artist) &&
-                (gallery === "" || p.gallery.galleryName === gallery) &&
-                (minYear === "" || p.year >= parseInt(minYear)) &&
-                (maxYear === "" || p.year <= parseInt(maxYear))
+                (artist === "Select an artist..." || getArtistName(p.artists) === artist) &&
+                (gallery === "Select a gallery..." || p.galleries.galleryName === gallery) &&
+                (minYear === "" || p.yearOfWork >= parseInt(minYear)) &&
+                (maxYear === "" || p.yearOfWork <= parseInt(maxYear))
             );
         });
     };
 
     const clearFilters = () => {
+        console.log("In clear filters")
         setTitle("");
-        setArtist("");
-        setGallery("");
+        setArtist("Select an artist...");
+        setGallery("Select a gallery...");
         setMinYear("");
         setMaxYear("");
+        //setFilterType("title"); // Reset to default
+        console.log("Original Paintings Set: ", paintings)
         props.onFilter(paintings); // Reset to original paintings
     };
 
@@ -38,7 +47,7 @@ const PaintingFilter = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const filteredResults = filterPaintings();
-        console.log("Filtered Paintings:", filteredPaintings);
+        console.log("Filtered Paintings:", filteredResults);
         props.onFilter(filteredResults); // Notify parent component
     }
 
@@ -94,29 +103,31 @@ const PaintingFilter = (props) => {
         <h1 className="text-white text-5xl font-semibold">Painting Filters</h1>
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
         
-        <input type='radio' className='mr-2' name="filterType" value="title" checked={filterType === "title"} onChange={handleFilterToggle}></input>
+        {/*<input type='radio' className='mr-2' name="filterType" value="title" checked={filterType === "title"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Title</label>
         <input className="bg-white rounded-sm w-3/4 h-8" type='text' value={title} onChange={handleTitle}></input>
 
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
         
-        <input type='radio' className='mr-2' name="filterType" value="artist" checked={filterType === "artist"} onChange={handleFilterToggle}></input>
+        {/*<input type='radio' className='mr-2' name="filterType" value="artist" checked={filterType === "artist"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Artist</label>
         <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={artist} onChange={handleArtist}>
+            <option>Select an artist...</option>
             {props.artistList.map((a) => <option key={a.artistId}>{getArtistName(a)}</option>)}
 
         </select>
 
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
 
-        <input type='radio' className='mr-2' value="gallery" checked={filterType === "gallery"} onChange={handleFilterToggle}></input>
+        {/*<input type='radio' className='mr-2' value="gallery" checked={filterType === "gallery"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Gallery</label>
         <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={gallery} onChange={handleGallery}>
+            <option>Select a gallery...</option>
             {props.galleryList.map((g) => <option key={g.galleryId}>{g.galleryName}</option>)}
 
         </select>
 
-        <input type='radio' className='mr-2' value="year" checked={filterType === "year"} onChange={handleFilterToggle}></input>
+         {/*<input type='radio' className='mr-2' value="year" checked={filterType === "year"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 w-full">Year</label>
         
         <div>

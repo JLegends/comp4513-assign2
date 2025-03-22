@@ -2,6 +2,13 @@
 import GalleryPaintingListItem from './GalleryPaintingListItem.jsx'
 
 const GalleryPaintingList = (props) => {
+    if (!props.paintings || props.paintings.length === 0) {
+        return (
+            <div className="w-full h-full flex items-center justify-center text-white text-lg">
+                No paintings found.
+            </div>
+        );
+    }
     return (
         <div className="w-full h-[100%] overflow-x-auto scrollbar-hide text-sm">
             <table className="w-full border-collapse">
@@ -20,6 +27,8 @@ const GalleryPaintingList = (props) => {
                     </tr>
                 </thead>
                 <tbody className="">
+                    
+                    
                     {props.paintings.map((p, index) => 
                         <GalleryPaintingListItem key={p.paintingId} index={index+1} title={p.title} firstName={p.artists.firstName} year={p.yearOfWork} fileName={p.imageFileName}/>
                         )
