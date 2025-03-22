@@ -6,10 +6,8 @@ const PaintingFilter = (props) => {
     const[title, setTitle] = useState("");
     const[artist, setArtist] = useState("");
     const[gallery, setGallery] = useState("");
-    const[year, setYear] = useState("");
     const[minYear, setMinYear] = useState("");
     const[maxYear, setMaxYear] = useState("");
-    const[filterType, setFilterType] = useState("title");
 
     const paintings = props.paintingList;
 
@@ -53,27 +51,18 @@ const PaintingFilter = (props) => {
     const handleTitle = (e) => {
         setTitle(e.target.value);
     }
-
     const handleArtist = (e) => {
         setArtist(e.target.value);
     }
-
     const handleGallery = (e) => {
         setGallery(e.target.value);
     }
-
-    const handleYear = (e) => {
-        setYear(e.target.value);
-    }
-
     const handleMinYear = (e) => {
         setMinYear(e.target.value);
     }
-
     const handleMaxYear = (e) => {
         setMaxYear(e.target.value);
     }
-
     const handleFilterToggle = (e) => {
         setFilterType(e.target.value)
     }
@@ -84,13 +73,11 @@ const PaintingFilter = (props) => {
         <h1 className="text-white text-5xl font-semibold">Painting Filters</h1>
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
         
-        {/*<input type='radio' className='mr-2' name="filterType" value="title" checked={filterType === "title"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Title</label>
         <input className="bg-white rounded-sm w-3/4 h-8" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title..."></input>
 
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
         
-        {/*<input type='radio' className='mr-2' name="filterType" value="artist" checked={filterType === "artist"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Artist</label>
         <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={artist} onChange={handleArtist}>
             <option value="">Select an artist...</option>
@@ -101,7 +88,6 @@ const PaintingFilter = (props) => {
 
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
 
-        {/*<input type='radio' className='mr-2' value="gallery" checked={filterType === "gallery"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Gallery</label>
         <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={gallery} onChange={handleGallery}>
             <option value="">Select a gallery...</option>
@@ -110,7 +96,6 @@ const PaintingFilter = (props) => {
 
         </select>
 
-         {/*<input type='radio' className='mr-2' value="year" checked={filterType === "year"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 w-full">Year</label>
         
         <div>
