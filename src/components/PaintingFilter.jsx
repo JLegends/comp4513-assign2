@@ -40,11 +40,14 @@ const PaintingFilter = (props) => {
         setGallery("");
         setMinYear("");
         setMaxYear("");
-        //setFilterType("title"); // Reset to default
-        console.log("Original Paintings Set: ", paintings)
-        props.onFilter(paintings); // Reset to original paintings
     };
 
+    useEffect(() => {
+        if (title === "" && artist === "" && gallery === "" && minYear === "" && maxYear === "") {
+            console.log("Resetting paintings after state update");
+            props.onFilter(paintings);
+        }
+    }, [title, artist, gallery, minYear, maxYear]); // Since the states set by clear filters don't happen immediately they are asynchronous we have to wait for all of these states to change by using useEffect AASGSAHGADHSGDHsaGh
     
 
     const handleSubmit = (e) => {
@@ -108,7 +111,7 @@ const PaintingFilter = (props) => {
         
         {/*<input type='radio' className='mr-2' name="filterType" value="title" checked={filterType === "title"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Title</label>
-        <input className="bg-white rounded-sm w-3/4 h-8" type='text' value={title} onChange={handleTitle}></input>
+        <input className="bg-white rounded-sm w-3/4 h-8" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title..."></input>
 
         <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
         
@@ -136,10 +139,10 @@ const PaintingFilter = (props) => {
         <label className="text-white text-lg mr-2 w-full">Year</label>
         
         <div>
-            <label className="text-white text-lg mr-2 ml-10">Less</label>
-            <input className="bg-white rounded-sm h-8 ml-20 mt-3" type='text' value={minYear} onChange={handleMinYear}></input>
-            
             <label className="text-white text-lg mr-2 ml-10">Greater</label>
+            <input className="bg-white rounded-sm h-8 ml-10 mt-3" type='text' value={minYear} onChange={handleMinYear}></input>
+            
+            <label className="text-white text-lg mr-2 ml-10">Less</label>
             <input className="bg-white rounded-sm h-8 ml-15 mt-3" type='text' value={maxYear} onChange={handleMaxYear}></input>
         </div>
 
