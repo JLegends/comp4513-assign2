@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 import LogInView from './components/LogInView.jsx'
 import GalleryView from './components/GalleryView.jsx'
+import ArtistView from './components/ArtistView.jsx'
+
 import { DataProvider } from './components/DataContext.jsx'
 import { Routes, Route } from 'react-router'
 
@@ -16,7 +18,7 @@ function App() {
       }
   }
 
-  if (!loggedIn){ // should be (!loggedIn) but use (false) is its getting in the way
+  if (false){ // should be (!loggedIn) but use (false) is its getting in the way
     return(
     <DataProvider>
       <LogInView handler={handleLogin} />
@@ -29,7 +31,7 @@ function App() {
           <Routes>
             <Route path="/galleries" element={<GalleryView/>}/>
             <Route path="/paintings" element={<h1>painting view</h1>}/>
-            <Route path="/artists" element={<h1>artist view</h1>}/>
+            <Route path="/artists" element={<ArtistView/>}/>
             <Route path="/genres" element={<h1>genre view</h1>}/>
           </Routes>
         </DataProvider>

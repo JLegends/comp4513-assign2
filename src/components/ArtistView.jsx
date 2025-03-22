@@ -1,32 +1,33 @@
 import { useData } from "./DataContext.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from './Header.jsx'
-import GalleryList from './GalleryList.jsx'
-import GalleryInfo from './GalleryInfo.jsx'
-import GalleryPaintingList from './GalleryPaintingList.jsx'
+import ArtistList from './ArtistList.jsx'
+import ArtistInfo from './ArtistInfo.jsx'
+import ArtistPaintingList from './ArtistPaintingList.jsx'
+import {useEffect} from 'react'
 
 
-const GalleryView = (props) => {
+const ArtistView = (props) => {
     const { galleries, paintings, artists } = useData();
-    const [gallery, setGallery] = useState(null);
-    const [galleryPaintings, setGalleryPaintings] = useState([]);
+    const [artist, setArtist] = useState(null);
+    const [artistPaintings, setArtistPaintings] = useState([]);
 
     useEffect(() => {
-        if (galleries && galleries.length > 0) {
-          setGallery(galleries[0]); // Set the initial artist
+        if (artists && artists.length > 0) {
+          setArtist(artists[0]); // Set the initial artist
         }
-        if (paintings && gallery) {
-          setGalleryPaintings(paintings.filter(p => gallery.galleryId === p.galleries.galleryId));
+        if (paintings && artist) {
+          setArtistPaintings(paintings.filter(p => artist.artistId === p.artists.artistId));
         }
-      }, [galleries, paintings, gallery]);
+      }, [artists, paintings, artist]);
 
     if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
 
-    const galleryHandler = (galIdSelected) => {
-        if (gallery.galleryId != galIdSelected) {
-            const newGallery = galleries.find(g => g.galleryId === galIdSelected)
-            setGallery(newGallery);
-            setGalleryPaintings(paintings.filter(p => gallery.galleryId == p.galleries.galleryId))
+    const artistHandler = (artIdSelected) => {
+        if (artist.artistId != artIdSelected) {
+            const newArtist = artists.find(a => a.artistId === artIdSelected)
+            setArtist(newArtist);
+            setArtistPaintings(paintings.filter(p => artist.artistId == p.artists.artistId))
         }
     }
 
@@ -35,15 +36,15 @@ const GalleryView = (props) => {
             <Header />
             <div className="flex h-[91.96%] p-2 bg-[#000000]">
                 <div className="items-center justify-center bg-[#000000] pr-2 w-1/5 h-[98%]">
-                    <GalleryList list={galleries} galleryHandler={galleryHandler}/>
+                    <ArtistList list={artists} artistHandler={artistHandler}/>
                 </div>
                     
                 <div className='flex justify-between bg-[#000000] w-full'>
                     <div className="flex w-3/5 rounded-xl m-2 bg-linear-to-t from-[#121212] to-button-focus">
-                        <GalleryInfo gallery={gallery}/>
+                        <ArtistInfo artist={artist}/>
                     </div>
                     <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                        <GalleryPaintingList paintings={galleryPaintings}/>
+                        <ArtistPaintingList paintings={artistPaintings}/>
                     </div>
                 </div>
                 {/* <button className="p-3 bg-secondary text-blue-600 rounded-xl" onClick={popUpHandler}>
@@ -55,4 +56,4 @@ const GalleryView = (props) => {
     )
 }
 
-export default GalleryView
+export default ArtistView
