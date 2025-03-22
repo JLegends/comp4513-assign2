@@ -1,36 +1,42 @@
+import { useData } from "./DataContext.jsx";
+import { useState } from "react";
 import Header from './Header.jsx'
 import GalleryList from './GalleryList.jsx'
 import GalleryInfo from './GalleryInfo.jsx'
-import { useData } from "./DataContext.jsx";
-import { useState } from "react";
+import GalleryPaintingList from './GalleryPaintingList.jsx'
 
 
 const GalleryView = (props) => {
-    const { galleries, paintings, artists } = useData();    
+    const { galleries, paintings, artists } = useData();   
+
     if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
-    
+
     const [gallery, setGallery] = useState(galleries[0])
+    const [galleryPaintings, setGalleryPaintings] = useState(paintings.filter(p => gallery.galleryId == p.galleries.galleryId))
+    
+
     const galleryHandler = (galIdSelected) => {
         if (gallery.galleryId != galIdSelected) {
             const newGallery = galleries.find(g => g.galleryId === galIdSelected)
             setGallery(newGallery);
+            setGalleryPaintings(paintings.filter(p => gallery.galleryId == p.galleries.galleryId))
         }
     }
 
     return (
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}
             <Header />
-            <div className="flex h-full">
-                <div className="items-center justify-center bg-[#000000] w-1/5 h-full">
+            <div className="flex h-[91.96%] p-2 bg-[#000000]">
+                <div className="items-center justify-center bg-[#000000] pr-2 w-1/5 h-[98%]">
                     <GalleryList list={galleries} galleryHandler={galleryHandler}/>
                 </div>
                     
-                <div className='flex justify-between bg-[#000000] w-4/5 p-2'>
+                <div className='flex justify-between bg-[#000000] w-full'>
                     <div className="flex w-3/5 rounded-xl m-2 bg-linear-to-t from-[#121212] to-button-focus">
                         <GalleryInfo gallery={gallery}/>
                     </div>
-                    <div className="flex text-white items-center justify-center w-3/5 rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121]">
-                        <h2 className=""> Gallery Painting </h2>
+                    <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
+                        <GalleryPaintingList paintings={galleryPaintings}/>
                     </div>
                 </div>
                 {/* <button className="p-3 bg-secondary text-blue-600 rounded-xl" onClick={popUpHandler}>

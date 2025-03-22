@@ -28,7 +28,7 @@ const GalleryList = (props) => {
       </button>
 
       {/* Scrollable Gallery List */}
-      <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl h-[calc(100vh-5rem)]">
+      <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl h-full">
         {props.list.map((g) => (
           <div key={g.galleryId} className="w-full flex flex-col flex-grow">
             <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry} galleryHandler={props.galleryHandler}/>

@@ -15,7 +15,7 @@ function App() {
       }
   }
 
-  if (!loggedIn){ // should be (!loggedIn) but use (false) is its getting in the way
+  if (false){ // should be (!loggedIn) but use (false) is its getting in the way
     return(
     <DataProvider>
       <LogInView handler={handleLogin} />
