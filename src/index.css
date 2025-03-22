@@ -14,7 +14,10 @@
   display: none;
 }
 
-#map {height: 50%}
+.leaflet-tile-pane {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 
 /*:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
