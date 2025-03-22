@@ -22,7 +22,7 @@ const GalleryList = (props) => {
       {/* Up Scroll Button */}
       <button
         onClick={() => scroll("up")}
-        className="absolute top-6 left-1/2 -translate-x-1/2 overflow-auto z-10 p-2 bg-gray-400 hover:bg-gray-100 rounded-full shadow-md"
+        className="absolute top-2 left-43 -translate-x-1/2 opacity-70 overflow-auto z-10 p-1.5 bg-gray-300 hover:bg-gray-100 rounded-full shadow-md"
       >
         <ChevronUp size={24} />
       </button>
@@ -39,7 +39,7 @@ const GalleryList = (props) => {
 
       {/* Down Scroll Button */}
       <button onClick={() => scroll("down")}
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 p-2 bg-gray-400 hover:bg-gray-100 rounded-full shadow-md"
+        className="absolute bottom-2 left-43 -translate-x-1/2 z-10 opacity-70 p-1.5 bg-gray-300 hover:bg-gray-100 rounded-full shadow-md"
       >
         <ChevronDown size={24} />
       </button>
