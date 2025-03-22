@@ -29,6 +29,7 @@ function App() {
       return (
         <DataProvider>
           <Routes>
+            <Route path="/" element={<GalleryView />} />
             <Route path="/galleries" element={<GalleryView/>}/>
             <Route path="/paintings" element={<h1>painting view</h1>}/>
             <Route path="/artists" element={<ArtistView/>}/>
