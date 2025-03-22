@@ -21,7 +21,7 @@ const ArtistPaintingList = (props) => {
                 </thead>
                 <tbody className="">
                     {props.paintings.map((p, index) => 
-                        <ArtistPaintingListItem key={p.paintingId} index={index+1} title={p.title} firstName={p.artists.firstName} year={p.yearOfWork}/>
+                        <ArtistPaintingListItem key={p.paintingId} index={index+1} title={p.title} firstName={p.artists.firstName} year={p.yearOfWork} fileName={p.imageFileName}/>
                         )
                     }
                 </tbody>
