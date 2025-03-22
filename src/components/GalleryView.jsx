@@ -11,22 +11,14 @@ const GalleryView = (props) => {
     const [gallery, setGallery] = useState(null);
     const [galleryPaintings, setGalleryPaintings] = useState([]);
 
-    useEffect(() => {
-        if (galleries && galleries.length > 0) {
-          setGallery(galleries[0]); // Set the initial artist
-        }
-        if (paintings && gallery) {
-          setGalleryPaintings(paintings.filter(p => gallery.galleryId === p.galleries.galleryId));
-        }
-      }, [galleries, paintings, gallery]);
-
     if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
 
     const galleryHandler = (galIdSelected) => {
-        if (gallery.galleryId != galIdSelected) {
-            const newGallery = galleries.find(g => g.galleryId === galIdSelected)
+
+        if (!gallery || gallery.galleryId != galIdSelected) {
+            const newGallery = galleries.find(g => !gallery ? g : g.galleryId === galIdSelected)
             setGallery(newGallery);
-            setGalleryPaintings(paintings.filter(p => gallery.galleryId == p.galleries.galleryId))
+            setGalleryPaintings(paintings.filter(p => !gallery ? p : gallery.galleryId == p.galleries.galleryId))
         }
     }
 

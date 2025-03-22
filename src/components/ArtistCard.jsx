@@ -1,5 +1,4 @@
 const ArtistCard = (props) => {
-    console.log(props)
     let name = "";
     if (props.artist.firstName && props.lastName) {
         name = `${props.artist.firstName} ${props.lastName}`

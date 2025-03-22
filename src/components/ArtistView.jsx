@@ -12,22 +12,13 @@ const ArtistView = (props) => {
     const [artist, setArtist] = useState(null);
     const [artistPaintings, setArtistPaintings] = useState([]);
 
-    useEffect(() => {
-        if (artists && artists.length > 0) {
-          setArtist(artists[0]); // Set the initial artist
-        }
-        if (paintings && artist) {
-          setArtistPaintings(paintings.filter(p => artist.artistId === p.artists.artistId));
-        }
-      }, [artists, paintings, artist]);
-
     if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
 
     const artistHandler = (artIdSelected) => {
-        if (artist.artistId != artIdSelected) {
-            const newArtist = artists.find(a => a.artistId === artIdSelected)
+        if (!artist || artist.artistId != artIdSelected) {
+            const newArtist = artists.find(a => !artist ? a : a.artistId === artIdSelected)
             setArtist(newArtist);
-            setArtistPaintings(paintings.filter(p => artist.artistId == p.artists.artistId))
+            setArtistPaintings(paintings.filter(p => !artist ? p : artist.artistId == p.artists.artistId))
         }
     }
 
