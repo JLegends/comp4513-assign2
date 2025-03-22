@@ -3,6 +3,7 @@ import './App.css'
 import LogInView from './components/LogInView.jsx'
 import GalleryView from './components/GalleryView.jsx'
 import ArtistView from './components/ArtistView.jsx'
+import PaintingView from './components/PaintingView.jsx'
 
 import { DataProvider } from './components/DataContext.jsx'
 import { Navigate, Routes, Route } from 'react-router'
@@ -31,7 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/galleries" replace />} />
             <Route path="/galleries" element={<GalleryView/>}/>
-            <Route path="/paintings" element={<h1>painting view</h1>}/>
+            <Route path="/paintings" element={<PaintingView/>}/>
             <Route path="/artists" element={<ArtistView/>}/>
             <Route path="/genres" element={<h1>genre view</h1>}/>
           </Routes>
