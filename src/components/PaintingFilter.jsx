@@ -15,15 +15,18 @@ const PaintingFilter = (props) => {
     const filterPaintings = () => {
         return paintings.filter(p => {
             console.log("Checking Painting:", p); // Debugging output
+            console.log("VALUES: ",
+                title, artist, gallery, minYear, maxYear);
+            
             console.log((title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
-            (artist === "Select an artist..." || getArtistName(p.artists) === artist) &&
-            (gallery === "Select a gallery..." || p.galleries.galleryName === gallery) &&
+            (artist === "" || getArtistName(p.artists) === artist) &&
+            (gallery === "" || p.galleries.galleryName === gallery) &&
             (minYear === "" || p.yearOfWork >= parseInt(minYear)) &&
-            (maxYear === "" || p.yearOfWork <= parseInt(maxYear))                )
+            (maxYear === "" || p.yearOfWork <= parseInt(maxYear)))
             return (
                 (title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
-                (artist === "Select an artist..." || getArtistName(p.artists) === artist) &&
-                (gallery === "Select a gallery..." || p.galleries.galleryName === gallery) &&
+                (artist === "" || getArtistName(p.artists) === artist) &&
+                (gallery === "" || p.galleries.galleryName === gallery) &&
                 (minYear === "" || p.yearOfWork >= parseInt(minYear)) &&
                 (maxYear === "" || p.yearOfWork <= parseInt(maxYear))
             );
@@ -33,8 +36,8 @@ const PaintingFilter = (props) => {
     const clearFilters = () => {
         console.log("In clear filters")
         setTitle("");
-        setArtist("Select an artist...");
-        setGallery("Select a gallery...");
+        setArtist("");
+        setGallery("");
         setMinYear("");
         setMaxYear("");
         //setFilterType("title"); // Reset to default
@@ -112,7 +115,8 @@ const PaintingFilter = (props) => {
         {/*<input type='radio' className='mr-2' name="filterType" value="artist" checked={filterType === "artist"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Artist</label>
         <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={artist} onChange={handleArtist}>
-            <option>Select an artist...</option>
+            <option value="">Select an artist...</option>
+
             {props.artistList.map((a) => <option key={a.artistId}>{getArtistName(a)}</option>)}
 
         </select>
@@ -122,7 +126,8 @@ const PaintingFilter = (props) => {
         {/*<input type='radio' className='mr-2' value="gallery" checked={filterType === "gallery"} onChange={handleFilterToggle}></input>*/}
         <label className="text-white text-lg mr-2 ">Gallery</label>
         <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={gallery} onChange={handleGallery}>
-            <option>Select a gallery...</option>
+            <option value="">Select a gallery...</option>
+
             {props.galleryList.map((g) => <option key={g.galleryId}>{g.galleryName}</option>)}
 
         </select>
