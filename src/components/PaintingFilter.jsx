@@ -1,5 +1,6 @@
 import { useData } from "./DataContext.jsx";
 import { useState, useEffect } from "react";
+import getArtistName from "./GetArtistName.jsx";
 
 const PaintingFilter = (props) => {
     const[title, setTitle] = useState("");
@@ -14,15 +15,7 @@ const PaintingFilter = (props) => {
 
     const filterPaintings = () => {
         return paintings.filter(p => {
-            console.log("Checking Painting:", p); // Debugging output
-            console.log("VALUES: ",
-                title, artist, gallery, minYear, maxYear);
-            
-            console.log((title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
-            (artist === "" || getArtistName(p.artists) === artist) &&
-            (gallery === "" || p.galleries.galleryName === gallery) &&
-            (minYear === "" || p.yearOfWork >= parseInt(minYear)) &&
-            (maxYear === "" || p.yearOfWork <= parseInt(maxYear)))
+
             return (
                 (title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
                 (artist === "" || getArtistName(p.artists) === artist) &&
@@ -84,24 +77,6 @@ const PaintingFilter = (props) => {
     const handleFilterToggle = (e) => {
         setFilterType(e.target.value)
     }
-
-    const getArtistName = (a) => {
-        let name = "";
-        if (a.firstName && a.lastName) {
-            name = `${a.firstName} ${a.lastName}`
-        }
-        else if (a.firstName && !a.lastName) {
-            name = a.firstName
-        }
-        else if (!a.firstName && a.lastName) {
-            name = a.lastName
-        }
-        else name = "unknown"
-
-        return(name)
-    }
-
-
 
 
     return(

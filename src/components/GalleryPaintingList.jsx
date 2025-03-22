@@ -1,5 +1,6 @@
 
 import GalleryPaintingListItem from './GalleryPaintingListItem.jsx'
+import getArtistName from './GetArtistName.jsx';
 
 const GalleryPaintingList = (props) => {
     if (!props.paintings || props.paintings.length === 0) {
@@ -30,7 +31,7 @@ const GalleryPaintingList = (props) => {
                     
                     
                     {props.paintings.map((p, index) => 
-                        <GalleryPaintingListItem key={p.paintingId} index={index+1} title={p.title} firstName={p.artists.firstName} year={p.yearOfWork} fileName={p.imageFileName}/>
+                        <GalleryPaintingListItem key={p.paintingId} index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName}/>
                         )
                     }
                 </tbody>
