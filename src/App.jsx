@@ -2,7 +2,10 @@ import { useState, useRef, useEffect } from 'react'
 import './App.css'
 import LogInView from './components/LogInView.jsx'
 import GalleryView from './components/GalleryView.jsx'
+import ArtistView from './components/ArtistView.jsx'
+
 import { DataProvider } from './components/DataContext.jsx'
+import { Routes, Route } from 'react-router'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -25,7 +28,12 @@ function App() {
   else {
       return (
         <DataProvider>
-            <GalleryView/>
+          <Routes>
+            <Route path="/galleries" element={<GalleryView/>}/>
+            <Route path="/paintings" element={<h1>painting view</h1>}/>
+            <Route path="/artists" element={<ArtistView/>}/>
+            <Route path="/genres" element={<h1>genre view</h1>}/>
+          </Routes>
         </DataProvider>
       )
   }
