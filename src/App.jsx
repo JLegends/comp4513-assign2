@@ -5,7 +5,7 @@ import GalleryView from './components/GalleryView.jsx'
 import ArtistView from './components/ArtistView.jsx'
 
 import { DataProvider } from './components/DataContext.jsx'
-import { Routes, Route } from 'react-router'
+import { Navigate, Routes, Route } from 'react-router'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -29,6 +29,7 @@ function App() {
       return (
         <DataProvider>
           <Routes>
+            <Route path="/" element={<Navigate to="/galleries" replace />} />
             <Route path="/galleries" element={<GalleryView/>}/>
             <Route path="/paintings" element={<h1>painting view</h1>}/>
             <Route path="/artists" element={<ArtistView/>}/>
