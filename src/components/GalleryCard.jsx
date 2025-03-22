@@ -3,7 +3,6 @@ const GalleryCard = ({gallery}) => {
     return (
 
         <div className="flex bg-[#1F1F1F] h-1/2 w-full rounded-xl shadow-lg px-3 py-3">
-            {/* Overlay */}
             <div className="flex flex-col pl-4 w-[44%] pt-3 relative">
             <h3 className="text-white text-lg font-bold"> {gallery.galleryName}</h3>
             <p className="font-normal text-white text-xs"> {gallery.galleryNativeName} </p>

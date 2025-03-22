@@ -22,7 +22,7 @@ const ArtistCard = (props) => {
             <p className="font-normal text-white text-xs"> {props.artist.details} </p>
             <a href={props.artist.artistLink} className="absolute -bottom-4 -left-4 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Find More</a>
             </div>
-            <img src={"./images/" + props.artist.artistId + '.jpg'} className="flex rounded-xl h-full w-1/2 translate-x-1/8 bg-green-500"/>
+            <img src={"./images/" + "favicon" + '.png'} className="flex rounded-xl h-full w-1/2 translate-x-1/8 bg-button-focus"/>
         </div>
     )
 }
