@@ -1,12 +1,12 @@
 const ArtistCard = (props) => {
     let name = "";
-    if (props.artist.firstName && props.lastName) {
-        name = `${props.artist.firstName} ${props.lastName}`
+    if (props.artist.firstName && props.artist.lastName) {
+        name = `${props.artist.firstName} ${props.artist.lastName}`
     }
-    else if (props.artist.firstName && !props.lastName) {
+    else if (props.artist.firstName && !props.artist.lastName) {
         name = props.artist.firstName
     }
-    else if (!props.artist.firstName && props.lastName) {
+    else if (!props.artist.firstName && props.artist.lastName) {
         name = props.lastName
     }
     else name = "unknown"
@@ -20,7 +20,7 @@ const ArtistCard = (props) => {
             <p className="font-normal text-white text-xs"> {`${props.artist.yearOfBirth}-${props.artist.yearOfDeath}`} </p>
             <p></p>
             <p className="font-normal text-white text-xs"> {props.artist.details} </p>
-            <a href={props.artist.artistLink} className="absolute -bottom-4 -left-4 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Find More</a>
+            <a href={props.artist.artistLink} className="absolute -bottom-4 -left-4 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Learn More</a>
             </div>
             <img src={"./images/" + "favicon" + '.png'} className="flex rounded-xl h-full w-1/2 translate-x-1/8 bg-button-focus"/>
         </div>
