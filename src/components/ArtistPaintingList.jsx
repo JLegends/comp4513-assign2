@@ -2,6 +2,13 @@
 import ArtistPaintingListItem from './ArtistPaintingListItem.jsx'
 
 const ArtistPaintingList = (props) => {
+    if (!props.paintings || props.paintings.length === 0) {
+        return (
+            <div className="w-full h-full flex items-center justify-center text-white text-lg">
+            </div>
+        );
+    }
+
     return (
         <div className="w-full h-[100%] overflow-x-auto scrollbar-hide text-sm">
             <table className="w-full border-collapse">

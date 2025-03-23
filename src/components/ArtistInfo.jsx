@@ -3,7 +3,7 @@ import ArtistCard from './ArtistCard.jsx'
 
 const ArtistInfo = ({artist}) => {
   if (!artist) {
-    return <p>Loading Artist Info</p>
+    return <p className="flex w-full h-full justify-center align-center items-center text-white font-bold">Select An Artist</p>
   }
 
   return (

@@ -6,10 +6,10 @@ const GalleryPaintingList = (props) => {
     if (!props.paintings || props.paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
-                No paintings found.
             </div>
         );
     }
+
     return (
         <div className="w-full h-[100%] overflow-x-auto scrollbar-hide text-sm">
             <table className="w-full border-collapse">
