@@ -1,5 +1,18 @@
 import { forwardRef } from 'react'
+import GalleryList from './GalleryList.jsx'
+
+
 const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
+
+    const p = [{
+        paintingId: 0, 
+        index:1, 
+        title:"Test", 
+        name:"Pablo",
+        year:1810, 
+        fileName:"137010"
+    }]
+
 
     return (
         <dialog 
@@ -11,6 +24,11 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
             > 
             <div className="w-full h-120 bg-[#212121] rounded-xl" >
                 <div className="relative bg-white">
+                    { /*
+                    <ArtistList artist={}/>
+                    <GalleryList gallery={}/>
+                    <PaintingList painting={}/>
+                        */ }
                     <button onClick={toggleDialog} className="absolute top-4 right-4 py-2 px-4 bg-button text-button-focus hover:bg-button-focus hover:text-white rounded-full">X</button>
                 </div>
             </div>
