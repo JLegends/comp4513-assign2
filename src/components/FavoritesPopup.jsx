@@ -25,13 +25,13 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
             <div className="w-full h-120 bg-[#212121] rounded-xl" >
                 <div className="relative h-full bg-white">
                     <div className="flex flex-shrink h-full p-2 bg-[#000000]">
-                        <div className="flex items-center justify-center bg-[#000000] pr-2 w-1/3">
+                        <div className="flex w-1/3 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121] p-4">
                             { /*  <ArtistList artist={}/> */ }
                         </div> 
-                        <div className="flex w-1/3 rounded-xl m-2 bg-linear-to-t from-[#121212] to-button-focus">
+                        <div className="flex w-1/3 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121] p-4">
                             { /*  <GalleryList gallery={}/> */ }
                         </div>
-                        <div className="flex text-white w-1/3 rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
+                        <div className="flex w-1/3 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121] p-4">
                             { /*  <PaintingList painting={}/> */ }
                         </div>
                     </div>
