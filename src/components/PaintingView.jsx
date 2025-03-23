@@ -10,9 +10,11 @@ const PaintingView = (props) => {
 
     if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
 
+    const headerFocus = "Painting"
+
     return (
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}
-            <Header />
+            <Header headerFocus={headerFocus}/>
             <div className="flex h-[91.96%] p-2 bg-[#000000]">
                 <div className="items-center justify-center bg-[#000000] pr-2 w-1/5 h-[98%]">
                     <PaintingFilter artistList={artists} galleryList={galleries} paintingList={paintings} onFilter={setFilteredPaintings}/>

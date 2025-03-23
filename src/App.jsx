@@ -4,6 +4,7 @@ import LogInView from './components/LogInView.jsx'
 import GalleryView from './components/GalleryView.jsx'
 import ArtistView from './components/ArtistView.jsx'
 import PaintingView from './components/PaintingView.jsx'
+import GenreView from './components/GenreView.jsx'
 
 import { DataProvider } from './components/DataContext.jsx'
 import { Navigate, Routes, Route } from 'react-router'
@@ -11,13 +12,6 @@ import { Navigate, Routes, Route } from 'react-router'
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const handleLogin = (which) => { setLoggedIn(which) }
-  const dialogRef = useRef(null);
-
-  const popUpHandler = () => {
-      if (dialogRef.current) {
-          dialogRef.current.showModal();  
-      }
-  }
 
   if (false){ // should be (!loggedIn) but use (false) is its getting in the way
     return(
@@ -34,7 +28,7 @@ function App() {
             <Route path="/galleries" element={<GalleryView/>}/>
             <Route path="/paintings" element={<PaintingView/>}/>
             <Route path="/artists" element={<ArtistView/>}/>
-            <Route path="/genres" element={<h1>genre view</h1>}/>
+            <Route path="/genres" element={<GenreView/>}/>
           </Routes>
         </DataProvider>
       )

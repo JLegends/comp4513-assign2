@@ -37,7 +37,7 @@ const ArtistItem = (props) => {
                         setHasError(true);
                         setIsLoading(false);
                     }}
-                    className={`transition-opacity duration-500 rounded-full w-14 h-14 transform translate-x-1/8 bg-green-500 object-cover object-center  ${isLoading ? "opacity-0" : "opacity-100"
+                    className={`transition-opacity duration-500 rounded-full w-14 h-14 transform translate-x-1/8 bg-black-500 object-cover object-center  ${isLoading ? "opacity-0" : "opacity-100"
                         }`}
                 />
             ) : (

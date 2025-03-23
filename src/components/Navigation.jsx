@@ -1,26 +1,37 @@
 import { Link } from 'react-router'
+import { useState } from 'react'
 
-const Navigation = (props) => {
+
+const Navigation = ({toggleDialog, headerFocus}) => {
+    const [focus, setFocus] = useState(null)
+
+    const getButtonStyle = (buttonType) => {
+        return headerFocus === buttonType
+            ? "bg-button-focus text-white" // Selected style
+            : "bg-button text-button-focus hover:bg-button-focus hover:text-white"; 
+    }
+    
+
     return (
         <nav>
             <div className="flex space-x-4 text-sm">
                 <div className="flex space-x-4">
                     <Link to="/artists">
-                        <button className="bg-button hover:bg-primary focus:bg-button-focus focus:text-white rounded-2xl p-3"> Artists  </button>
+                        <button className={`${getButtonStyle("Artist")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Artists  </button>
                     </Link>
                     <Link to="/galleries">
-                        <button className="bg-button hover:bg-primary focus:bg-button-focus focus:text-white rounded-2xl p-3"> Galleries </button>
+                        <button className={`${getButtonStyle("Gallery")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Galleries </button>
                     </Link>
                     <Link to="/genres">
-                        <button className="bg-button hover:bg-primary focus:bg-button-focus focus:text-white rounded-2xl p-3"> Genres </button>
+                        <button className={`${getButtonStyle("Genre")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Genres </button>
                     </Link>
                     <Link to="/paintings">
-                        <button className="bg-button hover:bg-primary focus:bg-button-focus focus:text-white rounded-2xl p-3"> Paintings </button>
+                        <button className={`${getButtonStyle("Painting")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Paintings </button>
                     </Link>
                 </div>
                 <div className="flex justify-end space-x-4">
+                    <button onClick={toggleDialog} className="flex justify-center items-center hover:underline focus:underline"> Favorites </button>
                     <button className="hover:underline focus:underline"> About </button>
-                    <button className="hover:underline focus:underline"> Favorites </button>
                 </div>
             </div>
         </nav>

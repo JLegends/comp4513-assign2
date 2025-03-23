@@ -16,7 +16,7 @@ const GalleryPaintingList = (props) => {
                 <thead>
                     <tr className="text-left">
                         <th className="px-2 w-1/12 font-normal">#</th>
-                        <th className="px-2 w-1/12 font-normal">Title</th>
+                        <th className="px-2 translate-x-2 w-1/12 font-normal">Title</th>
                         <th className="font-normal"></th>
                         <th className="px-2 w-3/12 font-normal">Artist</th>
                         <th className="px-2 w-2/12 font-normal">Year</th>
