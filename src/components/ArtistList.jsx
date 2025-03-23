@@ -31,7 +31,7 @@ const ArtistList = (props) => {
       <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl min-h-0 flex-grow w-full">
         {props.list.map((a) => (
           <div key={a.artistId} className="w-full flex flex-col">
-            <ArtistItem image={a.image} firstName={a.firstName} lastName={a.lastName} birth={a.yearOfBirth} death={a.yearOfDeath} id={a.artistId} artistHandler={props.artistHandler}/>
+            <ArtistItem firstName={a.firstName} lastName={a.lastName} birth={a.yearOfBirth} death={a.yearOfDeath} id={a.artistId} artistHandler={props.artistHandler}/>
             <hr className="bg-gray-600 h-[2px] ml-4"/>
           </div>
         ))}

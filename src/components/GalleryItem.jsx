@@ -8,7 +8,6 @@ const GalleryItem = (props) => {
     const [hasError, setHasError] = useState(false);
 
     const imageUrl = imagePath + props.id + '.jpg';
-    //console.log(imagePath + props.id + '.jpg');
 
     return (
         <div className="flex flex-grow h-18 w-full px-2 py-2 hover:bg-gray-900" onClick={() => props.galleryHandler(props.id)}>
