@@ -46,7 +46,7 @@ const ArtistPaintingListItem = (props) => {
             </td>            
             <td className="p-2 w-6/12 font-bold text-[1rem]"> {props.title} </td>
             <td className="p-2 w-3/12"> {name} </td>
-            <td className="p-2 w-2/12"> {props.year} </td>
+            <td className="p-2 w-2/12 text-gray-500"> {props.year} </td>
         </tr>
     
     );

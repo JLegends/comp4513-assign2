@@ -21,8 +21,8 @@ const ArtistPaintingList = (props) => {
                         <th className="px-2 w-2/12 font-normal">Year</th>
                     </tr>
                     <tr>
-                        <td colSpan={5} className="py-2">
-                            <hr className= "bg-gray-600 h-[2px]"></hr>
+                        <td colSpan={5} className="py-2 ">
+                            <hr className= "bg-gray-600 h-[2px] border-none"/>
                         </td>
                     </tr>
                 </thead>

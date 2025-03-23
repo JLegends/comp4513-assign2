@@ -23,7 +23,7 @@ const GalleryPaintingList = (props) => {
                     </tr>
                     <tr>
                         <td colSpan={5} className="py-2">
-                            <hr className= "bg-gray-600 h-[2px]"></hr>
+                            <hr className= "bg-gray-600 h-[2px] border-none"></hr>
                         </td>
                     </tr>
                 </thead>
