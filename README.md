@@ -11,8 +11,14 @@
 Image Credits:
 
 ICONS: 
-Prado Museum Icon: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.booking.com%2Fattractions%2Fes%2Fprsyzqcx5dhn-prado-museum-skip-the-line-admission.en-gb.html&psig=AOvVaw0yFAHhUr-IqCbEpbzqJjYR&ust=1742626826721000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj75PnMmowDFQAAAAAdAAAAABAP
+Image Placeholder: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:image:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=image&icon.size=24&icon.color=%236A7283 
+Person Placeholder: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:person:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=profi&icon.size=24&icon.color=%236A7283 
+Apple Photos Logo: 
+Heart Icon Contour: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:favorite:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=Heart&icon.size=24&icon.color=%236A7283
+Heart Icon Filled In: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:favorite:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=Heart&icon.size=24&icon.color=%23e3e3e3
 
+Gallery Photos:
+Prado Museum Icon: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.booking.com%2Fattractions%2Fes%2Fprsyzqcx5dhn-prado-museum-skip-the-line-admission.en-gb.html&psig=AOvVaw0yFAHhUr-IqCbEpbzqJjYR&ust=1742626826721000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj75PnMmowDFQAAAAAdAAAAABAP
 State Museum Icon: https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FStaatliche_Museen_zu_Berlin&psig=AOvVaw2BCZZClVfIfg3FX7kvLyEG&ust=1742626667865000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLiUmq7MmowDFQAAAAAdAAAAABAO
 Uffizi Museum: https://lovefromtuscany.com/wp-content/uploads/2019/02/gallery-1803525_1280-1024x768.jpg
 National Gallery London Icon: https://www.nationalgallery.org.uk/media/4pjlkodd/plan-your-visit-crop-photoshop.jpg?rxy=0.6015037593984962,0.4844054580896686&width=1150&height=640&v=1db6b42cbcfd310
@@ -48,4 +54,5 @@ Indianapolis Museum of Art: https://assets.simpleviewinc.com/simpleview/image/up
 Brera Art Gallery: https://upload.wikimedia.org/wikipedia/commons/a/ac/Milan_-_Pinacoth%C3%A8que_de_Brera_-_Cour_int%C3%A9rieure.jpg
 Leopold Museum: https://upload.wikimedia.org/wikipedia/commons/4/43/Wien_07_Leopold_Museum_a.jpg 
 
-
+Artist Portraits
+Pablo Picasso: 

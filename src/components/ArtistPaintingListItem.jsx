@@ -42,7 +42,7 @@ const ArtistPaintingListItem = (props) => {
                         }`}
                     />
                 ) : (
-                    <div className="text-gray-500 text-sm">Image not available</div>
+                    <div className="flex justify-center text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>            
             <td className="p-2 w-6/12 font-bold text-[1rem]"> {props.title} </td>
