@@ -10,7 +10,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerIconShadow,
 });
 
-const Map = (props) => {
+const GalleryMap = (props) => {
 
     return (      
         <div className="flex justify-center items-center h-1/2 bg-[#1F1F1F] w-full rounded-xl mt-2 text-white">
@@ -34,4 +34,4 @@ const Map = (props) => {
 }
 
 
-export default Map;
+export default GalleryMap;

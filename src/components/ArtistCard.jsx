@@ -2,14 +2,12 @@ const imagePath = '/images/artist-id-'
 import { useState } from "react";
 
 const ArtistCard = (props) => {
-    console.log(props.artist);
 
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
 
     const imageUrl = imagePath + props.artist.artistId + '.jpg';
-    console.log(props);
 
     let name = "";
     if (props.artist.firstName && props.artist.lastName) {
