@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const ArtistPaintingListItem = (props) => {
-
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
     
@@ -20,7 +19,7 @@ const ArtistPaintingListItem = (props) => {
     const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/square/${props.fileName}`;
 
     return (   
-        <tr className="text-sm hover:bg-[#302F2F] ">
+        <tr className="text-sm hover:bg-[#302F2F]">
             <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
             <td className="relative w-1/12">
                 {isLoading && (
