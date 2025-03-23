@@ -6,6 +6,8 @@ const ArtistCard = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
+    let gender = "Male";
+    if (props.artist.gender != "M") gender = "Female";
 
     const imageUrl = imagePath + props.artist.artistId + '.jpg';
 
@@ -24,12 +26,9 @@ const ArtistCard = (props) => {
     return (
         <div className="flex bg-[#1F1F1F] h-1/2 w-full rounded-xl shadow-lg px-3 py-3">
             <div className="flex flex-col pl-4 w-[44%] pt-3 relative">
-            <h3 className="text-white text-lg font-bold"> {name}</h3>
-            <p className="font-normal text-white text-xs"> {props.artist.nationality} </p>
-            <p className="font-normal text-white text-xs"> {props.artist.gender} </p>
-            <p className="font-normal text-white text-xs"> {`${props.artist.yearOfBirth}-${props.artist.yearOfDeath}`} </p>
-            <p></p>
-            <p className="font-normal text-white text-xs"> {props.artist.details} </p>
+            <h3 className="text-white text-lg w-[120%] font-bold"> {name}</h3>
+            <p className="flex space-between w-full font-normal text-gray-500 text-xs"> {props.artist.nationality} <span className="ml-10"> </span> {gender}  <span className="ml-10"> </span>  {props.artist.yearOfBirth}-{props.artist.yearOfDeath}</p>
+            <p className="font-normal w-[110%] pt-2 text-white text-xs"> {props.artist.details} </p>
             <a href={props.artist.artistLink} className="absolute -bottom-4 -left-4 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Learn More</a>
             </div>
             {isLoading && (

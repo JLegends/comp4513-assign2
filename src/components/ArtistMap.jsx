@@ -31,8 +31,6 @@ const ArtistMap = (props) => {
         }, [props.nationality]
     );
 
-    console.log(coordinates);
-
     if (error) {
         return <div className="flex justify-center items-center h-1/2 bg-[#1F1F1F] w-full rounded-xl mt-2 text-white">{error}</div>;
     }
