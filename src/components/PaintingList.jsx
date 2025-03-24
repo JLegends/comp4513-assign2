@@ -17,6 +17,7 @@ const PaintingList = (props) => {
                 <thead>
                     <tr className="text-left">
                         <th className="px-2 w-1/12 font-normal">#</th>
+                        <th className="px-2 w-1-12 invisible">favorite</th>
                         <th className="px-2 translate-x-2 w-1/12 font-normal">Title</th>
                         <th className="font-normal"></th>
                         <th className="px-2 w-3/12 font-normal">Artist</th>
@@ -24,7 +25,7 @@ const PaintingList = (props) => {
                         <th className="px-2 w-2/12 font-normal">Gallery</th>
                     </tr>
                     <tr>
-                        <td colSpan={6} className="py-2">
+                        <td colSpan={7} className="py-2">
                             <hr className= "bg-gray-600 h-[2px] border-none"></hr>
                         </td>
                     </tr>
@@ -33,7 +34,7 @@ const PaintingList = (props) => {
                     
                     
                     {props.paintings.map((p, index) => 
-                        <PaintingItem key={p.paintingId} index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName}/>
+                        <PaintingItem key={p.paintingId} index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName} painting={p}/>
                         )
                     }
                 </tbody>

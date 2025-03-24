@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFavorites } from "./FavoritesContext";
 
-const PaintingItem = (props) => {
+const FavPaintingItem = (props) => {
     const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -11,7 +11,6 @@ const PaintingItem = (props) => {
     return (
         <tr className="text-sm hover:bg-[#302F2F]">
             <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
-            <td><img className="rounded-full p-2 w-8 h-8 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" src="./images/heart-icon-outline.svg" onClick={()=>addToFavorites("paintings", props.painting)}/></td>
             <td className="relative w-1/12">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">
@@ -43,4 +42,4 @@ const PaintingItem = (props) => {
     );
 };
 
-export default PaintingItem;
+export default FavPaintingItem;
