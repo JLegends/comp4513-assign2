@@ -1,8 +1,15 @@
-import { forwardRef } from 'react'
-import GalleryList from './GalleryList.jsx'
+import { forwardRef, useState, useEffect } from 'react'
+import FavGalleryList from './FavGalleryList.jsx'
+import FavArtistList from './FavArtistList.jsx';
+import FavPaintingList from './FavPaintingList.jsx';
 
+
+import { useFavorites } from './FavoritesContext.jsx';
 
 const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
+    const {favorites, addToFavorites} = useFavorites();
+
+
 
     const p = [{
         paintingId: 0, 
@@ -26,13 +33,13 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
                 <div className="relative h-full bg-white">
                     <div className="flex flex-shrink h-full p-2 bg-[#000000]">
                         <div className="flex w-1/3 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                            { /*  <ArtistList artist={}/> */ }
+                            <FavArtistList list={favorites.artists}/>
                         </div> 
                         <div className="flex w-1/3 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                            { /*  <GalleryList gallery={}/> */ }
+                            <FavGalleryList list={favorites.galleries}/>
                         </div>
                         <div className="flex w-1/3 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                            { /*  <PaintingList painting={}/> */ }
+                            <FavPaintingList paintings={favorites.paintings}/>
                         </div>
                     </div>
                     <button onClick={toggleDialog} className="absolute top-4 right-4 py-2 px-4 bg-button text-button-focus hover:bg-button-focus hover:text-white rounded-full">X</button>

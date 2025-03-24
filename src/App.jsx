@@ -8,6 +8,7 @@ import GenreView from './components/GenreView.jsx'
 
 import { DataProvider } from './components/DataContext.jsx'
 import { Navigate, Routes, Route } from 'react-router'
+import { FavoritesProvider } from './components/FavoritesContext.jsx'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -23,13 +24,15 @@ function App() {
   else {
       return (
         <DataProvider>
-          <Routes>
-            <Route path="/" element={<Navigate to="/galleries" replace />} />
-            <Route path="/galleries" element={<GalleryView/>}/>
-            <Route path="/paintings" element={<PaintingView/>}/>
-            <Route path="/artists" element={<ArtistView/>}/>
-            <Route path="/genres" element={<GenreView/>}/>
-          </Routes>
+          <FavoritesProvider>
+            <Routes>
+              <Route path="/" element={<Navigate to="/galleries" replace />} />
+              <Route path="/galleries" element={<GalleryView/>}/>
+              <Route path="/paintings" element={<PaintingView/>}/>
+              <Route path="/artists" element={<ArtistView/>}/>
+              <Route path="/genres" element={<GenreView/>}/>
+            </Routes>
+          </FavoritesProvider>
         </DataProvider>
       )
   }
