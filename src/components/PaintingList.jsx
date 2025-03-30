@@ -3,8 +3,9 @@ import getArtistName from "./GetArtistName";
 
 //Might need to figure out how to remove scroll bar or maybe it should be kept for usability? The buttons are pretty slow to navigate
 
-const PaintingList = (props) => {
-    if (!props.paintings || props.paintings.length === 0) {
+const PaintingList = ({toggleDialog, paintings}) => {
+
+    if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
             </div>
@@ -33,8 +34,17 @@ const PaintingList = (props) => {
                 <tbody className="">
                     
                     
-                    {props.paintings.map((p, index) => 
-                        <PaintingItem key={p.paintingId} index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName} painting={p}/>
+                    {paintings.map((p, index) => 
+                        <PaintingItem 
+                            toggleDialog={toggleDialog} 
+                            key={p.paintingId} 
+                            index={index+1} 
+                            title={p.title} 
+                            name={getArtistName(p.artists)} 
+                            year={p.yearOfWork} 
+                            fileName={p.imageFileName} 
+                            gallery={p.galleries.galleryName} 
+                            painting={p}/>
                         )
                     }
                 </tbody>

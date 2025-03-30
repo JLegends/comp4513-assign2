@@ -1,9 +1,6 @@
 import { Link } from 'react-router'
-import { useState } from 'react'
-
 
 const Navigation = ({toggleDialog, headerFocus}) => {
-    const [focus, setFocus] = useState(null)
 
     const getButtonStyle = (buttonType) => {
         return headerFocus === buttonType

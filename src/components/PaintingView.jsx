@@ -1,16 +1,31 @@
 import { useData } from "./DataContext.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from './Header.jsx'
 import PaintingFilter from "./PaintingFilter.jsx";
 import PaintingList from "./PaintingList.jsx";
+import PaintingPopup from "./PaintingPopup.jsx"
 
 const PaintingView = (props) => {
+
+    const dialogRef = useRef(null);
+        
+    function toggleDialog() {
+        console.log("Dialog Toggled")
+        if (!dialogRef.current) {
+            return
+        }
+        dialogRef.current.hasAttribute("open")
+            ? dialogRef.current.close()
+            : dialogRef.current.showModal();
+    }
+
     const { galleries, paintings, artists } = useData();
     const [filteredPaintings, setFilteredPaintings] = useState(paintings);
 
     if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
 
     const headerFocus = "Painting"
+
 
     return (
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}
@@ -23,13 +38,14 @@ const PaintingView = (props) => {
                 
 
                 <div className="text-white w-4/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                    <PaintingList paintings={filteredPaintings}/>
+                    <PaintingList toggleDialog={toggleDialog} paintings={filteredPaintings}/>
                 </div>
                 {/* <button className="p-3 bg-secondary text-blue-600 rounded-xl" onClick={popUpHandler}>
                     Painting Popup Testing
                 </button>
                 <PaintingPopup ref={dialogRef}/> */}
             </div>
+            <PaintingPopup toggleDialog={toggleDialog} ref={dialogRef}/>
         </article>
     )
 }
