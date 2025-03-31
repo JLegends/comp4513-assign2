@@ -14,7 +14,7 @@ const FavArtistList = (props) => {
               <ArtistItem firstName={a.firstName} lastName={a.lastName} birth={a.yearOfBirth} death={a.yearOfDeath} id={a.artistId}/>
               <img className="rounded-full p-2 bg-[#1F1F1F] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("artists", a)}/>
             </div>
-            <hr className="bg-gray-600 h-[2px] ml-4"/>
+            <hr className="bg-gray-600 h-[2px]"/>
           </div>
         ))}
       </div>

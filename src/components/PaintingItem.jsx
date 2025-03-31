@@ -9,9 +9,8 @@ const PaintingItem = (props) => {
 
     const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/square/${props.fileName}`;
 
-    //console.log(imageUrl);
     return (
-        <tr onClick={props.toggleDialog} className="text-sm hover:bg-[#302F2F]">
+        <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F]">
             <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
             <td>
                 <img 
@@ -19,7 +18,10 @@ const PaintingItem = (props) => {
                     src="./images/heart-icon-outline.svg" 
                     onClick={()=> { 
                         e.stopPropagation(); 
-                        addToFavorites("paintings", props.painting)}}/></td>
+                        addToFavorites("paintings", props.painting)
+                    }}
+                />
+            </td>
             <td className="relative w-1/12">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">

@@ -21,7 +21,7 @@ const FavPaintingList = (props) => {
                         <FavPaintingItem index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName}/>  
                         <img className="rounded-full p-2 bg-[#1F1F1F] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("paintings", p)}/>
                     </div>
-                    <hr className="bg-gray-600 h-[2px] ml-4"/>
+                    <hr className="bg-gray-600 h-[2px]"/>
                 </div>
             ))}
         </div>

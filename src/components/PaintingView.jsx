@@ -8,15 +8,20 @@ import PaintingPopup from "./PaintingPopup.jsx"
 const PaintingView = (props) => {
 
     const dialogRef = useRef(null);
-        
-    function toggleDialog() {
-        console.log("Dialog Toggled")
+    const [selectedPainting, setSelectedPainting] = useState(null);
+
+    function toggleDialog(painting) {
         if (!dialogRef.current) {
             return
         }
-        dialogRef.current.hasAttribute("open")
-            ? dialogRef.current.close()
-            : dialogRef.current.showModal();
+        if (dialogRef.current.hasAttribute("open")) {
+            dialogRef.current.close()
+            setSelectedPainting(null);
+        }
+        else {
+            dialogRef.current.showModal();
+            setSelectedPainting(painting);
+        }
     }
 
     const { galleries, paintings, artists } = useData();
@@ -45,7 +50,7 @@ const PaintingView = (props) => {
                 </button>
                 <PaintingPopup ref={dialogRef}/> */}
             </div>
-            <PaintingPopup toggleDialog={toggleDialog} ref={dialogRef}/>
+            <PaintingPopup toggleDialog={toggleDialog} ref={dialogRef} painting={selectedPainting}/>
         </article>
     )
 }
