@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import PaintingCard from './PaintingCard.jsx'
 
 
 const PaintingPopup = forwardRef(({toggleDialog}, ref) => {

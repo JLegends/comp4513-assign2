@@ -9,37 +9,35 @@ const FavPaintingItem = (props) => {
     const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/square/${props.fileName}`;
     //console.log(imageUrl);
     return (
-        <tr className="text-sm hover:bg-[#302F2F]">
-            <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
-            <td className="relative w-1/12">
-                {isLoading && (
-                    <div className="flex justify-center items-center w-[80px] h-[80px]">
-                        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
-                    </div>
-                )}
-                {!hasError ? (
-                    <img
-                        src={imageUrl}
-                        alt={props.title}
-                        onLoad={() => setIsLoading(false)}
-                        onError={() => {
-                            setHasError(true);
-                            setIsLoading(false);
-                        }}
-                        className={`transition-opacity duration-500 ${
-                            isLoading ? "opacity-0" : "opacity-100"
+        <div className="flex flex-grow h-18 w-full px-2 py-2 hover:bg-gray-900">
+            {isLoading && (
+                <div className="flex justify-center items-center w-[80px] h-[80px]">
+                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
+                </div>
+            )}
+            {!hasError ? (
+                <img
+                    src={imageUrl}
+                    alt={props.title}
+                    onLoad={() => setIsLoading(false)}
+                    onError={() => {
+                        setHasError(true);
+                        setIsLoading(false);
+                    }}
+                    className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"
                         }`}
-                    />
-                ) : (
-                    <div className="flex justify-center text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
-                )}
-            </td>
-            <td className="p-2 w-6/12 font-bold text-[1rem]"> {props.title} </td>
-            <td className="p-2 w-3/12"> {props.name} </td>
-            <td className="p-2 w-2/12 text-gray-500"> {props.year} </td>
-            <td className="p-2 w-2/12 text-gray-500"> {props.gallery} </td>
-        </tr>
+                />
+            ) : (
+                 <div className="flex justify-center w-[56px] h-[56px] text-gray-500 text-sm"><img src="./images/image-standin.svg"/></div>
+            )}
+            <div className="flex flex-col pl-4 justify-center">
+                <h3 className="text-white text-sm font-bold">{props.title}</h3>
+                <p className="font-normal text-gray-500 text-xs">  {`${props.year}`}</p>
+                <p className="font-normal text-gray-500 text-xs">  {`${props.name}`}</p>
+
+            </div>
+        </div>
     );
-};
+}
 
 export default FavPaintingItem;
