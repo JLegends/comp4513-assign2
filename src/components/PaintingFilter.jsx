@@ -8,19 +8,17 @@ const PaintingFilter = (props) => {
     const[gallery, setGallery] = useState("");
     const[minYear, setMinYear] = useState("");
     const[maxYear, setMaxYear] = useState("");
+    const [filterType, setFilterType] = useState("");
 
     const paintings = props.paintingList;
 
     const filterPaintings = () => {
         return paintings.filter(p => {
-
-            return (
-                (title === "" || p.title.toLowerCase().includes(title.toLowerCase())) &&
-                (artist === "" || getArtistName(p.artists) === artist) &&
-                (gallery === "" || p.galleries.galleryName === gallery) &&
-                (minYear === "" || p.yearOfWork >= parseInt(minYear)) &&
-                (maxYear === "" || p.yearOfWork <= parseInt(maxYear))
-            );
+            if (filterType === "title") return title === "" || p.title.toLowerCase().includes(title.toLowerCase());
+            if (filterType === "artist") return artist === "" || getArtistName(p.artists) === artist;
+            if (filterType === "gallery") return gallery === "" || p.galleries.galleryName === gallery;
+            if (filterType === "year") return (minYear === "" || p.yearOfWork >= parseInt(minYear)) && (maxYear === "" || p.yearOfWork <= parseInt(maxYear));
+            return true; // No filter applied if none selected
         });
     };
 
@@ -76,7 +74,12 @@ const PaintingFilter = (props) => {
             <tbody>
             <tr className="w-full">
                 <td className="flex w-full items-center">
-                    <input type="radio" className="w-1/10 h-5 bg-button"></input>
+                    <input 
+                        type="radio" 
+                        name="filterType"
+                        value="title"
+                        onChange={() => setFilterType("title")}
+                        className="w-1/10 h-5 bg-button"></input>
                     <label className="w-3/10 pl-3 text-white text-sm">Title</label>
                     <input className="w-3/5 bg-button rounded-2xl h-8 pl-4 text-sm text-[#666666]" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
                 </td>
@@ -84,7 +87,12 @@ const PaintingFilter = (props) => {
             <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
             <tr className="w-full">
                 <td className="flex w-full items-center">
-                    <input type="radio" className="w-1/10 h-5 bg-button"></input>
+                    <input 
+                        type="radio" 
+                        name="filterType"
+                        value="artist"
+                        onChange={() => setFilterType("artist")}
+                        className="w-1/10 h-5 bg-button"></input>
                     <label className="w-3/10 pl-3 text-white text-sm">Artist</label>
                     <select className="w-3/5 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={artist} onChange={handleArtist}>
                         <option className="" value="">Select an artist</option>
@@ -97,7 +105,12 @@ const PaintingFilter = (props) => {
             <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
             <tr className="w-full">
                 <td className="flex w-full items-center">
-                    <input type="radio" className="w-1/10 h-5"></input>
+                    <input 
+                        type="radio" 
+                        name="filterType"
+                        value="gallery"
+                        onChange={() => setFilterType("gallery")}
+                        className="w-1/10 h-5"></input>
                     <label className="w-3/10 pl-3 text-white text-sm">Gallery</label>
                     <select className="w-3/5 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={gallery} onChange={handleGallery}>
                         <option className="" value="">Select a gallery</option>
@@ -110,7 +123,12 @@ const PaintingFilter = (props) => {
             <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
             <tr className="w-full">
                 <td className="flex w-full items-center">
-                    <input type="radio" className="w-1/10 h-5"></input>
+                    <input 
+                        type="radio" 
+                        name="filterType"
+                        value="year"
+                        onChange={() => setFilterType("year")}
+                        className="w-1/10 h-5"></input>
                     <label className="w-3/10 pl-3 text-white text-sm">Year</label>
                 </td>
                 <td className="flex w-full pt-2">

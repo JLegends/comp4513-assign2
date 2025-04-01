@@ -10,6 +10,9 @@
   --color-button-focus: #0076F7;
 }
 
+body {
+  font-family: -apple-system, "SF Pro", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.4); 
