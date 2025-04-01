@@ -49,7 +49,7 @@ const LogInView = (props) => {
                         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                         <span className="flex w-full h-4 justify-center text-red-500 font-semibold"> {msg} </span> 
                             <div>
-                                <label className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                                <label className="block mb-2 text-sm font-medium text-gray-900">Email</label>
                                 <input type="email" value={email} onChange={handleEmail} className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com"/>
                             </div>
                             <div>
@@ -79,6 +79,7 @@ const LogInView = (props) => {
                     <p className="w-full flex justify-center">1234</p>            
                 </div>
             </div>
+            <h1 className="absolute bottom-10 bg-white rounded-xl py-2 px-10 text-sm"><a className="hover:underline" href="https://sanctuarymentalhealth.org/2021/03/04/the-starry-night/">https://sanctuarymentalhealth.org/2021/03/04/the-starry-night/</a></h1>
         </div>
     );
 }

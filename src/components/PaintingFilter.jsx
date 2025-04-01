@@ -78,7 +78,7 @@ const PaintingFilter = (props) => {
                 <td className="flex w-full items-center">
                     <input type="radio" className="w-1/10 h-5 bg-button"></input>
                     <label className="w-3/10 pl-3 text-white text-sm">Title</label>
-                    <input className="w-3/5 bg-button rounded-2xl h-8 pl-4 text-sm" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
+                    <input className="w-3/5 bg-button rounded-2xl h-8 pl-4 text-sm text-[#666666]" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
                 </td>
             </tr>
             <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
