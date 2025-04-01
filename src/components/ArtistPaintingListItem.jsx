@@ -41,12 +41,12 @@ const ArtistPaintingListItem = (props) => {
                             setHasError(true);
                             setIsLoading(false);
                         }}
-                        className={`transition-opacity duration-500 ${
+                        className={`transition-opacity rounded-xl py-1 duration-500 ${
                             isLoading ? "opacity-0" : "opacity-100"
                         }`}
                     />
                 ) : (
-                    <div className="flex justify-center text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
+                    <div className="flex justify-center pl-1 text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>            
             <td className="p-2 w-8/12 font-bold text-[1rem]"> {props.title} </td>

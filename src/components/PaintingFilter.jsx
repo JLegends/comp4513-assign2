@@ -69,50 +69,68 @@ const PaintingFilter = (props) => {
 
 
     return(
-    <form className="justify-center p-3.5">
-        <h1 className="text-white text-5xl font-semibold">Painting Filters</h1>
-        <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
-        
-        <label className="text-white text-lg mr-2 ">Title</label>
-        <input className="bg-white rounded-sm w-3/4 h-8" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title..."></input>
+    <form className="justify-center py-2 px-1">
+        <h1 className="flex text-white text-xl font-semibold">Painting Filters</h1>
+        <hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr>
+        <table className=" w-full">
+            <tbody>
+            <tr className="w-full">
+                <td className="flex w-full items-center">
+                    <input type="radio" className="w-1/10 h-5 bg-button"></input>
+                    <label className="w-3/10 pl-3 text-white text-sm">Title</label>
+                    <input className="w-3/5 bg-button rounded-2xl h-8 pl-4 text-sm" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
+                </td>
+            </tr>
+            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
+            <tr className="w-full">
+                <td className="flex w-full items-center">
+                    <input type="radio" className="w-1/10 h-5 bg-button"></input>
+                    <label className="w-3/10 pl-3 text-white text-sm">Artist</label>
+                    <select className="w-3/5 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={artist} onChange={handleArtist}>
+                        <option className="" value="">Select an artist</option>
 
-        <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
-        
-        <label className="text-white text-lg mr-2 ">Artist</label>
-        <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={artist} onChange={handleArtist}>
-            <option value="">Select an artist...</option>
+                        {props.artistList.map((a) => <option key={a.artistId}>{getArtistName(a)}</option>)}
 
-            {props.artistList.map((a) => <option key={a.artistId}>{getArtistName(a)}</option>)}
+                    </select>
+                </td>
+            </tr>
+            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
+            <tr className="w-full">
+                <td className="flex w-full items-center">
+                    <input type="radio" className="w-1/10 h-5"></input>
+                    <label className="w-3/10 pl-3 text-white text-sm">Gallery</label>
+                    <select className="w-3/5 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={gallery} onChange={handleGallery}>
+                        <option className="" value="">Select a gallery</option>
 
-        </select>
+                        {props.galleryList.map((g) => <option key={g.galleryId}>{g.galleryName}</option>)}
 
-        <div className="bg-gray-600 w-full h-0.5 mt-4 mb-4"></div>
-
-        <label className="text-white text-lg mr-2 ">Gallery</label>
-        <select className="bg-white rounded-sm w-3/4 h-8" type='text' value={gallery} onChange={handleGallery}>
-            <option value="">Select a gallery...</option>
-
-            {props.galleryList.map((g) => <option key={g.galleryId}>{g.galleryName}</option>)}
-
-        </select>
-
-        <label className="text-white text-lg mr-2 w-full">Year</label>
-        
-        <div>
-            <label className="text-white text-lg mr-2 ml-10">Greater</label>
-            <input className="bg-white rounded-sm h-8 ml-10 mt-3" type='text' value={minYear} onChange={handleMinYear}></input>
-            
-            <label className="text-white text-lg mr-2 ml-10">Less</label>
-            <input className="bg-white rounded-sm h-8 ml-15 mt-3" type='text' value={maxYear} onChange={handleMaxYear}></input>
+                    </select>
+                </td>
+            </tr>
+            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
+            <tr className="w-full">
+                <td className="flex w-full items-center">
+                    <input type="radio" className="w-1/10 h-5"></input>
+                    <label className="w-3/10 pl-3 text-white text-sm">Year</label>
+                </td>
+                <td className="flex w-full pt-2">
+                    <div className="w-1/10 h-5"></div>
+                    <div className="w-1/2 flex items-center text-center justify-center pl-1">
+                        <label className="w-1/2 text-white  text-sm">From</label>
+                        <input className="bg-button rounded-2xl h-8 w-1/2 text-center mx-1" type='text' value={minYear} onChange={handleMinYear}></input>
+                    </div>
+                    <div className=" w-1/2 flex items-center text-center">
+                        <label className=" w-1/2 text-white text-sm ">To</label>
+                        <input className="bg-button rounded-2xl h-8 w-1/2 text-center mx-1" type='text' value={maxYear} onChange={handleMaxYear}></input>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>        
+        <div className="flex flex-row mt-7 justify-center space-x-4">
+            <button className="bg-button-focus text-white hover:bg-blue-400 font-bold px-8 py-2 rounded-xl" onClick={clearFilters}>Clear</button>
+            <button className="bg-button-focus text-white hover:bg-blue-400 font-bold px-8 py-2 rounded-xl" onClick={handleSubmit}>Filter</button>
         </div>
-
-        <div className="flex flex-row mt-7 justify-evenly">
-            <button className="bg-sky-500 hover:bg-sky-700 px-10 py-3 rounded-2xl" onClick={clearFilters}>Clear</button>
-            <button className="bg-sky-500 hover:bg-sky-700 px-10 py-3 rounded-2xl" onClick={handleSubmit}>Filter</button>
-        </div>
-
-        <h1 className="mt-32 text-6xl text-white">STYLING NOT DONE</h1>
-
     </form>)
 }
 

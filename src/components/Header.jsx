@@ -18,7 +18,7 @@ const Header = (props) => {
     return (
         <header className="font-bold flex justify-between items-center text-xl bg-[#F5F5F3] p-4 shadow-lg">
             <img src="./images/favicon.png" className="h-11 w-11" alt="logo"/>
-            <h1 className="absolute left-[17.3%] font-bold w-1/5"> {`Art Project ${props.headerFocus} View`} </h1>
+            <h1 className="absolute left-[20.8%] font-bold w-1/5"> {`Art Project ${props.headerFocus} View`} </h1>
             <Navigation toggleDialog={toggleDialog} headerFocus={props.headerFocus}/>
             <FavoritesPopup toggleDialog={toggleDialog} ref={dialogRef}/>
         </header>

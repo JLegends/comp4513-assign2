@@ -32,7 +32,7 @@ const FavPaintingItem = (props) => {
             )}
             <div className="flex flex-col pl-3 justify-center">
                 <h3 className="text-white text-sm font-bold">{props.title}</h3>
-                <p className="font-normal text-gray-500 text-xs">  {`${props.year} – ${props.name}`}</p>
+                <p className="font-normal text-gray-500 text-xs">  {`${props.name} – ${props.year}`}</p>
             </div>
         </div>
     );

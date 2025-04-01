@@ -37,7 +37,7 @@ const PaintingItem = (props) => {
                             setHasError(true);
                             setIsLoading(false);
                         }}
-                        className={`transition-opacity duration-500 ${
+                        className={`transition-opacity py-1 rounded-xl duration-500 ${
                             isLoading ? "opacity-0" : "opacity-100"
                         }`}
                     />

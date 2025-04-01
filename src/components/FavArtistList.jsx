@@ -10,7 +10,7 @@ const FavArtistList = (props) => {
       <table className="w-full border-collapse">
         <thead className="w-full">
             <tr className="text-left">
-                <th className="px-2 text-sm font-normal  flex justify-center">Artists</th>
+                <th className="px-2 text-sm font-normal pl-[21px]">Artists</th>
             </tr>
             <tr>
                 <td colSpan={5} className="py-2">
