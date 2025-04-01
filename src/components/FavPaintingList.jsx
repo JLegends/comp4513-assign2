@@ -14,14 +14,26 @@ const FavPaintingList = (props) => {
     }
 
     return (
-        <div className="flex flex-col items-center h-full w-full relative">
+        <div className="w-full">
+            <table className="w-full border-collapse">
+                <thead className="w-full">
+                    <tr className="text-left">
+                        <th className="px-2 text-sm font-normal flex justify-center">Paintings</th>
+                    </tr>
+                    <tr>
+                        <td colSpan={5} className="py-2">
+                            <hr className= "bg-gray-600 h-[2px] border-none"/>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
             {props.paintings.map((p, index) => (
                 <div key={p.paintingId} className="w-full flex flex-col">
-                    <div className="flex flex-row items-center">
+                    <div className="flex flex-row items-center relative">
                         <FavPaintingItem index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName}/>  
-                        <img className="rounded-full p-2 bg-[#1F1F1F] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("paintings", p)}/>
+                        <img className="absolute right-1 rounded-full p-2 bg-[#1F1F1F] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("paintings", p)}/>
                     </div>
-                    <hr className="bg-gray-600 h-[2px]"/>
+                    <hr className="bg-gray-600 h-[1px] border-none"/>
                 </div>
             ))}
         </div>

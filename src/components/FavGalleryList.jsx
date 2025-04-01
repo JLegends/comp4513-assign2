@@ -7,14 +7,26 @@ const FavGalleryList = (props) => {
 
 
     return (
-        <div className="flex flex-col items-center h-full w-full relative">
-            {props.list.map((g) => (
-                <div key={g.galleryId} className="w-full flex flex-col">
+        <div className="w-full">
+        <table className="w-full border-collapse">
+          <thead className="w-full">
+              <tr className="text-left">
+                  <th className="px-2 text-sm font-normal flex justify-center">Galleries</th>
+              </tr>
+              <tr>
+                  <td colSpan={5} className="py-2">
+                      <hr className= "bg-gray-600 h-[2px] border-none"/>
+                  </td>
+              </tr>
+            </thead>
+          </table>            
+          {props.list.map((g) => (
+                <div key={g.galleryId} className="w-full flex flex-col relative">
                     <div className="flex flex-row items-center">
                         <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry} galleryHandler={props.galleryHandler} />
-                        <img className="rounded-full p-2 bg-[#000000] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("galleries", g)}/>
+                        <img className="absolute right-1 rounded-full p-2 bg-[#212121] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("galleries", g)}/>
                     </div>
-                    <hr className="bg-gray-600 h-[2px]" />
+                    <hr className="bg-gray-600 h-[1px] border-none" />
                 </div>
             ))}
         </div>

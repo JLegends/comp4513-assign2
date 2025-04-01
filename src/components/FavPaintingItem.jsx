@@ -24,17 +24,15 @@ const FavPaintingItem = (props) => {
                         setHasError(true);
                         setIsLoading(false);
                     }}
-                    className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"
+                    className={`transition-opacity rounded-xl duration-500 ${isLoading ? "opacity-0" : "opacity-100"
                         }`}
                 />
             ) : (
                  <div className="flex justify-center w-[56px] h-[56px] text-gray-500 text-sm"><img src="./images/image-standin.svg"/></div>
             )}
-            <div className="flex flex-col pl-4 justify-center">
+            <div className="flex flex-col pl-3 justify-center">
                 <h3 className="text-white text-sm font-bold">{props.title}</h3>
-                <p className="font-normal text-gray-500 text-xs">  {`${props.year}`}</p>
-                <p className="font-normal text-gray-500 text-xs">  {`${props.name}`}</p>
-
+                <p className="font-normal text-gray-500 text-xs">  {`${props.year} – ${props.name}`}</p>
             </div>
         </div>
     );

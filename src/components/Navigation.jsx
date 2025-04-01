@@ -1,29 +1,47 @@
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 
 const Navigation = ({toggleDialog, headerFocus}) => {
 
+    const location = useLocation();
+
     const getButtonStyle = (buttonType) => {
         return headerFocus === buttonType
-            ? "bg-button-focus text-white" // Selected style
+            ? "bg-button-focus text-white hover:bg-button-focus" // Selected style
             : "bg-button text-button-focus hover:bg-button-focus hover:text-white"; 
     }
     
+    const routes = {
+        Artist: '/artists',
+        Gallery: '/galleries',
+        Genre: '/genres',
+        Painting: '/paintings'
+    }
+    
+    const isDisabled = (buttonType) => location.pathname === routes[buttonType]
 
     return (
         <nav>
             <div className="flex space-x-4 text-sm">
                 <div className="flex space-x-4">
                     <Link to="/artists">
-                        <button className={`${getButtonStyle("Artist")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Artists  </button>
+                        <button 
+                            disabled={isDisabled("Artist")}
+                            className={`${getButtonStyle("Artist")} bg-button text-button-focus rounded-2xl py-3 px-6`}> Artists  </button>
                     </Link>
                     <Link to="/galleries">
-                        <button className={`${getButtonStyle("Gallery")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Galleries </button>
+                        <button 
+                            disabled={isDisabled("Gallery")}
+                            className={`${getButtonStyle("Gallery")} bg-button text-button-focus rounded-2xl py-3 px-6`}> Galleries </button>
                     </Link>
                     <Link to="/genres">
-                        <button className={`${getButtonStyle("Genre")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Genres </button>
+                        <button 
+                            disabled={isDisabled("Genre")}
+                            className={`${getButtonStyle("Genre")} bg-button text-button-focus rounded-2xl py-3 px-6`}> Genres </button>
                     </Link>
                     <Link to="/paintings">
-                        <button className={`${getButtonStyle("Painting")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Paintings </button>
+                        <button 
+                            disabled={isDisabled("Painting")}
+                            className={`${getButtonStyle("Painting")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Paintings </button>
                     </Link>
                 </div>
                 <div className="flex justify-end space-x-4">

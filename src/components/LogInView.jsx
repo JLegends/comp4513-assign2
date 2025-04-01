@@ -35,6 +35,7 @@ const LogInView = (props) => {
     return (
         // Found here: https://flowbite.com/blocks/marketing/login/
         <div className = "h-screen relative w-full bg-[url('/images/starry-night.webp')] bg-no-repeat bg-cover flex items-center justify-center">
+            <h1 className="absolute top-20 bg-white rounded-xl py-5 px-10 font-bold text-2xl">CanvasHub</h1>
             <div className="flex items-center space-x-4 max-w-5xl mx-auto">
                 <div className = "p-4 bg-white rounded-xl w-40">
                     <h1 className="w-full flex justify-center text-lg font-semibold">Email</h1>
