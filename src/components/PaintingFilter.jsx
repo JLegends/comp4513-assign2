@@ -117,11 +117,11 @@ const PaintingFilter = (props) => {
                     <div className="w-1/10 h-5"></div>
                     <div className="w-1/2 flex items-center text-center justify-center pl-1">
                         <label className="w-1/2 text-white  text-sm">From</label>
-                        <input className="bg-button rounded-2xl h-8 w-1/2 text-center mx-1" type='text' value={minYear} onChange={handleMinYear}></input>
+                        <input className="bg-button rounded-2xl text-sm h-8 w-1/2 text-center mx-1" type='text' value={minYear} onChange={handleMinYear}></input>
                     </div>
                     <div className=" w-1/2 flex items-center text-center">
                         <label className=" w-1/2 text-white text-sm ">To</label>
-                        <input className="bg-button rounded-2xl h-8 w-1/2 text-center mx-1" type='text' value={maxYear} onChange={handleMaxYear}></input>
+                        <input className="bg-button rounded-2xl text-sm h-8 w-1/2 text-center mx-1" type='text' value={maxYear} onChange={handleMaxYear}></input>
                     </div>
                 </td>
             </tr>

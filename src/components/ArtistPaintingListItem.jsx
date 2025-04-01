@@ -41,7 +41,7 @@ const ArtistPaintingListItem = (props) => {
                             setHasError(true);
                             setIsLoading(false);
                         }}
-                        className={`transition-opacity rounded-xl py-1 duration-500 ${
+                        className={`transition-opacity rounded-lg py-1 duration-500 ${
                             isLoading ? "opacity-0" : "opacity-100"
                         }`}
                     />

@@ -25,12 +25,12 @@ const GalleryPaintingListItem = (props) => {
                             setHasError(true);
                             setIsLoading(false);
                         }}
-                        className={`transition-opacity rounded-xl m-1 duration-500 ${
+                        className={`transition-opacity rounded-lg m-1 duration-500 ${
                             isLoading ? "opacity-0" : "opacity-100"
                         }`}
                     />
                 ) : (
-                    <div className="flex justify-center pl-1 rounded-xl text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
+                    <div className="flex justify-center pl-1 rounded-lg text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>
             <td className="p-2 w-6/12 font-bold text-[1rem]"> {props.title} </td>
