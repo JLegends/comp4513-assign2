@@ -1,16 +1,45 @@
 import { useState } from "react";
+import { useFavorites } from "./FavoritesContext";
 
 const GalleryPaintingListItem = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+    const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
 
     const imageUrl = `./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`;
+
+    const isFavorited = favorites.paintings.some(
+        (fav) => fav.paintingId === props.painting.paintingId
+    );
+
+    const handleFavoriteToggle = (e) => {
+        e.stopPropagation(); 
+        if (isFavorited) {
+          removeFromFavorites("paintings", props.painting);
+        } else {
+          addToFavorites("paintings", props.painting);
+        }
+    };
     //console.log(imageUrl);
+
     return (
-        <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F]">
-            <td className="p-2 w-4 text-[1rem]"> {props.index} </td>
-            <td className="relative w-1/12">
+        <tr onClick={() => props.toggleDialog(props.painting)} className="relative text-sm hover:bg-[#302F2F]">
+            <td className="p-2 pr-10 w-6 text-1"> {props.index} </td>
+            <td className="absolute top-6 left-1 h-16 w-16 font-bold text-[1rem]">
+                <img 
+                    className="translate-x-8 w-[33%] cursor-pointer text-button-focus" 
+                    src={
+                        isFavorited
+                            ? "./images/heart-icon-filled.svg"
+                            : "./images/blank.png" 
+                    } 
+                    onClick={() => handleFavoriteToggle} 
+                    alt="favorite"
+                /> 
+            </td>
+
+            <td className="">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">
                         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>

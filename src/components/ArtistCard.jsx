@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useFavorites } from "./FavoritesContext";
 
 const ArtistCard = (props) => {
     const [isLoading, setIsLoading] = useState(true);

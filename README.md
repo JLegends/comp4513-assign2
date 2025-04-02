@@ -55,82 +55,8 @@ Indianapolis Museum of Art: https://assets.simpleviewinc.com/simpleview/image/up
 Brera Art Gallery: https://upload.wikimedia.org/wikipedia/commons/a/ac/Milan_-_Pinacoth%C3%A8que_de_Brera_-_Cour_int%C3%A9rieure.jpg
 Leopold Museum: https://upload.wikimedia.org/wikipedia/commons/4/43/Wien_07_Leopold_Museum_a.jpg 
 
-Artist Portraits
-Pablo Picasso: https://en.wikipedia.org/wiki/Pablo_Picasso
-Henri Matisse: https://www.biography.com/artists/henri-matisse 
-Jacques-Louis David: https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_Self-Portrait_-_WGA6066.jpg 
-Jean-Auguste-Dominique Ingres: https://commons.wikimedia.org/wiki/File:Jean-Auguste-Dominique_Ingres_-_Autoportrait_%C3%A0_vingt-quatre_ans_-_Google_Art_Project.jpg 
-Eugene Delacroix: https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Self-Portrait_-_WGA6192.jpg 
-Francisco Goya: https://www.smu.edu/news/archives/2014/meadows-museum-goya-30sept2014 
-Gustave Courbet: https://roswithakoch.com/artwork/gustave-courbet/ 
-Edouard Manet: https://en.wikipedia.org/wiki/Self-Portrait_with_Palette_%28Manet%29
-James Abbott Whistler: https://www.meisterdrucke.ie/fine-art-prints/Walter-Greaves/1172853/Portrait-of-James-Abbott-McNeill-Whistler.html 
-Pierre Auguste Renoir: https://www.myddoa.com/artists/pierre-auguste-renoir/ 
-Edgar Degas: https://news.artnet.com/art-world/edgar-degas-monotypes-at-moma-459263 
-Mary Cassatt: https://nmwa.org/art/artists/mary-cassatt/
-Claude Monet: https://www.pinterest.com/pin/10273905376775716/ 
-Filippo Lippi: https://www.pinterest.com/pin/self-portrait-of-fra-filippo-lippi--529806343642853257/
-Paul Gauguin: https://www.gauguin.org/biography.jsp 
-Vincent Van Gogh: https://commons.wikimedia.org/wiki/Vincent_van_Gogh
-Georges Seurat: https://barnies.fr/georges-seurat/
-Paul Cezanne: https://timelessmoon.getarchive.net/amp/media/paul-cezanne-71b1b8
-Edvard Munch: https://poulwebb.blogspot.com/2015/02/edvard-munch-part-8.html
-Henri Toulouse-Lautrec: https://www.biography.com/artists/henri-de-toulouse-lautrec
-Gustav Klimt: https://imkinsky.com/en/auction-results/146/771/7/99729
-Andre Derain: https://no.m.wikipedia.org/wiki/Fil:Andr%C3%A9_Derain_1928.jpg
-Vasily Kandinsky: https://www.wassily-kandinsky.org/
-Giacomo Balla: https://www.lindahall.org/about/news/scientist-of-the-day/giacomo-balla/
-Salvidor Dali: https://www.pinterest.com/pin/147492956520121169/
-Paul Klee: https://www.paulklee.net/
-Henri Rousseau: https://www.henrirousseau.net/
-Marc Chagall: https://arthistoryschool.com/portfolio-item/marc-chagall/
-Piet Mondrian: https://www.dinnerpartydownload.org/piet-mondrian/index.html
-Piero della Francesca: http://www.travelingintuscany.com/art/pierodellafrancesca/sigismondopandolfomalatestaportrait.htm
-Andrea Mantegna: https://itoldya420.getarchive.net/amp/topics/andrea+mantegna
-Sandro Botticelli: https://www.flickr.com/photos/menesje/27099781089 
-Pietro Perugino: https://www.worldhistory.org/Pietro_Perugino/
-Leonardo da Vinci: https://abcnews.go.com/International/leonardo-da-vinci-remembered-500-years-death-french/story?id=62774256
-Michelangelo: https://www.alamy.com/stock-photo/michelangelo-hand.html?sortBy=relevant
-Raphael: https://www.theartstory.org/artist/raphael/ 
-Titian: https://www.nationalgallery.org.uk/artists/titian
-Caravaggio: https://en.wikipedia.org/wiki/Caravaggio
-Peter Paul Rubens: https://garystockbridge617.getarchive.net/amp/topics/paintings+by+peter+paul+rubens+in+the+hyde+collection
-Anthony van Dyck: https://www.masterworksfineart.com/artists/anthony-van-dyck/biography
-Diego Velazquez: https://en.wikipedia.org/wiki/Diego_Vel%C3%A1zquez
-Rembrandt: https://itoldya420.getarchive.net/amp/topics/paintings+by+rembrandt+in+the+national+gallery+of+art
-Jan Vermeer: https://www.mauritshuis.nl/en/our-collection/our-masters/johannes-vermeer
-Francois Boucher: https://www.reprodart.com/a/francois-boucher/die_drei_grazien_mit.html
-Jean-Baptiste-Simeon Chardin: https://commons.wikimedia.org/wiki/File:Jean-Baptiste_Sim%C3%A9on_Chardin_023.jpg
-Joshua Reynolds: https://commons.wikimedia.org/wiki/File:Self-portrait_c.1747-9_by_Joshua_Reynolds_%282%29.jpg
-Thomas Gainsborough: https://www.meisterdrucke.uk/artist/Thomas-Gainsborough/4.html
-Artemisia Gentileschi: https://www.wikiart.org/en/artemisia-gentileschi
-Judith Leyster: https://nmwa.org/art/artists/judith-leyster/
-Elisabeth Louise Lebrun: https://nmwa.org/art/artists/elisabeth-louise-vigee-lebrun/
-Giotto: https://en.wikipedia.org/wiki/Giotto
-Jan van Eyck: https://www.artrenewal.org/artists/jan-van-eyck/2636
-Albrecht Dürer: https://www.illustrationhistory.org/artists/albrecht-duerer
-Hieronymus Bosch: https://www.arthistoryproject.com/artists/hieronymus-bosch/
-Pieter Bruegel the Elder: https://www.tallengestore.com/collections/pieter-bruegel-the-elder
-Agnolo Bronzino: https://www.christies.com/en/stories/a-masterpiece-by-agnolo-bronzino-b22440f6f2d04796a6629677b4a6de72
-El Greco: https://en.wikipedia.org/wiki/El_Greco
-Frans Hals: https://www.nationalgallery.org.uk/artists/frans-hals
-Jan Steen: https://www.wikiart.org/en/jan-steen
-Jan Kruseman: https://en.wikipedia.org/wiki/Jan_Adam_Kruseman
-Pieter de Hooch: https://www.wikiart.org/en/pieter-de-hooch
+Missing Artist Portraits
 Jacob van Ruisdael: https://dutch-art-reproductions.com/en/masters/jacob-van-ruisdael
-Anton Mauve: https://www.simonis-buunk.com/artist/anton-mauve/artworks-for-sale/377/
-Lawrence Alma-Tadema: https://en.wikipedia.org/wiki/Lawrence_Alma-Tadema
-Therese Schwartze: https://www.dailyartmagazine.com/therese-schwartze-the-painter-of-the-amsterdams-elite/
 Canaletto: https://www.wikiart.org/en/canaletto
-Nicolas Poussin: https://commons.wikimedia.org/wiki/File:Nicolas_Poussin_079.jpg
-Ferdinand Georg Waldmüller: https://en.wikipedia.org/wiki/Ferdinand_Georg_Waldm%C3%BCller
-Rogier van der Weyden: https://www.wikiart.org/en/rogier-van-der-weyden
-Giovanni Bellini: https://fr.m.wikipedia.org/wiki/Fichier:BELLINI,_Giovanni.jpg
-Francesco Hayez: https://commons.wikimedia.org/wiki/File:Francesco_Hayez_-_Self-Portrait_by_Hayez_Francesco_%281791-1882%29_Oil_on_canvas_c_1822_Private_Collec_-_%28MeisterDrucke-960141%29.jpg
-Caspar David Friedrich: https://www.wikiart.org/en/caspar-david-friedrich
-Arnold Bocklin: https://www.wikiart.org/en/arnold-bocklin
-John William Waterhouse: https://www.facebook.com/ArtofWaterhouse/
-William Bouguereau: https://www.britannica.com/biography/William-Adolphe-Bouguereau
 Agnolo Gaddi: https://en.wikipedia.org/wiki/Agnolo_Gaddi
-Egon Schiele: https://pixels.com/featured/egon-schiele-artist-john-springfield.html
-Friedrich Amerling: https://commons.wikimedia.org/wiki/File:Friedrich_von_Amerling_015.jpg
+
