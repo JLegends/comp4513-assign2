@@ -14,8 +14,8 @@ const ArtistPaintingList = ({ paintings, toggleDialog}) => {
             <table className="w-full border-collapse">
                 <thead>
                     <tr className="text-left">
-                        <th className="px-2 w-1/12 font-normal">#</th>
-                        <th className="px-2 font-normal"> </th>
+                        <th className="px-2 w-6 font-normal">#</th>
+                        <th className="px-2 w-4 font-normal"> </th>
                         <th className="px-4 w-1/12 font-normal"> Title</th>
                         <th className="font-normal"></th>
                         <th className="w-2/12 font-normal">Year</th>

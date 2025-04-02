@@ -19,12 +19,36 @@ const ArtistPaintingListItem = (props) => {
     }
     else name = "unknown"
 
+    const isFavorited = favorites.paintings.some(
+        (fav) => fav.paintingId === props.painting.paintingId
+    );
+
+    const handleFavoriteToggle = (e) => {
+        e.stopPropagation(); 
+        if (isFavorited) {
+          removeFromFavorites("paintings", props.painting);
+        } else {
+          addToFavorites("paintings", props.painting);
+        }
+    };
+
     const imageUrl = `./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`;
 
     return (   
-        <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F] rounded-xl">
-            <td className="p-2 w-1/12 text-1"> {props.index} </td>
-            <td className="w-1/12 font-bold text-[1rem]"><img className="translate-x-8 w-[33%] cursor-pointer text-button-focus" src="./images/heart-icon-filled.svg" onClick={()=>addToFavorites("paintings", props.painting)} /> </td>
+        <tr onClick={() => props.toggleDialog(props.painting)} className="relative text-sm hover:bg-[#302F2F] rounded-xl">
+            <td className="p-2 pr-10 w-6 text-1"> {props.index} </td>
+            <td className="absolute top-6 left-1 h-16 w-16 font-bold text-[1rem]">
+                <img 
+                    className="translate-x-8 w-[33%] cursor-pointer text-button-focus" 
+                    src={
+                        isFavorited
+                            ? "./images/heart-icon-filled.svg"
+                            : "./images/blank.png" 
+                    } 
+                    onClick={() => handleFavoriteToggle} 
+                    alt="favorite"
+                /> 
+            </td>
 
             <td className=" ">
                 {isLoading && (

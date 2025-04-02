@@ -1,15 +1,15 @@
-const imagePath = '/images/artist-id-'
 import { useState } from "react";
+import { useFavorites } from "./FavoritesContext";
 
 const ArtistCard = (props) => {
-
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+
 
     let gender = "Male";
     if (props.artist.gender != "M") gender = "Female";
 
-    const imageUrl = `./images/art-images/artists/full/${props.artist.artistId}.jpg`;
+    const imageUrl = `./images/art-images/artists/square/${props.artist.artistId}.jpg`;
 
     let name = "";
     if (props.artist.firstName && props.artist.lastName) {
@@ -50,7 +50,8 @@ const ArtistCard = (props) => {
                 />
             ) : (
                 <div className=" flex rounded-xl h-full w-1/2 translate-x-1/8 bg-black transition-opacity"><img src="./images/image-standin.svg"/></div>
-            )}        </div>
+            )}        
+        </div>
     )
 }
 

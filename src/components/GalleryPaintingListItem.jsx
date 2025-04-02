@@ -9,7 +9,7 @@ const GalleryPaintingListItem = (props) => {
     //console.log(imageUrl);
     return (
         <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F]">
-            <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
+            <td className="p-2 w-4 text-[1rem]"> {props.index} </td>
             <td className="relative w-1/12">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">

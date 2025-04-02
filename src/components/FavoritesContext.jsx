@@ -156,8 +156,6 @@ export const FavoritesProvider = ({ children }) => {
                 return updatedFavorites;
             });
         }
-
-        return prev;
     };
 
     return (
