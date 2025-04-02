@@ -37,7 +37,7 @@ const PaintingItem = (props) => {
                     alt="favorite"
                 />
             </td>
-            <td className="relative w-1/40 h-1/12">
+            <td className="relative w-10 h-1/10">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">
                         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
@@ -45,7 +45,7 @@ const PaintingItem = (props) => {
                 )}
                 {!hasError ? (
                     <img
-                        src={imageUrl}
+                        src={`./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`}
                         alt={props.title}
                         onLoad={() => setIsLoading(false)}
                         onError={() => {

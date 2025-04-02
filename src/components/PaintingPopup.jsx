@@ -3,7 +3,7 @@ import { useFavorites } from "./FavoritesContext";
 
 const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
   const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
-  
+    
   if (!painting) {
         return (
           <dialog
@@ -31,8 +31,6 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
         );
     }
 
-    const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/${painting.imageFileName}`;
-
     const isFavorited = favorites.paintings.some(
       (fav) => fav.paintingId === painting.paintingId
     );
@@ -45,6 +43,8 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
       }
     };
 
+    console.log(painting.imageFileName)
+
     return (
         <dialog     
             ref={ref} 
@@ -54,7 +54,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                 <div className="flex flex-shrink h-full p-2 bg-[#000000] rounded-xl">
                     <div className="flex w-1/2 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121]">
                         <figure className="w-full h-full relative">
-                          <img src={imageUrl} alt={painting.title} className="text-center w-full h-full object-cover rounded-xl"/>
+                          <img src={`./images/art-images/paintings/full/${String(painting.imageFileName).padStart(6,"0")}.jpg`} alt={painting.title} className="text-center w-full h-full object-cover rounded-xl"/>
                           <img 
                             className="absolute top-5 right-5 rounded-full p-2 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
                             src={

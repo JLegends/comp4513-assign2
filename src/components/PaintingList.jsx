@@ -20,7 +20,7 @@ const PaintingList = ({toggleDialog, paintings}) => {
                         <th className="px-2 w-5 font-normal">#</th>
                         <th className="px-2 w-4 invisible">favorite</th>
                         <th className="px-2 translate-x-2 w-4 font-normal">Title</th>
-                        <th className="font-normal"></th>
+                        <th className="font-normal w-0"></th>
                         <th className="px-2 w-10 font-normal">Artist</th>
                         <th className="px-2 w-10 font-normal">Year</th>
                         <th className="px-2 w-2/12 font-normal">Gallery</th>
