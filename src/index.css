@@ -45,6 +45,22 @@ button:hover img.red-tint {
   filter: invert(100%) brightness(250%) contrast(150%);
 }
 
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  @apply bg-[#212121] bg-linear-to-t from-[#121212] to-[#212121]; 
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  @apply bg-black rounded-full; 
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-600;
+}
+
 /*:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

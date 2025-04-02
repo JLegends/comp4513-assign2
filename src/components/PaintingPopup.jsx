@@ -70,7 +70,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                             alt={painting.title} 
                             className="text-center w-full h-full object-cover rounded-xl"/>
                           <img 
-                            className="absolute top-5 right-5 rounded-full p-2 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
+                            className="absolute top-5 right-5 rounded-full p-2 h-12 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
                             src={
                               isFavorited
                                 ? "./images/heart-icon-filled.svg"
@@ -89,10 +89,10 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                         <p><span className="text-gray-400">Dimensions: </span>{painting.width + " cm x " + painting.height + " cm"}</p>
                         <p><span className="text-gray-400">Medium: </span>{painting.medium}</p>
                         <p><span className="text-gray-400">Location: </span>{`${painting.galleries.galleryName} – ${painting.galleries.galleryCity}, ${painting.galleries.galleryCountry}`}</p>
-                        <p className="pt-5">{painting.description}</p>
+                        <p className="pt-5 overflow-y-auto overflow-x-hidden h-1/2 scrollbar-hide">{painting.description}</p>
                         <a href={painting.museumLink} className="absolute bottom-0 left-0 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Museum</a>
                         <a href={painting.googleLink} className="absolute bottom-0 left-25 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Wikipedia</a>
-                        <p className="absolute bottom-0 right-0 text-sm text-gray-400 rounded-xl m-4 font-bold">{painting.copyrightText}</p>
+                        <p className="absolute text-right bottom-0 right-0 max-w-1/4 md:text-xs text-xs text-gray-400 rounded-xl m-2 font-bold">{painting.copyrightText}</p>
                     </div>
                 </div>
                   <button 

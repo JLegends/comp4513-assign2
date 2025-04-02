@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useFavorites } from "./FavoritesContext";
 
 const ArtistItem = (props) => {
-    console.log(props)
 
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -23,8 +22,6 @@ const ArtistItem = (props) => {
     };
 
     const imageUrl = `./images/art-images/artists/square/${props.id}.jpg`;
-
-    console.log(imageUrl);
 
     let name = "";
     if (props.firstName && props.lastName) {
@@ -67,7 +64,7 @@ const ArtistItem = (props) => {
                 <p className="font-normal text-gray-500 text-xs">  {`${props.birth}-${props.death}`}</p>
             </div>
             <img 
-                className="absolute right-0 transform translate-y-3/5 w-6 cursor-pointer text-button-focus" 
+                className="absolute right-1 transform translate-y-3/5 w-6 cursor-pointer text-button-focus" 
                 src={
                     isFavorited
                         ? "./images/heart-icon-filled.svg"

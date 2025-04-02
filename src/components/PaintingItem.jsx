@@ -37,7 +37,7 @@ const PaintingItem = (props) => {
                     alt="favorite"
                 />
             </td>
-            <td className="relative w-10 h-1/10">
+            <td className="flex relative w-[80px] h-[80px]">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">
                         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>

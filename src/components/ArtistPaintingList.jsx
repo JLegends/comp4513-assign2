@@ -10,9 +10,9 @@ const ArtistPaintingList = ({ paintings, toggleDialog}) => {
     }
 
     return (
-        <div className="w-full h-[100%] overflow-x-auto scrollbar-hide text-sm">
+        <div className="w-full h-[100%] overflow-x-auto overflow-y-auto scrollbar-custom text-sm">
             <table className="w-full border-collapse">
-                <thead>
+                <thead className="sticky top-0 bg-[#212121] z-10">
                     <tr className="text-left">
                         <th className="px-2 w-6 font-normal">#</th>
                         <th className="px-2 w-4 font-normal"> </th>
