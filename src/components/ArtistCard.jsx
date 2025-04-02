@@ -9,7 +9,7 @@ const ArtistCard = (props) => {
     let gender = "Male";
     if (props.artist.gender != "M") gender = "Female";
 
-    const imageUrl = imagePath + props.artist.artistId + '.jpg';
+    const imageUrl = `./images/art-images/artists/full/${props.artist.artistId}.jpg`;
 
     let name = "";
     if (props.artist.firstName && props.artist.lastName) {

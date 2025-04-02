@@ -7,7 +7,7 @@ const ArtistItem = (props) => {
     const [hasError, setHasError] = useState(false);
 
 
-    const imageUrl = imagePath + props.id + '.jpg';
+    const imageUrl = `./images/art-images/artists/square/${props.id}.jpg`;
 
     let name = "";
     if (props.firstName && props.lastName) {

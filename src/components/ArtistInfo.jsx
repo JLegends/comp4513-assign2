@@ -6,7 +6,6 @@ import { useFavorites } from './FavoritesContext.jsx';
 const ArtistInfo = ({artist}) => {
   const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
   
-  
   if (!artist) {
     return <p className="flex w-full h-full justify-center align-center items-center text-white font-bold">Select An Artist</p>
   }
