@@ -1,9 +1,11 @@
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import { useFavorites } from "./FavoritesContext";
 
 const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
   const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
-    
+  const [isLoading, setIsLoading] = useState(true);
+      
+  
   if (!painting) {
         return (
           <dialog
@@ -43,7 +45,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
       }
     };
 
-    console.log(painting.imageFileName)
+    const imageUrl = `./images/art-images/paintings/full/${String(painting.imageFileName).padStart(6,"0")}.jpg`;
 
     return (
         <dialog     
@@ -54,7 +56,19 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                 <div className="flex flex-shrink h-full p-2 bg-[#000000] rounded-xl">
                     <div className="flex w-1/2 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121]">
                         <figure className="w-full h-full relative">
-                          <img src={`./images/art-images/paintings/full/${String(painting.imageFileName).padStart(6,"0")}.jpg`} alt={painting.title} className="text-center w-full h-full object-cover rounded-xl"/>
+                          {isLoading && (
+                            <div className="flex justify-center items-center w-[80px] h-[80px]">
+                                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
+                            </div>
+                          )}
+                          <img 
+                            src={imageUrl} 
+                            onLoad={() => setIsLoading(false)}
+                            onError={() => {
+                                setIsLoading(false);
+                            }}
+                            alt={painting.title} 
+                            className="text-center w-full h-full object-cover rounded-xl"/>
                           <img 
                             className="absolute top-5 right-5 rounded-full p-2 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
                             src={

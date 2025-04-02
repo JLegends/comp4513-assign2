@@ -5,7 +5,7 @@ const GalleryPaintingListItem = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/square/${props.fileName}`;
+    const imageUrl = `./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`;
     //console.log(imageUrl);
     return (
         <tr className="text-sm hover:bg-[#302F2F]">

@@ -7,8 +7,6 @@ const PaintingItem = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
-    const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/square/${props.fileName}`;
-
     const isFavorited = favorites.paintings.some(
         (fav) => fav.paintingId === props.painting.paintingId
     );
@@ -21,6 +19,8 @@ const PaintingItem = (props) => {
           addToFavorites("paintings", props.painting);
         }
     };
+
+    const imageUrl = `./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`;
 
     return (
         <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F]">
@@ -45,7 +45,7 @@ const PaintingItem = (props) => {
                 )}
                 {!hasError ? (
                     <img
-                        src={`./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`}
+                        src={imageUrl}
                         alt={props.title}
                         onLoad={() => setIsLoading(false)}
                         onError={() => {
