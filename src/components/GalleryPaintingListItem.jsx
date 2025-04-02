@@ -8,7 +8,7 @@ const GalleryPaintingListItem = (props) => {
     const imageUrl = `./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`;
     //console.log(imageUrl);
     return (
-        <tr className="text-sm hover:bg-[#302F2F]">
+        <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F]">
             <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
             <td className="relative w-1/12">
                 {isLoading && (

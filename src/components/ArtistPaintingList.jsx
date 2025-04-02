@@ -1,8 +1,8 @@
 
 import ArtistPaintingListItem from './ArtistPaintingListItem.jsx'
 
-const ArtistPaintingList = (props) => {
-    if (!props.paintings || props.paintings.length === 0) {
+const ArtistPaintingList = ({ paintings, toggleDialog}) => {
+    if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
             </div>
@@ -27,8 +27,17 @@ const ArtistPaintingList = (props) => {
                     </tr>
                 </thead>
                 <tbody className="">
-                    {props.paintings.map((p, index) => 
-                        <ArtistPaintingListItem key={p.paintingId} index={index+1} title={p.title} firstName={p.artists.firstName} lastName={p.artists.lastName} year={p.yearOfWork} fileName={p.imageFileName} painting={p}/>
+                    {paintings.map((p, index) => 
+                        <ArtistPaintingListItem 
+                            toggleDialog={toggleDialog} 
+                            key={p.paintingId} 
+                            index={index+1} 
+                            title={p.title} 
+                            firstName={p.artists.firstName} 
+                            lastName={p.artists.lastName} 
+                            year={p.yearOfWork} 
+                            fileName={p.imageFileName} 
+                            painting={p}/>
                         )
                     }
                 </tbody>

@@ -45,12 +45,18 @@ function App() {
           <FavoritesProvider>
             <Routes>
               <Route path="/" element={<Navigate to="/galleries" replace />} />
-              <Route path="/galleries" element={<GalleryView/>}/>
+              <Route 
+                path="/galleries" 
+                element={<GalleryView toggleDialog={toggleDialog}/>}/>
               <Route 
                 path="/paintings" 
                 element={<PaintingView toggleDialog={toggleDialog}/>}/>
-              <Route path="/artists" element={<ArtistView/>}/>
-              <Route path="/genres" element={<GenreView/>}/>
+              <Route 
+                path="/artists" 
+                element={<ArtistView toggleDialog={toggleDialog}/>}/>
+              <Route 
+                path="/genres" 
+                element={<GenreView/>}/>
             </Routes>
             <PaintingPopup toggleDialog={toggleDialog} ref={dialogRef} painting={selectedPainting}/>
           </FavoritesProvider>

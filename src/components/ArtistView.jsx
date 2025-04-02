@@ -7,7 +7,7 @@ import ArtistPaintingList from './ArtistPaintingList.jsx'
 import {useEffect} from 'react'
 
 
-const ArtistView = (props) => {
+const ArtistView = ({toggleDialog}) => {
     const { galleries, paintings, artists } = useData();
     const [artist, setArtist] = useState(null);
     const [artistPaintings, setArtistPaintings] = useState([]);
@@ -46,7 +46,7 @@ const ArtistView = (props) => {
                         <ArtistInfo artist={artist}/>
                     </div>
                     <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                        <ArtistPaintingList paintings={artistPaintings}/>
+                        <ArtistPaintingList paintings={artistPaintings} toggleDialog={toggleDialog}/>
                     </div>
                 </div>
                 {/* <button className="p-3 bg-secondary text-blue-600 rounded-xl" onClick={popUpHandler}>

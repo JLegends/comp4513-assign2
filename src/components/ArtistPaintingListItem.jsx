@@ -22,7 +22,7 @@ const ArtistPaintingListItem = (props) => {
     const imageUrl = `./images/art-images/paintings/square/${String(props.fileName).padStart(6,"0")}.jpg`;
 
     return (   
-        <tr onClick={() => props.toggleDialog(props.artistId)} className="text-sm hover:bg-[#302F2F] rounded-xl">
+        <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F] rounded-xl">
             <td className="p-2 w-1/12 text-1"> {props.index} </td>
             <td className="w-1/12 font-bold text-[1rem]"><img className="translate-x-8 w-[33%] cursor-pointer text-button-focus" src="./images/heart-icon-filled.svg" onClick={()=>addToFavorites("paintings", props.painting)} /> </td>
 

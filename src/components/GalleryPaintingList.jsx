@@ -2,8 +2,8 @@
 import GalleryPaintingListItem from './GalleryPaintingListItem.jsx'
 import getArtistName from './GetArtistName.jsx';
 
-const GalleryPaintingList = (props) => {
-    if (!props.paintings || props.paintings.length === 0) {
+const GalleryPaintingList = ({toggleDialog, paintings}) => {
+    if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
             </div>
@@ -30,8 +30,17 @@ const GalleryPaintingList = (props) => {
                 <tbody className="">
                     
                     
-                    {props.paintings.map((p, index) => 
-                        <GalleryPaintingListItem key={p.paintingId} index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName}/>
+                    {paintings.map((p, index) => 
+                        <GalleryPaintingListItem 
+                            toggleDialog={toggleDialog}
+                            key={p.paintingId} 
+                            index={index+1} 
+                            title={p.title}
+                            name={getArtistName(p.artists)} 
+                            year={p.yearOfWork}
+                            fileName={p.imageFileName}
+                            painting={p}
+                        />
                         )
                     }
                 </tbody>

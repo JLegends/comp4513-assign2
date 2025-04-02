@@ -6,7 +6,7 @@ import GalleryInfo from './GalleryInfo.jsx'
 import GalleryPaintingList from './GalleryPaintingList.jsx'
 
 
-const GalleryView = (props) => {
+const GalleryView = ({toggleDialog}) => {
     const { galleries, paintings, artists } = useData();
     const [gallery, setGallery] = useState(null);
     const [galleryPaintings, setGalleryPaintings] = useState([]);
@@ -45,13 +45,9 @@ const GalleryView = (props) => {
                         <GalleryInfo gallery={gallery}/>
                     </div>
                     <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                        <GalleryPaintingList paintings={galleryPaintings}/>
+                        <GalleryPaintingList paintings={galleryPaintings} toggleDialog={toggleDialog}/>
                     </div>
                 </div>
-                {/* <button className="p-3 bg-secondary text-blue-600 rounded-xl" onClick={popUpHandler}>
-                    Painting Popup Testing
-                </button>
-                <PaintingPopup ref={dialogRef}/> */}
             </div>
         </article>
     )
