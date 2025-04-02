@@ -17,12 +17,12 @@ const PaintingList = ({toggleDialog, paintings}) => {
             <table className="w-full border-collapse">
                 <thead>
                     <tr className="text-left">
-                        <th className="px-2 w-1/12 font-normal">#</th>
-                        <th className="px-2 w-1-12 invisible">favorite</th>
-                        <th className="px-2 translate-x-2 w-1/12 font-normal">Title</th>
+                        <th className="px-2 w-5 font-normal">#</th>
+                        <th className="px-2 w-4 invisible">favorite</th>
+                        <th className="px-2 translate-x-2 w-4 font-normal">Title</th>
                         <th className="font-normal"></th>
-                        <th className="px-2 w-3/12 font-normal">Artist</th>
-                        <th className="px-2 w-2/12 font-normal">Year</th>
+                        <th className="px-2 w-10 font-normal">Artist</th>
+                        <th className="px-2 w-10 font-normal">Year</th>
                         <th className="px-2 w-2/12 font-normal">Gallery</th>
                     </tr>
                     <tr>

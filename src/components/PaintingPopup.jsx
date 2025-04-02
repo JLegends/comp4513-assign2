@@ -33,6 +33,18 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
 
     const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/${painting.imageFileName}`;
 
+    const isFavorited = favorites.paintings.some(
+      (fav) => fav.paintingId === painting.paintingId
+    );
+  
+    const handleFavoriteToggle = () => {
+      if (isFavorited) {
+        removeFromFavorites("paintings", painting);
+      } else {
+        addToFavorites("paintings", painting);
+      }
+    };
+
     return (
         <dialog     
             ref={ref} 
@@ -42,8 +54,17 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                 <div className="flex flex-shrink h-full p-2 bg-[#000000] rounded-xl">
                     <div className="flex w-1/2 text-white m-2 rounded-xl bg-linear-to-t from-[#121212] to-[#212121]">
                         <figure className="w-full h-full relative">
-                            <img src={imageUrl} alt={painting.title} className="text-center w-full h-full object-cover rounded-xl"/>
-                            <img className="absolute top-5 right-5 rounded-full p-2 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" src="./images/heart-icon-outline.svg" onClick={() => addToFavorites("artists", artist)}/>
+                          <img src={imageUrl} alt={painting.title} className="text-center w-full h-full object-cover rounded-xl"/>
+                          <img 
+                            className="absolute top-5 right-5 rounded-full p-2 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
+                            src={
+                              isFavorited
+                                ? "./images/heart-icon-filled.svg"
+                                : "./images/heart-icon-outline.svg"
+                            }
+                            onClick={handleFavoriteToggle}
+                            alt="Favorite"
+                          />
                         </figure>
                     </div> 
                     <div className="flex flex-col relative w-1/2 text-white m-2 rounded-xl bg-[#212121] p-4">

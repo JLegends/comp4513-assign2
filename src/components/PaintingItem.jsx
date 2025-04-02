@@ -9,20 +9,35 @@ const PaintingItem = (props) => {
 
     const imageUrl = `https://res.cloudinary.com/funwebdev/image/upload/w_500/art/paintings/square/${props.fileName}`;
 
+    const isFavorited = favorites.paintings.some(
+        (fav) => fav.paintingId === props.painting.paintingId
+    );
+    
+    const handleFavoriteToggle = (e) => {
+        e.stopPropagation(); 
+        if (isFavorited) {
+          removeFromFavorites("paintings", props.painting);
+        } else {
+          addToFavorites("paintings", props.painting);
+        }
+    };
+
     return (
         <tr onClick={() => props.toggleDialog(props.painting)} className="text-sm hover:bg-[#302F2F]">
-            <td className="p-2 w-1/12 text-[1rem]"> {props.index} </td>
-            <td>
+            <td className="pl-2 w-3 text-[1rem]"> {props.index} </td>
+            <td className="pl-[14px] w-3 text-[1rem]">
                 <img 
-                    className="rounded-full p-2 w-8 h-8 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
-                    src="./images/heart-icon-outline.svg" 
-                    onClick={()=> { 
-                        e.stopPropagation(); 
-                        addToFavorites("paintings", props.painting)
-                    }}
+                    className="rounded-full p-1 w-8 h-8 bg-opacity-100" 
+                    src= {
+                        isFavorited
+                            ? "./images/heart-icon-filled.svg"
+                            : "./images/blank.png" 
+                    }
+                    onClick={()=> handleFavoriteToggle}
+                    alt="favorite"
                 />
             </td>
-            <td className="relative w-1/12">
+            <td className="relative w-1/40 h-1/12">
                 {isLoading && (
                     <div className="flex justify-center items-center w-[80px] h-[80px]">
                         <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
@@ -37,17 +52,17 @@ const PaintingItem = (props) => {
                             setHasError(true);
                             setIsLoading(false);
                         }}
-                        className={`transition-opacity py-1 rounded-lg duration-500 ${
+                        className={`transition-opacity w-[80px] h-[80px] py-1 rounded-lg duration-500 ${
                             isLoading ? "opacity-0" : "opacity-100"
                         }`}
                     />
                 ) : (
-                    <div className="flex justify-center text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
+                    <div className="flex justify-center text-gray-500 text-sm w-[80px] h-[80px]"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>
             <td className="p-2 w-6/12 font-bold text-[1rem]"> {props.title} </td>
-            <td className="p-2 w-3/12"> {props.name} </td>
-            <td className="p-2 w-2/12 text-gray-500"> {props.year} </td>
+            <td className="p-2 w-10"> {props.name} </td>
+            <td className="p-2 w-10 text-gray-500"> {props.year} </td>
             <td className="p-2 w-2/12 text-gray-500"> {props.gallery} </td>
         </tr>
     );
