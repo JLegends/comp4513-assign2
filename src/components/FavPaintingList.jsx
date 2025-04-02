@@ -14,7 +14,7 @@ const FavPaintingList = (props) => {
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full h-full overflow-y-auto overflow-x-hidden scrollbar-hide">
             <table className="w-full border-collapse">
                 <thead className="w-full">
                     <tr className="text-left">
@@ -29,7 +29,7 @@ const FavPaintingList = (props) => {
             </table>
             {props.paintings.map((p, index) => (
                 <div key={p.paintingId} className="w-full flex flex-col">
-                    <div className="flex flex-row items-center relative">
+                    <div className="flex flex-row items-center relative ">
                         <FavPaintingItem index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName}/>  
                         <img className="absolute right-1 rounded-full p-2 bg-[#1F1F1F] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("paintings", p)}/>
                     </div>

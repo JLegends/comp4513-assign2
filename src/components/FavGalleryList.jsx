@@ -7,7 +7,7 @@ const FavGalleryList = (props) => {
 
 
     return (
-        <div className="w-full">
+        <div className="w-full h-full overflow-y-auto overflow-x-hidden scrollbar-hide">
         <table className="w-full border-collapse">
           <thead className="w-full">
               <tr className="text-left">
