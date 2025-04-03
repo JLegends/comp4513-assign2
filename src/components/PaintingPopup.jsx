@@ -5,7 +5,8 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
   const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
   const [isLoading, setIsLoading] = useState(true);
       
-  
+  console.log(painting)
+
   if (!painting) {
         return (
           <dialog
@@ -90,15 +91,17 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                         <p><span className="text-gray-400">Medium: </span>{painting.medium}</p>
                         <p><span className="text-gray-400">Location: </span>{`${painting.galleries.galleryName} – ${painting.galleries.galleryCity}, ${painting.galleries.galleryCountry}`}</p>
                         <p className="pt-5 overflow-y-auto overflow-x-hidden h-1/2 scrollbar-hide">{painting.description}</p>
+                        <hr className="bg-gray-600 w-full h-[1px] my-2 border-none"></hr>                        
+                        <h1 className="text-pink-500 text-xl">ADD DOM COLORS HERE </h1>
                         <a href={painting.museumLink} className="absolute bottom-0 left-0 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Museum</a>
                         <a href={painting.googleLink} className="absolute bottom-0 left-25 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Wikipedia</a>
-                        <p className="absolute text-right bottom-0 right-0 max-w-1/4 md:text-xs text-xs text-gray-400 rounded-xl m-2 font-bold">{painting.copyrightText}</p>
+                        <p className="absolute text-right bottom-0 right-0 max-w-1/4 md:text-xs text-xs text-gray-400 rounded-xl m-2 font-normal">{painting.copyrightText}</p>
                     </div>
                 </div>
                   <button 
                       onClick={toggleDialog} 
-                      className="absolute -top-3 -right-3 p-2 bg-button hover:bg-red-500 rounded-full">
-                      <img className="red-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
+                      className="absolute -top-3 -right-3 p-3 bg-black hover:bg-red-500 rounded-full">
+                      <img className="white-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
                   </button>           
                 </div>
         </dialog>
