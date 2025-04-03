@@ -69,7 +69,7 @@ const PaintingFilter = (props) => {
     return(
     <form className="justify-center py-2 px-1">
         <h1 className="flex text-white text-xl font-semibold">Painting Filters</h1>
-        <hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr>
+        <hr className="bg-gray-600 w-full h-[2.5px] my-4"></hr>
         <table className=" w-full">
             <tbody>
             <tr className="w-full">
@@ -80,11 +80,11 @@ const PaintingFilter = (props) => {
                         value="title"
                         onChange={() => setFilterType("title")}
                         className="w-1/10 h-5 bg-button"></input>
-                    <label className="w-3/10 pl-3 text-white text-sm">Title</label>
-                    <input className="w-3/5 bg-button rounded-2xl h-8 pl-4 text-sm text-[#666666]" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
+                    <label className="w-1/4 pl-3 text-white text-sm">Title</label>
+                    <input className="w-9/10 bg-button rounded-2xl h-8 pl-4 text-sm text-[#000000]" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
                 </td>
             </tr>
-            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
+            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] my-4"></hr></td></tr>
             <tr className="w-full">
                 <td className="flex w-full items-center">
                     <input 
@@ -93,8 +93,8 @@ const PaintingFilter = (props) => {
                         value="artist"
                         onChange={() => setFilterType("artist")}
                         className="w-1/10 h-5 bg-button"></input>
-                    <label className="w-3/10 pl-3 text-white text-sm">Artist</label>
-                    <select className="w-3/5 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={artist} onChange={handleArtist}>
+                    <label className="w-1/4 pl-3 flex text-white text-sm">Artist</label>
+                    <select className="w-9/10 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={artist} onChange={handleArtist}>
                         <option className="" value="">Select an artist</option>
 
                         {props.artistList.map((a) => <option key={a.artistId}>{getArtistName(a)}</option>)}
@@ -102,7 +102,7 @@ const PaintingFilter = (props) => {
                     </select>
                 </td>
             </tr>
-            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
+            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] my-4"></hr></td></tr>
             <tr className="w-full">
                 <td className="flex w-full items-center">
                     <input 
@@ -111,8 +111,8 @@ const PaintingFilter = (props) => {
                         value="gallery"
                         onChange={() => setFilterType("gallery")}
                         className="w-1/10 h-5"></input>
-                    <label className="w-3/10 pl-3 text-white text-sm">Gallery</label>
-                    <select className="w-3/5 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={gallery} onChange={handleGallery}>
+                    <label className="w-1/4 pl-3 text-white text-sm">Gallery</label>
+                    <select className="w-9/10 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={gallery} onChange={handleGallery}>
                         <option className="" value="">Select a gallery</option>
 
                         {props.galleryList.map((g) => <option key={g.galleryId}>{g.galleryName}</option>)}
@@ -120,7 +120,7 @@ const PaintingFilter = (props) => {
                     </select>
                 </td>
             </tr>
-            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr></td></tr>
+            <tr><td><hr className="bg-gray-600 w-full h-[2.5px] my-4"></hr></td></tr>
             <tr className="w-full">
                 <td className="flex w-full items-center">
                     <input 
@@ -128,26 +128,27 @@ const PaintingFilter = (props) => {
                         name="filterType"
                         value="year"
                         onChange={() => setFilterType("year")}
-                        className="w-1/10 h-5"></input>
-                    <label className="w-3/10 pl-3 text-white text-sm">Year</label>
+                        className="w-1/12 h-5"></input>
+                    <label className="w-1/4 pl-[12px] text-white text-sm">Year</label>
                 </td>
                 <td className="flex w-full pt-2">
                     <div className="w-1/10 h-5"></div>
-                    <div className="w-1/2 flex items-center text-center justify-center pl-1">
-                        <label className="w-1/2 text-white  text-sm">From</label>
-                        <input className="bg-button rounded-2xl text-sm h-8 w-1/2 text-center mx-1" type='text' value={minYear} onChange={handleMinYear}></input>
-                    </div>
-                    <div className=" w-1/2 flex items-center text-center">
-                        <label className=" w-1/2 text-white text-sm ">To</label>
-                        <input className="bg-button rounded-2xl text-sm h-8 w-1/2 text-center mx-1" type='text' value={maxYear} onChange={handleMaxYear}></input>
+                    <div className="flex justify-end w-full">
+                        <label className="w-5/10 pl-[9px] text-white text-sm flex items-center">From</label>
+                        <input className="bg-button rounded-2xl text-sm h-[34px] w-full text-center mx-3" type='text' value={minYear} onChange={handleMinYear} placeholder="Year"></input>
+                        <label className=" w-1/3 text-white text-sm flex items-center justify-center">To</label>
+                        <input className="bg-button rounded-3xl text-sm h-[34px] w-full text-center ml-3" type='text' value={maxYear} onChange={handleMaxYear} placeholder="Year"></input>
                     </div>
                 </td>
             </tr>
             </tbody>
         </table>        
-        <div className="flex flex-row mt-7 justify-center space-x-4">
-            <button className="bg-button-focus text-white hover:bg-blue-400 font-bold px-8 py-2 rounded-xl" onClick={clearFilters}>Clear</button>
-            <button className="bg-button-focus text-white hover:bg-blue-400 font-bold px-8 py-2 rounded-xl" onClick={handleSubmit}>Filter</button>
+        <hr className="bg-gray-600 w-full h-[2.5px] mt-4 mb-4"></hr>
+
+        <div className="flex flex-row justify-end space-x-4">
+            
+            <button className="bg-button text-sm font-bold text-button-focus hover:bg-button-focus hover:text-white px-6 py-3 rounded-2xl" onClick={clearFilters}>Clear</button>
+            <button className="bg-button text-sm font-bold text-button-focus hover:bg-button-focus hover:text-white px-6 py-3 rounded-2xl" onClick={handleSubmit}>Filter</button>
         </div>
     </form>)
 }
