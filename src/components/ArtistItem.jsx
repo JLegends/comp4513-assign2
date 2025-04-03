@@ -59,7 +59,7 @@ const ArtistItem = (props) => {
             ) : (
                 <div className=" text-gray-500 text-sm"><img src="./images/image-standin.svg"/></div>
             )}
-            <div className="flex flex-col pl-4 justify-center">
+            <div className="flex flex-col pl-4 justify-center max-w-7/10">
                 <h3 className="text-white text-sm font-bold">{name}</h3>
                 <p className="font-normal text-gray-500 text-xs">  {`${props.birth}-${props.death}`}</p>
             </div>

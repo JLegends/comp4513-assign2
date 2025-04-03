@@ -9,7 +9,7 @@ const GalleryCard = ({gallery}) => {
             <p className="font-normal text-gray-400 400-normal"> {`${gallery.galleryCity}, ${gallery.galleryCountry}`} </p>
             <a href={gallery.galleryWebSite} className="absolute -bottom-4 -left-4 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Learn More</a>
             </div>
-            <img src={"./images/" + gallery.galleryId + '.jpg'} className="flex rounded-xl h-full w-1/2 translate-x-1/8 bg-green-500"/>
+            <img src={"./images/art-images/galleries/" + gallery.galleryId + '.jpg'} className="flex rounded-xl h-full w-1/2 translate-x-1/8 bg-green-500"/>
         </div>
     )
 }

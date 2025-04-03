@@ -29,7 +29,7 @@ const FavPaintingList = (props) => {
                     </thead>
                 </table>
             </div>
-            <div className="w-full flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide">
+            <div className="w-full flex-1 overflow-y-auto overflow-x-hidden scrollbar-custom">
                 {props.paintings.map((p, index) => (
                     <div key={p.paintingId} className="w-full flex flex-col">
                         <div className="flex flex-row items-center relative ">

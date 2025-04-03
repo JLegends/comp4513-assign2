@@ -1,4 +1,4 @@
-const imagePath = '/images/'
+const imagePath = '/images/art-images/galleries/'
 import { useState } from "react";
 import { useFavorites } from "./FavoritesContext";
 
@@ -9,16 +9,16 @@ const GalleryItem = (props) => {
     const [hasError, setHasError] = useState(false);
     const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
 
-    const isFavorited = favorites.artists.some(
-        (fav) => fav.artistId === props.id
+    const isFavorited = favorites.galleries.some(
+        (fav) => fav.galleryId === props.id
     );
 
     const handleFavoriteToggle = (e) => {
         e.stopPropagation(); 
         if (isFavorited) {
-          removeFromFavorites("artists", props.id);
+          removeFromFavorites("gallery", props.id);
         } else {
-          addToFavorites("artists", props.id);
+          addToFavorites("gallery", props.id);
         }
     };
 
@@ -47,7 +47,7 @@ const GalleryItem = (props) => {
                 <div className="text-gray-500 text-sm">Image not available</div>
             )}
 
-            <div className="flex flex-col pl-4 justify-center">
+            <div className="flex flex-col pl-4 justify-center max-w-7/10">
                 <h3 className="text-white text-sm font-bold">{props.name}</h3>
                 <p className="font-normal text-gray-500 text-xs">  {`${props.city}, ${props.country}`}</p>
             </div>

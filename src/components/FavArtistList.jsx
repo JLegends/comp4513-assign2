@@ -21,7 +21,7 @@ const FavArtistList = (props) => {
             </thead>
           </table>
         </div>
-        <div className="w-full flex-1 overflow-y-auto overflow-x-hidden scrollbar-hide">
+        <div className="w-full flex-1 overflow-y-auto overflow-x-hidden scrollbar-custom">
           {props.list.map((a) => (
             <div key={a.artistId} className="w-full flex flex-col">
               <div className="flex flex-row items-center relative">
