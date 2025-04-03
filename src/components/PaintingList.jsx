@@ -19,9 +19,9 @@ const PaintingList = ({toggleDialog, paintings}) => {
                     <tr className="text-left">
                         <th className="px-2 w-5 font-normal">#</th>
                         <th className="px-2 w-16"></th>
-                        <th className="px-2 w-[80px] h-[80px] m-[1px] font-normal">Title</th>
-                        <th className="font-normal w-0"></th>
-                        <th className="px-2 w-10 font-normal">Artist</th>
+                        <th className="px-2 w-0 translate-x-4 font-normal">Title</th>
+                        <th className="font-normal w-1/2"></th>
+                        <th className="px-2 w-25 font-normal">Artist</th>
                         <th className="px-2 w-10 font-normal">Year</th>
                         <th className="px-2 w-2/12 font-normal">Gallery</th>
                     </tr>

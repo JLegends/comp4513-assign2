@@ -73,7 +73,7 @@ const ArtistPaintingListItem = (props) => {
                     <div className="flex justify-center pl-1 text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>            
-            <td className="p-2 w-8/12 font-bold text-[1rem]"> {props.title} </td>
+            <td className="p-2 pl-3 w-8/12 font-bold text-[1rem]"> {props.title} </td>
             <td className="w-4/12 text-gray-500"> {props.year} </td>
         </tr>
     

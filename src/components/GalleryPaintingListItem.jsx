@@ -62,7 +62,7 @@ const GalleryPaintingListItem = (props) => {
                     <div className="flex justify-center pl-1 rounded-lg text-gray-500 text-sm w-full h-full"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>
-            <td className="p-2 w-6/12 font-bold text-[1rem]"> {props.title} </td>
+            <td className="p-2 w-6/12 translate-x-2 font-bold text-[1rem]"> {props.title} </td>
             <td className="p-2 w-3/12"> {props.name} </td>
             <td className="p-2 w-2/12 text-gray-500"> {props.year} </td>
         </tr>
