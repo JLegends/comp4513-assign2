@@ -1,3 +1,4 @@
+const imagePath = '/images/artist-id-'
 import ArtistCard from './ArtistCard.jsx'
 import ArtistMap from './ArtistMap.jsx'
 import { useFavorites } from './FavoritesContext.jsx';

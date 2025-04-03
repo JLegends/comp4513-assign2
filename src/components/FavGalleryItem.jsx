@@ -3,7 +3,7 @@ import { useFavorites } from "./FavoritesContext";
 
 const imagePath = '/images/art-images/galleries/'
 
-const GalleryItem = (props) => {
+const FavGalleryItem = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -25,7 +25,7 @@ const GalleryItem = (props) => {
     const imageUrl = imagePath + props.id + '.jpg';
 
     return (
-        <div className="flex flex-grow relative h-18 w-full px-2 py-2 hover:bg-gray-900" onClick={() => props.galleryHandler(props.id)}>
+        <div className="flex flex-grow relative h-18 w-full px-2 py-2 hover:bg-gray-900">
             {isLoading && (
                 <div className="flex justify-center items-center w-[80px] h-[80px]">
                     <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
@@ -65,4 +65,4 @@ const GalleryItem = (props) => {
     );
 }
 
-export default GalleryItem;
+export default FavGalleryItem;
