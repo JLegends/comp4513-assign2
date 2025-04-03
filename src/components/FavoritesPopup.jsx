@@ -44,9 +44,9 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
                 </div>
                 <button 
                     onClick={toggleDialog} 
-                    className="absolute -top-3 -right-3 p-2 bg-button hover:bg-red-500 rounded-full">
-                    <img className="red-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
-                </button>
+                    className="absolute -top-[14px] -right-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
+                    <img className="white-tint w-7 h-7" src="/images/x-icon.svg" alt="Close"></img>
+                </button>  
             </div>
         </dialog>
     );
