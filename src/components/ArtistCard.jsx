@@ -28,7 +28,7 @@ const ArtistCard = (props) => {
             <h3 className="text-white text-xl w-[120%] font-bold"> {name}</h3>
             <p className="flex space-between w-full font-normal text-gray-500 text-normal"> {props.artist.nationality} <span className="ml-10"> </span> {gender}  <span className="ml-10"> </span>  {props.artist.yearOfBirth}-{props.artist.yearOfDeath}</p>
             <p className="font-normal overflow-y-auto overflow-x-hidden h-3/5 pr-5 scrollbar-custom w-[110%] pt-2 text-white text-normal"> {props.artist.details} </p>
-            <a href={props.artist.artistLink} className="absolute -bottom-4 -left-4 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Learn More</a>
+            <a href={props.artist.artistLink} className="absolute -bottom-4 -left-4 text-button-focus text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Learn More</a>
             </div>
             {isLoading && (
                 <div className="flex justify-center items-center w-[80px] h-[80px]">
