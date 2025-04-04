@@ -1,9 +1,11 @@
 import PaintingItem from "./PaintingItem";
 import getArtistName from "./GetArtistName";
+import useSort from "./useSort";
 
 //Might need to figure out how to remove scroll bar or maybe it should be kept for usability? The buttons are pretty slow to navigate
 
 const PaintingList = ({toggleDialog, paintings}) => {
+    const { sortConfig, handleSort, sortedData } = useSort(paintings);
 
     if (!paintings || paintings.length === 0) {
         return (
@@ -17,13 +19,23 @@ const PaintingList = ({toggleDialog, paintings}) => {
             <table className="w-full border-collapse">
                 <thead className="sticky top-0 bg-[#212121] z-10">
                     <tr className="text-left">
-                        <th className="px-2 w-5 font-normal">#</th>
+                        <th className="px-2 w-5 font-normal">
+                            #
+                        </th>
                         <th className="px-2 w-16"></th>
-                        <th className="px-2 w-0 translate-x-4 font-normal">Title</th>
+                        <th className="px-2 w-0 -translate-x-[10px] font-normal" onClick={() => handleSort("title")}>
+                            Title {sortConfig.key === "title" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                        </th>
                         <th className="font-normal w-1/2"></th>
-                        <th className="px-2 w-25 font-normal">Artist</th>
-                        <th className="px-2 w-10 font-normal">Year</th>
-                        <th className="px-2 w-2/12 font-normal">Gallery</th>
+                        <th className="px-2 w-25 font-normal" onClick={() => handleSort("artists")}>
+                            Artist {sortConfig.key === "artists" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                        </th>
+                        <th className="px-2 w-10 font-normal" onClick={() => handleSort("yearOfWork")}>
+                            Year {sortConfig.key === "yearOfWork" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                        </th>
+                        <th className="px-2 w-2/12 font-normal" onClick={() => handleSort("galleries")}>
+                            Gallery {sortConfig.key === "galleries" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                        </th>
                     </tr>
                     <tr>
                         <td colSpan={7} className="py-2">
@@ -32,7 +44,7 @@ const PaintingList = ({toggleDialog, paintings}) => {
                     </tr>
                 </thead>
                 <tbody className="">
-                    {paintings.map((p, index) => 
+                    {sortedData.map((p,index) => 
                         <PaintingItem 
                             toggleDialog={toggleDialog} 
                             key={p.paintingId} 
@@ -42,9 +54,9 @@ const PaintingList = ({toggleDialog, paintings}) => {
                             year={p.yearOfWork} 
                             fileName={p.imageFileName} 
                             gallery={p.galleries.galleryName} 
-                            painting={p}/>
-                        )
-                    }
+                            painting={p}
+                        />                
+                    )}
                 </tbody>
             </table>
         </div>

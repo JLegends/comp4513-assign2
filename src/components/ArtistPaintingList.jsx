@@ -1,7 +1,11 @@
 
 import ArtistPaintingListItem from './ArtistPaintingListItem.jsx'
+import useSort from "./useSort";
+
 
 const ArtistPaintingList = ({ paintings, toggleDialog}) => {
+    const { sortConfig, handleSort, sortedData } = useSort(paintings);
+
     if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
@@ -16,9 +20,13 @@ const ArtistPaintingList = ({ paintings, toggleDialog}) => {
                     <tr className="text-left">
                         <th className="px-2 w-6 font-normal">#</th>
                         <th className="px-2 w-4 font-normal"> </th>
-                        <th className="px-4 w-1/12 font-normal"> Title</th>
+                        <th className="w-1/12 min-w-12 font-normal" onClick={() => handleSort("title")}> 
+                            Title {sortConfig.key === "title" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                        </th>
                         <th className="font-normal"></th>
-                        <th className="w-2/12 font-normal">Year</th>
+                        <th className="w-2/12 font-normal" onClick={() => handleSort("yearOfWork")}>
+                            Year {sortConfig.key === "yearOfWork" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                        </th>
                     </tr>
                     <tr>
                         <td colSpan={5} className="py-2 ">
@@ -27,7 +35,7 @@ const ArtistPaintingList = ({ paintings, toggleDialog}) => {
                     </tr>
                 </thead>
                 <tbody className="">
-                    {paintings.map((p, index) => 
+                    {sortedData.map((p, index) => 
                         <ArtistPaintingListItem 
                             toggleDialog={toggleDialog} 
                             key={p.paintingId} 
