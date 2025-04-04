@@ -20,7 +20,7 @@ const ArtistPaintingList = ({ paintings, toggleDialog}) => {
                     <tr className="text-left">
                         <th className="px-2 w-6 font-normal">#</th>
                         <th className="px-2 w-4 font-normal"> </th>
-                        <th className="w-1/12 min-w-12 font-normal" onClick={() => handleSort("title")}> 
+                        <th className="w-1/12 min-w-14 font-normal" onClick={() => handleSort("title")}> 
                             Title {sortConfig.key === "title" && (sortConfig.direction === "asc" ? "↑" : "↓")}
                         </th>
                         <th className="font-normal"></th>
