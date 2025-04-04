@@ -6,8 +6,6 @@ import useSort from "./useSort";
 const GenrePaintingList = ({toggleDialog, paintings}) => {
     const { sortConfig, handleSort, sortedData } = useSort(paintings);
 
-    console.log(paintings);
-
     if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
