@@ -32,6 +32,7 @@ const GenreView = ({toggleDialog}) => {
     const headerFocus = "Genre"
 
     console.log(genres)
+    console.log(paintings)
 
     return (
         <article className="h-screen flex flex-col w-full"> {/* clean up Background color EVENTUALLY */}

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-const hostURL = 'https://comp4513-assign1.onrender.com/api';
+const hostURL = 'https://w2025-assign1.onrender.com/api';
 
 // Create a context
 const DataContext = createContext();
