@@ -12,7 +12,7 @@ export const DataProvider = ({ children }) => {
 
 
     // Fetch & store function
-    const fetchAndStore = (key, url, setData) => {
+    const fetchAndStore = (key, url, setData, transform = data => data) => {
         const storedData = localStorage.getItem(key);
         if (storedData) {
             setData(JSON.parse(storedData));
