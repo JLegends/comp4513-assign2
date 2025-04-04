@@ -2,7 +2,7 @@ import { useData } from "./DataContext.jsx";
 import { useState, useEffect } from "react";
 import Header from './Header.jsx'
 import GenreList from './GenreList.jsx'
-//import GenreInfo from './GenreInfo.jsx'
+import GenreInfo from './GenreInfo.jsx'
 import GenrePaintingList from './GenrePaintingList.jsx'
 
 
@@ -33,7 +33,6 @@ const GenreView = ({toggleDialog}) => {
             setGenrePaintings([]); // resets to empty array on error (so the page doesn't break)
         }
     };
-
     useEffect(() => {
         if (genres && genres.length > 0) {
             const initialGenre = genres[0];
@@ -64,7 +63,7 @@ const GenreView = ({toggleDialog}) => {
                     
                 <div className='flex justify-between bg-[#000000] w-full'>
                     <div className="flex w-3/5 rounded-xl m-2 bg-linear-to-t from-[#121212] to-button-focus">
-                        {/*<GenreInfo genre={genre}/>*/}
+                        <GenreInfo genre={genre}/>
                     </div>
                     <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
                         <GenrePaintingList paintings={genrePaintings} toggleDialog={toggleDialog}/>
