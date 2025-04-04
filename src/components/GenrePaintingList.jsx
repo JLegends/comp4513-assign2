@@ -6,11 +6,14 @@ import useSort from "./useSort";
 const GenrePaintingList = ({toggleDialog, paintings}) => {
     const { sortConfig, handleSort, sortedData } = useSort(paintings);
 
-    //console.log(paintings);
+    console.log(paintings);
 
     if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
+                <div className="flex justify-center items-center w-40 h-40">
+                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
+                </div>
             </div>
         );
     }

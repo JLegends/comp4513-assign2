@@ -2,8 +2,6 @@ import PaintingItem from "./PaintingItem";
 import getArtistName from "./GetArtistName";
 import useSort from "./useSort";
 
-//Might need to figure out how to remove scroll bar or maybe it should be kept for usability? The buttons are pretty slow to navigate
-
 const PaintingList = ({toggleDialog, paintings}) => {
     const { sortConfig, handleSort, sortedData } = useSort(paintings);
 

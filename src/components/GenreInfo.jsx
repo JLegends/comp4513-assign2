@@ -4,7 +4,13 @@ const GenreInfo = ({genre}) => {
 
 
   if (!genre) {
-    return <p className="flex w-full h-full justify-center align-center items-center text-white font-bold">Select An Genre</p>
+    return (         
+      <div className="w-full h-full flex items-center justify-center text-white text-lg">
+        <div className="flex justify-center items-center w-40 h-40">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
+        </div>
+      </div>
+    )
   }
 
   //console.log(genre);

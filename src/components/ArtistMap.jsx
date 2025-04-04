@@ -36,7 +36,13 @@ const ArtistMap = (props) => {
     }
     
     if (!coordinates) {
-        return <div className="flex justify-center items-center h-1/2 bg-[#1F1F1F] w-full rounded-xl mt-2 text-white">Loading map...</div>;
+        return (
+          <div className="w-full h-full flex items-center justify-center text-white text-lg">
+            <div className="flex justify-center items-center w-40 h-40">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
+            </div>
+          </div>
+        )
     }
     
     return (      

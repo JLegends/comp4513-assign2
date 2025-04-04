@@ -17,6 +17,10 @@ const ArtistList = (props) => {
     }
   };
 
+  const sortedArtists = [...props.list].sort((a, b) =>
+    a.lastName.localeCompare(b.lastName, undefined, { sensitivity: 'base' })
+  );
+
   return (
     <div className="flex flex-col items-center h-full w-full relative">
       {/* Up Scroll Button */}
@@ -29,7 +33,7 @@ const ArtistList = (props) => {
 
       {/* Scrollable Artist List */}
       <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl min-h-0 flex-grow w-full">
-        {props.list.map((a) => (
+        {sortedArtists.map((a) => (
           <div key={a.artistId} className="w-full flex flex-col">
             <ArtistItem firstName={a.firstName} lastName={a.lastName} birth={a.yearOfBirth} death={a.yearOfDeath} id={a.artistId} artistHandler={props.artistHandler}/>
             <hr className="bg-gray-600 h-[2px] ml-4"/>

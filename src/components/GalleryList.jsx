@@ -17,6 +17,10 @@ const GalleryList = (props) => {
     }
   };
 
+  const sortedGalleries = [...props.list].sort((a, b) =>
+    a.galleryName.localeCompare(b.galleryName, undefined, { sensitivity: 'base' })
+  );
+
   return (
     <div className="flex flex-col items-center h-full w-full relative">
       {/* Up Scroll Button */}
@@ -29,7 +33,7 @@ const GalleryList = (props) => {
 
       {/* Scrollable Gallery List */}
       <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl h-full">
-        {props.list.map((g) => (
+        {sortedGalleries.map((g) => (
           <div key={g.galleryId} className="w-full flex flex-col flex-grow">
             <GalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry} galleryHandler={props.galleryHandler}/>
             <hr className="bg-gray-600 h-[2px] ml-4"/>

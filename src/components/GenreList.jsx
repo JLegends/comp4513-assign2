@@ -17,6 +17,10 @@ const GenreList = (props) => {
     }
   };
 
+  const sortedGenres = [...props.list].sort((a, b) =>
+    a.genreName.localeCompare(b.genreName, undefined, { sensitivity: 'base' })
+  );
+
   return (
     <div className="flex flex-col items-center h-full w-full relative">
       {/* Up Scroll Button */}
@@ -29,7 +33,7 @@ const GenreList = (props) => {
 
       {/* Scrollable Genre List */}
       <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl min-h-0 flex-grow w-full">
-        {props.list.map((g) => (
+        {sortedGenres.map((g) => (
           <div key={g.genreId} className="w-full flex flex-col">
             <GenreItem name={g.genreName}  years={g.eras.eraYears}  id={g.genreId} genreHandler={props.genreHandler}/>
             <hr className="bg-gray-600 h-[2px] ml-4"/>
