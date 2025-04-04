@@ -82,7 +82,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                         <p><span className="text-gray-400">Dimensions: </span>{painting.width + " cm x " + painting.height + " cm"}</p>
                         <p><span className="text-gray-400">Medium: </span>{painting.medium}</p>
                         <p><span className="text-gray-400">Location: </span>{`${painting.galleries.galleryName} – ${painting.galleries.galleryCity}, ${painting.galleries.galleryCountry}`}</p>
-                        <p className="pt-5 overflow-y-auto overflow-x-hidden h-1/2 scrollbar-hide">{painting.description}</p>
+                        <p className="pt-5 overflow-y-auto overflow-x-hidden max-h-80 scrollbar-custom">{painting.description}</p>
                         <hr className="bg-gray-600 w-full h-[1px] my-2 border-none"></hr>                        
                         <div className="flex flex-wrap gap-2">
                           {dominantColors.map((colorObj, index) => (

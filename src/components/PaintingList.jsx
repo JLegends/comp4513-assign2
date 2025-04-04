@@ -30,7 +30,7 @@ const PaintingList = ({toggleDialog, paintings}) => {
                         <th className="px-2 w-25 font-normal" onClick={() => handleSort("artists")}>
                             Artist {sortConfig.key === "artists" && (sortConfig.direction === "asc" ? "↑" : "↓")}
                         </th>
-                        <th className="px-2 w-10 font-normal" onClick={() => handleSort("yearOfWork")}>
+                        <th className="px-2 w-10 min-w-10 font-normal" onClick={() => handleSort("yearOfWork")}>
                             Year {sortConfig.key === "yearOfWork" && (sortConfig.direction === "asc" ? "↑" : "↓")}
                         </th>
                         <th className="px-2 w-2/12 font-normal" onClick={() => handleSort("galleries")}>
