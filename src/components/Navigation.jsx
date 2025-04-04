@@ -1,15 +1,23 @@
 import { Link, useLocation } from 'react-router'
+import { useFavorites } from './FavoritesContext'
 
 const Navigation = ({toggleDialog, headerFocus}) => {
 
     const location = useLocation();
+    const { favorites } = useFavorites(); 
 
     const getButtonStyle = (buttonType) => {
         return headerFocus === buttonType
-            ? "bg-button-focus text-white hover:bg-button-focus" // Selected style
+            ? "bg-button-focus text-white hover:bg-button-focus"
             : "bg-button text-button-focus hover:bg-button-focus hover:text-white"; 
     }
     
+    const isFavoritesEmpty =
+        (!favorites.artists || favorites.artists.length === 0) &&
+        (!favorites.galleries || favorites.galleries.length === 0) &&
+        (!favorites.paintings || favorites.paintings.length === 0);
+        
+
     const routes = {
         Artist: '/artists',
         Gallery: '/galleries',
@@ -45,7 +53,16 @@ const Navigation = ({toggleDialog, headerFocus}) => {
                     </Link>
                 </div>
                 <div className="flex justify-end space-x-4">
-                    <button onClick={toggleDialog} className="flex justify-center items-center hover:underline focus:underline"> Favorites </button>
+                    <button 
+                        onClick={toggleDialog} 
+                        disabled={isFavoritesEmpty}
+                        className={`flex justify-center items-center hover:underline focus:underline 
+                            ${isFavoritesEmpty
+                                ? "text-button cursor-not-allowed"
+                                : "hover:underline focus:underline"
+                        }`}> 
+                        Favorites 
+                    </button>
                     <button className="hover:underline focus:underline"> About </button>
                 </div>
             </div>

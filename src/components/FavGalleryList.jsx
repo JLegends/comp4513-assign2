@@ -1,6 +1,5 @@
 import FavGalleryItem from "./FavGalleryItem";
 import { useFavorites } from "./FavoritesContext";
-//Might need to figure out how to remove scroll bar or maybe it should be kept for usability? The buttons are pretty slow to navigate
 
 const FavGalleryList = (props) => {
     const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
@@ -22,8 +21,8 @@ const FavGalleryList = (props) => {
                     </thead>
                 </table>         
             </div>   
-            <div className=" flex-1 overflow-y-auto overflow-x-hidden scrollbar-custom">
-            {props.list.map((g) => (
+            <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-custom">
+                {props.list.map((g) => (
                     <div key={g.galleryId} className="w-full flex flex-col">
                         <div className="flex flex-row items-center relative">
                             <FavGalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry} galleryHandler={props.galleryHandler} />

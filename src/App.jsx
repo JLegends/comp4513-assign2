@@ -13,7 +13,32 @@ import { FavoritesProvider } from './components/FavoritesContext.jsx'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const handleLogin = (which) => { setLoggedIn(which) }
+
+  useEffect(() => { // This alongside handleLogin makes it so once a "login" is performed it persists for at least 30 minutes
+    const storedLogin = JSON.parse(localStorage.getItem('loginState'));
+    if (storedLogin && storedLogin.isLoggedIn) {
+      const loginTime = new Date(storedLogin.timestamp);
+      const currentTime = new Date();
+      const timeDiff = (currentTime - loginTime) / (1000 * 60); // the difference of time in mins
+      if (timeDiff < 30) { // 30 minutes
+        setLoggedIn(true);
+      } else {
+        localStorage.removeItem('loginState');
+      }
+    }
+  }, []);
+
+  const handleLogin = (which) => {
+    if (which) {
+      // stores login state with login timestamp
+      const loginData = {
+        isLoggedIn: true,
+        timestamp: new Date().toISOString(),
+      };
+      localStorage.setItem('loginState', JSON.stringify(loginData));
+      setLoggedIn(true);
+    }
+  };
 
   const dialogRef = useRef(null);
   const [selectedPainting, setSelectedPainting] = useState(null);
@@ -32,7 +57,7 @@ function App() {
       }
   }
 
-  if (false){ // should be (!loggedIn) but use (false) is its getting in the way
+  if (!loggedIn){ // should be (!loggedIn) but use (false) is its getting in the way
     return(
     <DataProvider>
       <LogInView handler={handleLogin} />

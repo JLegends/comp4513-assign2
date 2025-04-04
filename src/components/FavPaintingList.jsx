@@ -6,13 +6,6 @@ import { useFavorites } from "./FavoritesContext";
 const FavPaintingList = (props) => {
     const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
 
-    if (!props.paintings || props.paintings.length === 0) {
-        return (
-            <div className="w-full h-full flex items-center justify-center text-white text-lg">
-            </div>
-        );
-    }
-
     return (
         <div className="w-full h-full flex flex-col">
             <div className="w-full flex-shrink-0">             
@@ -29,7 +22,7 @@ const FavPaintingList = (props) => {
                     </thead>
                 </table>
             </div>
-            <div className="w-full flex-1 overflow-y-auto overflow-x-hidden scrollbar-custom">
+            <div className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-custom">
                 {props.paintings.map((p, index) => (
                     <div key={p.paintingId} className="w-full flex flex-col">
                         <div className="flex flex-row items-center relative ">
