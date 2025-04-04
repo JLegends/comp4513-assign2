@@ -27,7 +27,7 @@ const GalleryItem = (props) => {
     return (
         <div className="flex flex-grow relative h-18 w-full px-2 py-2 hover:bg-gray-900" onClick={() => props.galleryHandler(props.id)}>
             {isLoading && (
-                <div className="flex justify-center items-center w-[80px] h-[80px]">
+                <div className="flex justify-center items-center w-[80px] max-w-14 max-h-14  h-[80px]">
                     <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-300"></div>
                 </div>
             )}

@@ -99,8 +99,8 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                             </div>
                           ))}
                         </div>
-                        <a href={painting.museumLink} className="absolute bottom-0 left-0 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Museum</a>
-                        <a href={painting.googleLink} className="absolute bottom-0 left-25 text-[#1F1F1F] text-sm bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Wikipedia</a>
+                        <a href={painting.museumLink} className="absolute bottom-0 left-0 text-sm text-button-focus bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Museum</a>
+                        <a href={painting.googleLink} className="absolute bottom-0 left-25 text-sm text-button-focus bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Wikipedia</a>
                         <p className="absolute text-right bottom-0 right-0 max-w-1/4 md:text-xs text-xs text-gray-400 rounded-xl m-2 font-normal">{painting.copyrightText}</p>
                     </div>
 

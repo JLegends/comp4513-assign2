@@ -152,14 +152,29 @@ export const FavoritesProvider = ({ children }) => {
 
                 // Save immediately after state update
                 localStorage.setItem("favorited", JSON.stringify(updatedFavorites));
-
+                
                 return updatedFavorites;
             });
         }
     };
 
+
+    const removeAllFavorites = () => {
+        setFavorites({
+            artists: [],
+            galleries: [],
+            paintings: []
+        });
+        localStorage.setItem("favorited", JSON.stringify({
+            artists: [],
+            galleries: [],
+            paintings: []
+        }));
+    }
+
+
     return (
-        <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
+        <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, removeAllFavorites }}>
             {children}
         </FavoritesContext.Provider>
     );

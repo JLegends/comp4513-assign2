@@ -17,6 +17,7 @@ Apple Photos Logo:
 Heart Icon Contour: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:favorite:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=Heart&icon.size=24&icon.color=%236A7283
 Heart Icon Filled In: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:favorite:FILL@1;wght@400;GRAD@0;opsz@24&icon.query=Heart&icon.size=24&icon.color=%23e3e3e3
 Blank: https://imgur.com/gallery/blank-transparent-png-Y1x2s41 
+Trash Icon: https://fonts.google.com/icons?selected=Material+Symbols+Outlined:delete:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=trash&icon.size=24&icon.color=%23FFFFFF 
 
 Gallery Photos:
 Prado Museum Icon: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.booking.com%2Fattractions%2Fes%2Fprsyzqcx5dhn-prado-museum-skip-the-line-admission.en-gb.html&psig=AOvVaw0yFAHhUr-IqCbEpbzqJjYR&ust=1742626826721000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj75PnMmowDFQAAAAAdAAAAABAP

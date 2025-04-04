@@ -26,7 +26,11 @@ const FavGalleryList = (props) => {
                     <div key={g.galleryId} className="w-full flex flex-col">
                         <div className="flex flex-row items-center relative">
                             <FavGalleryItem image={g.image} name={g.galleryName} id={g.galleryId} city={g.galleryCity} country={g.galleryCountry} galleryHandler={props.galleryHandler} />
-                            <img className="absolute right-1 rounded-full p-2 bg-[#212121] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("galleries", g)}/>
+                            <button 
+                            onClick={()=>removeFromFavorites("galleries", g)}
+                            className="absolute right-1 p-2 bg-[#212121] hover:bg-red-500 rounded-full">
+                            <img className="white-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
+                            </button>                         
                         </div>
                         <hr className="bg-gray-600 h-[1px] border-none" />
                     </div>

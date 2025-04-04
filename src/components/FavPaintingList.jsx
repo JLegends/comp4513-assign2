@@ -27,7 +27,11 @@ const FavPaintingList = (props) => {
                     <div key={p.paintingId} className="w-full flex flex-col">
                         <div className="flex flex-row items-center relative ">
                             <FavPaintingItem index={index+1} title={p.title} name={getArtistName(p.artists)} year={p.yearOfWork} fileName={p.imageFileName} gallery={p.galleries.galleryName}/>  
-                            <img className="absolute right-1 rounded-full p-2 bg-[#1F1F1F] hover:bg-red-700 bg-opacity-100 w-8 h-8 cursor-pointer" src="./images/x-icon.svg" onClick={()=>removeFromFavorites("paintings", p)}/>
+                            <button 
+                                onClick={()=>removeFromFavorites("paintings", p)}
+                                className="absolute right-1 p-2 bg-[#212121] hover:bg-red-500 rounded-full">
+                                <img className="white-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
+                            </button>                          
                         </div>
                         <hr className="bg-gray-600 h-[1px] border-none"/>
                     </div>

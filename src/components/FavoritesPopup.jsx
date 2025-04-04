@@ -7,7 +7,7 @@ import FavPaintingList from './FavPaintingList.jsx';
 import { useFavorites } from './FavoritesContext.jsx';
 
 const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
-    const {favorites, addToFavorites} = useFavorites();
+    const {favorites, removeAllFavorites} = useFavorites();
 
 
 
@@ -42,6 +42,11 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
                         <FavPaintingList paintings={favorites.paintings}/>
                     </div>
                 </div>
+                <button 
+                    onClick={removeAllFavorites} 
+                    className="absolute -top-[14px] -left-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
+                    <img className="w-7 h-7" src="/images/trash-icon.svg" alt="Close"></img>
+                </button>  
                 <button 
                     onClick={toggleDialog} 
                     className="absolute -top-[14px] -right-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
