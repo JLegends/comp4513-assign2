@@ -29,9 +29,9 @@ const GenreList = (props) => {
 
       {/* Scrollable Genre List */}
       <div ref={scrollRef} className="flex flex-col align-center overflow-y-auto overflow-x-hidden scrollbar-hide rounded-xl min-h-0 flex-grow w-full">
-        {props.list.map((a) => (
-          <div key={a.artistId} className="w-full flex flex-col">
-            <GenreItem firstName={a.firstName} lastName={a.lastName} birth={a.yearOfBirth} death={a.yearOfDeath} id={a.artistId} artistHandler={props.artistHandler}/>
+        {props.list.map((g) => (
+          <div key={g.genreId} className="w-full flex flex-col">
+            <GenreItem name={g.genreName}  years={g.eras.eraYears}  id={g.genreId} genreHandler={props.genreHandler}/>
             <hr className="bg-gray-600 h-[2px] ml-4"/>
           </div>
         ))}
