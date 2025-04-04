@@ -8,24 +8,24 @@ import Header from './Header.jsx'
 
 const GenreView = ({toggleDialog}) => {
     const { galleries, paintings, artists, genres} = useData();
-    const [artist, setGenre] = useState(null);
-    const [artistPaintings, setGenrePaintings] = useState([]);
+    const [genre, setGenre] = useState(null);
+    const [genrePaintings, setGenrePaintings] = useState([]);
 
     useEffect(() => {
-        if (artists && artists.length > 0) {
-            const initialGenre = artists[0];
+        if (genres && genres.length > 0) {
+            const initialGenre = genres[0];
             setGenre(initialGenre)
-            setGenrePaintings(paintings.filter(p => initialGenre.artistId == p.artists.artistId))
+            setGenrePaintings(paintings.filter(p => initialGenre.genreId == p.genres.genreId))
         }
-    }, [artists]);
+    }, [genres]);
 
-    if (!galleries || !paintings || !artists) return <p>{/*Loading behaviour here*/}</p>;
+    if (!galleries || !paintings || !genres || !genres) return <p>{/*Loading behaviour here*/}</p>;
 
-    const artistHandler = (artIdSelected) => {
-        if (!artist || artist.artistId != artIdSelected) {
-            const newGenre = artists.find(a => a.artistId === artIdSelected)
+    const genreHandler = (genreIdSelected) => {
+        if (!genre || genre.genreId != genreIdSelected) {
+            const newGenre = genres.find(a => a.genreId === genreIdSelected)
             setGenre(newGenre);
-            setGenrePaintings(paintings.filter(p => newGenre.artistId == p.artists.artistId))
+            setGenrePaintings(paintings.filter(p => newGenre.genreId == p.genres.genreId))
         }
     }
 
@@ -38,15 +38,15 @@ const GenreView = ({toggleDialog}) => {
             <Header headerFocus={headerFocus}/>
             <div className="flex h-[91.96%] p-2 bg-[#000000]">
                 <div className="items-center justify-center bg-[#000000] pr-2 w-1/5 h-[98%]">
-                    {/*<GenreList list={artists} artistHandler={artistHandler}/>*/}
+                    {/*<GenreList list={genres} genreHandler={genreHandler}/>*/}
                 </div>
                     
                 <div className='flex justify-between bg-[#000000] w-full'>
                     <div className="flex w-3/5 rounded-xl m-2 bg-linear-to-t from-[#121212] to-button-focus">
-                        {/*<GenreInfo artist={artist}/>*/}
+                        {/*<GenreInfo genre={genre}/>*/}
                     </div>
                     <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                        {/*<GenrePaintingList paintings={artistPaintings} toggleDialog={toggleDialog}/>*/}
+                        {/*<GenrePaintingList paintings={genrePaintings} toggleDialog={toggleDialog}/>*/}
                     </div>
                 </div>
             </div>
