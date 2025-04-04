@@ -1,10 +1,9 @@
 import { useData } from "./DataContext.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from './Header.jsx'
 import ArtistList from './ArtistList.jsx'
 import ArtistInfo from './ArtistInfo.jsx'
 import ArtistPaintingList from './ArtistPaintingList.jsx'
-import {useEffect} from 'react'
 
 
 const ArtistView = ({toggleDialog}) => {

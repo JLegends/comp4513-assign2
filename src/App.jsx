@@ -81,7 +81,7 @@ function App() {
                 element={<ArtistView toggleDialog={toggleDialog}/>}/>
               <Route 
                 path="/genres" 
-                element={<GenreView/>}/>
+                element={<GenreView toggleDialog={toggleDialog}/>}/>
             </Routes>
             <PaintingPopup toggleDialog={toggleDialog} ref={dialogRef} painting={selectedPainting}/>
           </FavoritesProvider>
