@@ -44,7 +44,7 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
                 </div>
                 <button 
                     onClick={removeAllFavorites} 
-                    className="absolute -top-[14px] -left-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
+                    className="absolute -bottom-[50px] -right-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
                     <img className="w-7 h-7" src="/images/trash-icon.svg" alt="Close"></img>
                 </button>  
                 <button 
