@@ -1,4 +1,3 @@
-import { useData } from "./DataContext.jsx";
 import { useState, useEffect } from "react";
 import getArtistName from "./GetArtistName.jsx";
 
@@ -80,7 +79,7 @@ const PaintingFilter = (props) => {
                         value="title"
                         onChange={() => setFilterType("title")}
                         className="w-1/10 h-5 bg-button"></input>
-                    <label className="w-1/4 pl-3 text-white text-sm">Title</label>
+                    <label className="w-1/4 pl-1 text-white text-sm">Title</label>
                     <input className="w-9/10 bg-button rounded-2xl h-8 pl-4 text-sm text-[#000000]" type='text' value={title} onChange={handleTitle} placeholder="Enter painting title"></input>
                 </td>
             </tr>
@@ -93,7 +92,7 @@ const PaintingFilter = (props) => {
                         value="artist"
                         onChange={() => setFilterType("artist")}
                         className="w-1/10 h-5 bg-button"></input>
-                    <label className="w-1/4 pl-3 flex text-white text-sm">Artist</label>
+                    <label className="w-1/4 pl-1 flex text-white text-sm">Artist</label>
                     <select className="w-9/10 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={artist} onChange={handleArtist}>
                         <option className="" value="">Select an artist</option>
 
@@ -111,7 +110,7 @@ const PaintingFilter = (props) => {
                         value="gallery"
                         onChange={() => setFilterType("gallery")}
                         className="w-1/10 h-5"></input>
-                    <label className="w-1/4 pl-3 text-white text-sm">Gallery</label>
+                    <label className="w-1/4 pl-1 text-white text-sm">Gallery</label>
                     <select className="w-9/10 pl-4 bg-button text-[#666666] text-sm rounded-2xl h-8" type='text' value={gallery} onChange={handleGallery}>
                         <option className="" value="">Select a gallery</option>
 
@@ -128,13 +127,13 @@ const PaintingFilter = (props) => {
                         name="filterType"
                         value="year"
                         onChange={() => setFilterType("year")}
-                        className="w-1/12 h-5"></input>
-                    <label className="w-1/4 pl-[12px] text-white text-sm">Year</label>
+                        className="w-[8.5%] h-5"></input>
+                    <label className="w-1/4 pl-[3px] text-white text-sm">Year</label>
                 </td>
                 <td className="flex w-full pt-2">
                     <div className="w-1/10 h-5"></div>
                     <div className="flex justify-end w-full">
-                        <label className="w-5/10 pl-[9px] text-white text-sm flex items-center">From</label>
+                        <label className="w-5/10 pl-[3px] text-white text-sm flex items-center">From</label>
                         <input className="bg-button rounded-2xl text-sm h-[34px] w-full text-center mx-3" type='text' value={minYear} onChange={handleMinYear} placeholder="Year"></input>
                         <label className=" w-1/3 text-white text-sm flex items-center justify-center">To</label>
                         <input className="bg-button rounded-3xl text-sm h-[34px] w-full text-center ml-3" type='text' value={maxYear} onChange={handleMaxYear} placeholder="Year"></input>

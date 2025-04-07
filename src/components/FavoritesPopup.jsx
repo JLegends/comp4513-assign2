@@ -1,4 +1,4 @@
-import { forwardRef, useState, useEffect } from 'react'
+import { forwardRef } from 'react'
 import FavGalleryList from './FavGalleryList.jsx'
 import FavArtistList from './FavArtistList.jsx';
 import FavPaintingList from './FavPaintingList.jsx';
@@ -8,18 +8,6 @@ import { useFavorites } from './FavoritesContext.jsx';
 
 const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
     const {favorites, removeAllFavorites} = useFavorites();
-
-
-
-    const p = [{
-        paintingId: 0, 
-        index:1, 
-        title:"Test", 
-        name:"Pablo",
-        year:1810, 
-        fileName:"137010"
-    }]
-
 
     return (
         <dialog 

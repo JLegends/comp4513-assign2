@@ -2,7 +2,7 @@ import FavGalleryItem from "./FavGalleryItem";
 import { useFavorites } from "./FavoritesContext";
 
 const FavGalleryList = (props) => {
-    const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
+    const { removeFromFavorites } = useFavorites();
 
 
     return (

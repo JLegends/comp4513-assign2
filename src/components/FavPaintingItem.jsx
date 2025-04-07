@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useFavorites } from "./FavoritesContext";
 
 const FavPaintingItem = (props) => {
-    const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 

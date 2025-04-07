@@ -4,7 +4,7 @@ import { useFavorites } from "./FavoritesContext";
 //Might need to figure out how to remove scroll bar or maybe it should be kept for usability? The buttons are pretty slow to navigate
 
 const FavPaintingList = (props) => {
-    const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
+    const { removeFromFavorites} = useFavorites();
 
     return (
         <div className="w-full h-full flex flex-col">

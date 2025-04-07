@@ -2,8 +2,6 @@ import { useRef } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react"; // Icon package
 import GalleryItem from "./GalleryItem";
 
-//Might need to figure out how to remove scroll bar or maybe it should be kept for usability? The buttons are pretty slow to navigate
-
 const GalleryList = (props) => {
   const scrollRef = useRef(null);
 

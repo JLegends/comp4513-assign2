@@ -1,5 +1,5 @@
 import Navigation from './Navigation.jsx'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import FavoritesPopup from './FavoritesPopup.jsx'
 
 

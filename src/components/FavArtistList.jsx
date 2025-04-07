@@ -3,7 +3,7 @@ import FavArtistItem from "./FavArtistItem";
 import { useFavorites } from "./FavoritesContext";
 
 const FavArtistList = (props) => {
-  const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
+  const {removeFromFavorites} = useFavorites();
   
   return (
     <div className="w-full h-full flex flex-col">

@@ -60,7 +60,7 @@ const PaintingItem = (props) => {
                     <div className="flex justify-center text-gray-500 text-sm w-[80px] h-[80px]"><img src="./images/image-standin.svg"/></div>
                 )}
             </td>
-            <td className="p-2 -translate-x-3 w-6/12 font-bold text-[1rem]"> {props.title} </td>
+            <td className="p-2 -translate-x-1 w-6/12 font-bold text-[1rem]"> {props.title} </td>
             <td className="p-2 w-10"> {props.name} </td>
             <td className="p-2 w-10 min-w-16 translate-x-[2px]  text-gray-500"> {props.year} </td>
             <td className="p-2 w-2/12 text-gray-500"> {props.gallery} </td>

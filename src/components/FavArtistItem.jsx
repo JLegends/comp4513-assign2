@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useFavorites } from "./FavoritesContext";
 
-const imagePath = '/images/artist-id-'
-
 const FavArtistItem = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);

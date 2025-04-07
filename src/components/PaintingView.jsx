@@ -1,5 +1,5 @@
 import { useData } from "./DataContext.jsx";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Header from './Header.jsx'
 import PaintingFilter from "./PaintingFilter.jsx";
 import PaintingList from "./PaintingList.jsx";

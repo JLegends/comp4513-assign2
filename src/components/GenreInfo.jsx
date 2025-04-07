@@ -1,5 +1,3 @@
-import { useFavorites } from './FavoritesContext.jsx';
-
 const GenreInfo = ({genre}) => {
 
 

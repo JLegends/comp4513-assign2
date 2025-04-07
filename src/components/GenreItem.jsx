@@ -1,5 +1,4 @@
 import { useState } from "react";
-const imagePath = '/images/genre-id-'
 
 const GenreItem = (props) => {
 
