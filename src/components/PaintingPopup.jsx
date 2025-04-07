@@ -91,12 +91,12 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                           {dominantColors.map((colorObj, index) => (
                             <div
                               key={index}
-                              className="w-8 h-8 rounded-full"
+                              className="group w-8 h-8 rounded-full relative"
                               style={{
                                 backgroundColor: `rgb(${colorObj.color.red}, ${colorObj.color.green}, ${colorObj.color.blue})`,
                               }}
                             >
-                              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-800 text-white text-xs rounded py-1 px-2 whitespace-nowrap">
+                              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-black text-white text-normal rounded py-1 px-2 whitespace-nowrap">
                                 {colorObj.name}
                               </span>
                             </div>
