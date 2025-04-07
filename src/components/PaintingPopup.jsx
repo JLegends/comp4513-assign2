@@ -5,6 +5,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
   const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
   const [isLoading, setIsLoading] = useState(true);
       
+
   if (!painting) {
         return (
           <dialog
@@ -34,6 +35,8 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
         addToFavorites("paintings", painting);
       }
     };
+
+    console.log(painting);
 
     const annotations = JSON.parse(painting.jsonAnnotations);    
     const dominantColors = annotations.dominantColors;
@@ -100,7 +103,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                           ))}
                         </div>
                         <a href={painting.museumLink} className="absolute bottom-0 left-0 text-sm text-button-focus bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Museum</a>
-                        <a href={painting.googleLink} className="absolute bottom-0 left-25 text-sm text-button-focus bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Wikipedia</a>
+                        <a href={painting.wikiLink} className="absolute bottom-0 left-25 text-sm text-button-focus bg-button hover:bg-button-focus hover:text-white rounded-xl p-3 m-4 font-bold">Wikipedia</a>
                         <p className="absolute text-right bottom-0 right-0 max-w-1/4 md:text-xs text-xs text-gray-400 rounded-xl m-2 font-normal">{painting.copyrightText}</p>
                     </div>
 
