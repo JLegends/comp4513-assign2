@@ -1,6 +1,61 @@
 @import "tailwindcss"; 
 
+@theme {
+  --color-primary: #E1E2E0;  
+  --color-secondary: #A39171;  
+  --color-tertiary: #6D4C3D; 
+  --color-quaternary: #6D4C3D;   
+  --color-quinary: #6D4C3D; 
+  --color-button: #CCCCCC;
+  --color-button-focus: #0076F7;
+}
 
+body {
+  font-family: -apple-system, "SF Pro", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(10px);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.leaflet-container {
+  border-radius: 10px;
+}
+
+.leaflet-marker-icon .leaflet-zoom-animated .leaflet-interactive {
+  color: var(--color-black);
+  background-color: black;
+}
+
+.leaflet-tile-pane {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.white-tint {
+  filter: invert(100%) brightness(250%) contrast(150%);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  @apply bg-[#212121] bg-linear-to-t from-[#121212] to-[#212121]; 
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  @apply bg-black rounded-full; 
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-600;
+}
 
 /*:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
