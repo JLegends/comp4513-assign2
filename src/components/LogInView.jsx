@@ -34,14 +34,16 @@ const LogInView = (props) => {
 
     return (
         // Found here: https://flowbite.com/blocks/marketing/login/
-        <div className = "h-screen relative w-full bg-[url('/images/starry-night.webp')] bg-no-repeat bg-cover flex items-center justify-center">
-            <h1 className="absolute top-20 bg-white rounded-xl py-5 px-10 font-bold text-2xl">CanvasHub</h1>
-            <div className="flex items-center space-x-4 max-w-5xl mx-auto">
-                <div className = "p-4 bg-white rounded-xl w-40">
+        <div className = "h-screen relative w-full bg-[url('/images/starry-night.webp')] bg-no-repeat bg-cover flex items-center relative">
+            <div className="flex items-center space-x-4 max-w-5xl mx-auto relative">
+                <h1 className="absolute -top-[13%] translate-x-[103%] shadow-xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)] text-white rounded-xl font-bold text-4xl">
+                    CanvasHub
+                </h1>
+                <div className = "p-4 bg-white shadow-xl mb-32 rounded-xl w-40">
                     <h1 className="w-full flex justify-center text-lg font-semibold">Email</h1>
                     <p className="w-full flex justify-center">test@gmail.com</p>
                 </div>
-                <div className="w-120 bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+                <div className="w-120 bg-white rounded-lg shadow-xl md:mt-0 sm:max-w-md xl:p-0">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                             {isLoggingIn ? "Loading..." : "Sign in to your account"}
@@ -74,12 +76,12 @@ const LogInView = (props) => {
                         </form>
                     </div>
                 </div>
-                <div className="p-4 bg-white rounded-xl w-40">                    
+                <div className="p-4 mt-18 shadow-xl bg-white rounded-xl w-40">                    
                     <h1 className="w-full flex justify-center text-lg font-semibold">Password</h1>                    
                     <p className="w-full flex justify-center">1234</p>            
                 </div>
             </div>
-            <h1 className="absolute bottom-10 bg-white rounded-xl py-2 px-10 text-sm"><a className="hover:underline" href="https://sanctuarymentalhealth.org/2021/03/04/the-starry-night/">https://sanctuarymentalhealth.org/2021/03/04/the-starry-night/</a></h1>
+            <h1 className="absolute right-1/2 translate-x-1/2 shadow-xl bottom-10 bg-white rounded-2xl py-2 px-8 text-sm"><a className="hover:underline" href="https://sanctuarymentalhealth.org/2021/03/04/the-starry-night/">https://sanctuarymentalhealth.org/2021/03/04/the-starry-night/</a></h1>
         </div>
     );
 }
