@@ -5,6 +5,7 @@ import GalleryView from './components/GalleryView.jsx'
 import ArtistView from './components/ArtistView.jsx'
 import PaintingView from './components/PaintingView.jsx'
 import GenreView from './components/GenreView.jsx'
+import AboutView from './components/AboutView.jsx'
 import PaintingPopup from "./components/PaintingPopup.jsx"
 
 import { DataProvider } from './components/DataContext.jsx'
@@ -82,6 +83,9 @@ function App() {
               <Route 
                 path="/genres" 
                 element={<GenreView toggleDialog={toggleDialog}/>}/>
+              <Route 
+                path="/about" 
+                element={<AboutView toggleDialog={toggleDialog}/>}/>
             </Routes>
             <PaintingPopup toggleDialog={toggleDialog} ref={dialogRef} painting={selectedPainting}/>
           </FavoritesProvider>
