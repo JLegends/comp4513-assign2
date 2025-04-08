@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useFavorites } from "./FavoritesContext";
 
 const imagePath = import.meta.env.BASE_URL + 'images/art-images/galleries/';
-
+console.log("BASEURL: ", import.meta.env.BASE_URL);
 const GalleryItem = (props) => {
 
     const [isLoading, setIsLoading] = useState(true);
