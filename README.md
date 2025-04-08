@@ -10,7 +10,6 @@ CanvasHub is a single-page React application built with Vite, designed to explor
 - [Usage](#usage)
 - [Assignment Compliance](#assignment-compliance)
 - [Credits](#credits)
-- [License](#license)
 
 ## Overview
 CanvasHub provides users with an immersive experience to browse art-related data through multiple views: Gallery, Artist, Painting, and Genre. Users can log in (simulated), filter and sort paintings, view detailed painting information in a modal dialog, manage a favorites list, and explore gallery locations on a map. The application fetches data from a custom API hosted at `https://w2025-assign1.onrender.com/api` and persists user preferences using local storage.
@@ -34,7 +33,6 @@ CanvasHub provides users with an immersive experience to browse art-related data
 - ![React Router](https://img.shields.io/badge/React%20Router-7.4.0-purple) & ![React Router DOM](https://img.shields.io/badge/React%20Router%20DOM-7.4.0-purple) - Manages navigation between views in the single-page application.
 - ![Lucide React](https://img.shields.io/badge/Lucide%20React-0.483.0-pink) - Icon library for UI elements.
 - ![Tailwind Scrollbar Hide](https://img.shields.io/badge/Tailwind%20Scrollbar%20Hide-2.0.0-cyan) - Customizes scrollbar visibility with Tailwind.
-- **Context API**: Built-in React feature for managing global state (data and favorites).
 - **Local Storage**: Persists login state and fetched data for performance.
 - **Fetch API**: Retrieves data from the custom API endpoint.
 
