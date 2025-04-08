@@ -7,47 +7,25 @@ import GenrePaintingList from './GenrePaintingList.jsx'
 
 
 const GenreView = ({toggleDialog}) => {
-    const { galleries, paintings, artists, genres} = useData();
+    const {genres, genrePaintings, fetchAndStoreGenrePaintings} = useData();
     const [genre, setGenre] = useState(null);
-    const [genrePaintings, setGenrePaintings] = useState([]);
 
-    const fetchPaintingsByGenre = async (genreId) => {
-        try {
-            const response = await fetch(`https://w2025-assign1.onrender.com/api/paintings/genre/${genreId}`);
-            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            const genrePaintingsData = await response.json();
-            //console.log(`paintings from genrepaintings ${genreId} (before cross reference to paintings):`, genrePaintingsData);
-
-            const enrichedPaintings = genrePaintingsData.map(genrePainting => {
-                const paintingId = genrePainting.paintings.paintingId;
-                const fullPainting = paintings.find(p => p.paintingId === paintingId);
-                if (!fullPainting) {
-                    return genrePainting.paintings; // using the nested paintings object as fallback
-                }
-                return fullPainting;
-            });
-
-            setGenrePaintings(enrichedPaintings);
-        } catch (error) {
-            console.error(`Error fetching paintings for genre ${genreId}:`, error);
-            setGenrePaintings([]); // resets to empty array on error (so the page doesn't break)
-        }
-    };
     useEffect(() => {
         if (genres && genres.length > 0) {
             const initialGenre = genres[0];
             setGenre(initialGenre)
-            fetchPaintingsByGenre(initialGenre.genreId);
         }   
-    }, [genres, paintings]);
+    }, [genres]);
 
-    if (!galleries || !paintings || !genres || !genres) return <p>{/*Loading behaviour here*/}</p>;
+    if (!genres) return <p>{/*Loading behaviour here*/}</p>;
 
     const genreHandler = (genreIdSelected) => {
-        if (!genre || genre.genreId != genreIdSelected) {
+        if (!genre || genre.genreId !== genreIdSelected) {
             const newGenre = genres.find(g => g.genreId === genreIdSelected)
             setGenre(newGenre);
-            fetchPaintingsByGenre(newGenre.genreId);  
+            if (!genrePaintings[genreIdSelected]) {
+                fetchAndStoreGenrePaintings(newGenre.genreId);  
+            }
         }
     }
 
@@ -66,7 +44,9 @@ const GenreView = ({toggleDialog}) => {
                         <GenreInfo genre={genre}/>
                     </div>
                     <div className="text-white w-3/5 h-[98%] rounded-xl m-2 bg-linear-to-t from-[#121212] to-[#212121] p-4">
-                        <GenrePaintingList paintings={genrePaintings} toggleDialog={toggleDialog}/>
+                        <GenrePaintingList 
+                            paintings={genre && genrePaintings[genre.genreId] ? genrePaintings[genre.genreId] : []} 
+                            toggleDialog={toggleDialog}/>
                     </div>
                 </div>
             </div>
