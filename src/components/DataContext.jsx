@@ -69,7 +69,7 @@ export const DataProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        if (genres && genres.length > 0) {
+        if (genres && genres.length > 0 && paintings) {
             const initialGenre = genres[0];
             fetchAndStoreGenrePaintings(initialGenre.genreId)
         }   
