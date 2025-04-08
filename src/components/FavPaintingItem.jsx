@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const imagePath = import.meta.env.BASE_URL + 'images/';
+
 const FavPaintingItem = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
@@ -26,7 +28,7 @@ const FavPaintingItem = (props) => {
                         }`}
                 />
             ) : (
-                 <div className="flex justify-center w-[56px] h-[56px] text-gray-500 text-sm"><img src="./images/image-standin.svg"/></div>
+                 <div className="flex justify-center w-[56px] h-[56px] text-gray-500 text-sm"><img src={imagePath + "image-standin.svg"}/></div>
             )}
             <div className="flex flex-col pl-3 justify-center">
                 <h3 className="text-white text-sm font-bold">{props.title}</h3>

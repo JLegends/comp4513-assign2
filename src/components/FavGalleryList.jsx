@@ -1,6 +1,8 @@
 import FavGalleryItem from "./FavGalleryItem";
 import { useFavorites } from "./FavoritesContext";
 
+const imagePath = import.meta.env.BASE_URL + 'images/';
+
 const FavGalleryList = (props) => {
     const { removeFromFavorites } = useFavorites();
 
@@ -29,7 +31,7 @@ const FavGalleryList = (props) => {
                             <button 
                             onClick={()=>removeFromFavorites("galleries", g)}
                             className="absolute right-1 p-2 bg-[#212121] hover:bg-red-500 rounded-full">
-                            <img className="white-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
+                            <img className="white-tint w-5 h-5" src={imagePath + "x-icon.svg"} alt="Close"></img>
                             </button>                         
                         </div>
                         <hr className="bg-gray-600 h-[1px] border-none" />

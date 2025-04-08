@@ -2,6 +2,8 @@
 import FavArtistItem from "./FavArtistItem";
 import { useFavorites } from "./FavoritesContext";
 
+const basePath = import.meta.env.BASE_URL + 'images/';
+
 const FavArtistList = (props) => {
   const {removeFromFavorites} = useFavorites();
   
@@ -29,7 +31,7 @@ const FavArtistList = (props) => {
                 <button 
                       onClick={()=>removeFromFavorites("artists", a)}
                       className="absolute right-1 p-2 bg-[#212121] hover:bg-red-500 rounded-full">
-                      <img className="white-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
+                      <img className="white-tint w-5 h-5" src={basePath + "x-icon.svg"} alt="Close"></img>
                 </button>                  
               </div>
               <hr className="bg-gray-600 h-[1px] border-none"/>
