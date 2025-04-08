@@ -6,6 +6,9 @@ import FavPaintingList from './FavPaintingList.jsx';
 
 import { useFavorites } from './FavoritesContext.jsx';
 
+const imagePath = import.meta.env.BASE_URL + 'images/';
+console.log(imagePath + "trash-icon.svg");
+console.log(imagePath + "x-icon.svg");
 const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
     const {favorites, removeAllFavorites} = useFavorites();
 
@@ -33,12 +36,13 @@ const FavoritesPopup = forwardRef(({toggleDialog}, ref) => {
                 <button 
                     onClick={removeAllFavorites} 
                     className="absolute -bottom-[50px] -right-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
-                    <img className="w-7 h-7" src="/images/trash-icon.svg" alt="Close"></img>
+                    <img className="w-7 h-7" src={imagePath + "trash-icon.svg"} alt="Close"></img>
+                    
                 </button>  
                 <button 
                     onClick={toggleDialog} 
                     className="absolute -top-[14px] -right-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
-                    <img className="white-tint w-7 h-7" src="/images/x-icon.svg" alt="Close"></img>
+                    <img className="white-tint w-7 h-7" src={imagePath + "x-icon.svg"} alt="Close"></img>
                 </button>  
             </div>
         </dialog>

@@ -4,7 +4,8 @@ import { useFavorites } from "./FavoritesContext";
 const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
   const {favorites, addToFavorites, removeFromFavorites} = useFavorites();
   const [isLoading, setIsLoading] = useState(true);
-      
+  
+  const basePath = import.meta.env.BASE_URL + 'images/';
 
   if (!painting) {
         return (
@@ -18,7 +19,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
           <button 
             onClick={toggleDialog} 
             className="absolute -top-3 -right-3 p-2 bg-button hover:bg-red-500 rounded-full">
-            <img className="red-tint w-5 h-5" src="/images/x-icon.svg" alt="Close"></img>
+            <img className="red-tint w-5 h-5" src={basePath + "x-icon.svg"} alt="Close"></img>
           </button>
         </dialog>
       );
@@ -41,7 +42,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
     const annotations = JSON.parse(painting.jsonAnnotations);    
     const dominantColors = annotations.dominantColors;
 
-    const imageUrl = `./images/art-images/paintings/full/${String(painting.imageFileName).padStart(6,"0")}.jpg`;
+    const imageUrl = basePath + `art-images/paintings/full/${String(painting.imageFileName).padStart(6,"0")}.jpg`;
 
     return (
         <dialog     
@@ -69,8 +70,8 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                             className="absolute top-5 right-5 rounded-full p-2 h-12 bg-[#1F1F1F] hover:bg-button-focus bg-opacity-100" 
                             src={
                               isFavorited
-                                ? "./images/heart-icon-filled.svg"
-                                : "./images/heart-icon-outline.svg"
+                                ? basePath + "heart-icon-filled.svg"
+                                : basePath + "heart-icon-outline.svg"
                             }
                             onClick={handleFavoriteToggle}
                             alt="Favorite"
@@ -111,7 +112,7 @@ const PaintingPopup = forwardRef(({toggleDialog, painting}, ref) => {
                   <button 
                       onClick={toggleDialog} 
                       className="absolute -top-[14px] -right-[14px] p-2 bg-black hover:bg-red-500 rounded-full">
-                      <img className="white-tint w-7 h-7" src="/images/x-icon.svg" alt="Close"></img>
+                      <img className="white-tint w-7 h-7" src={basePath + "x-icon.svg"} alt="Close"></img>
                   </button>           
                 </div>
         </dialog>

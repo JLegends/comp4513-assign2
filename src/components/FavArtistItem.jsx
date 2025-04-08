@@ -20,8 +20,8 @@ const FavArtistItem = (props) => {
         }
     };
 
-    const imageUrl = `./images/art-images/artists/square/${props.id}.jpg`;
-
+    const imageUrl = `art-images/artists/square/${props.id}.jpg`;
+    const basePath = import.meta.env.BASE_URL + 'images/';
     let name = "";
     if (props.firstName && props.lastName) {
         name = `${props.firstName} ${props.lastName}`
@@ -45,7 +45,7 @@ const FavArtistItem = (props) => {
             )}
             {!hasError ? (
                 <img
-                    src={imageUrl}
+                    src={basePath + imageUrl}
                     alt={props.name}
                     onLoad={() => setIsLoading(false)}
                     onError={() => {
@@ -66,8 +66,8 @@ const FavArtistItem = (props) => {
                 className="absolute right-1 transform translate-y-3/5 w-6 cursor-pointer text-button-focus" 
                 src={
                     isFavorited
-                        ? "./images/heart-icon-filled.svg"
-                        : "./images/blank.png" 
+                        ? basePath + "heart-icon-filled.svg"
+                        : basePath + "blank.png" 
                 } 
                 onClick={() => handleFavoriteToggle} 
                 alt="favorite"

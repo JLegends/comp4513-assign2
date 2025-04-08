@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFavorites } from "./FavoritesContext";
-
-const imagePath = '/images/art-images/galleries/'
+const basePath = import.meta.env.BASE_URL + 'images/';
+const imagePath = 'art-images/galleries/'
 
 const FavGalleryItem = (props) => {
 
@@ -22,7 +22,7 @@ const FavGalleryItem = (props) => {
         }
     };
 
-    const imageUrl = imagePath + props.id + '.jpg';
+    const imageUrl = basePath + imagePath + props.id + '.jpg';
 
     return (
         <div className="flex flex-grow relative h-18 w-full px-2 py-2 hover:bg-gray-900">
@@ -55,8 +55,8 @@ const FavGalleryItem = (props) => {
                 className="absolute right-1 transform translate-y-3/5 w-6 cursor-pointer text-button-focus" 
                 src={
                     isFavorited
-                        ? "./images/heart-icon-filled.svg"
-                        : "./images/blank.png" 
+                        ? basePath + "heart-icon-filled.svg"
+                        : basePath + "blank.png" 
                 } 
                 onClick={() => handleFavoriteToggle} 
                 alt="favorite"
