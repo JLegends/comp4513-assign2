@@ -52,7 +52,7 @@ const Navigation = ({toggleDialog, headerFocus}) => {
                             className={`${getButtonStyle("Painting")} bg-button text-button-focus hover:bg-blue-400 hover:text-white rounded-2xl py-3 px-6`}> Paintings </button>
                     </Link>
                 </div>
-                <div className="flex justify-end space-x-4 items-center">
+                <div className="flex justify-end space-x-2 items-center">
                     <button 
                         onClick={toggleDialog} 
                         disabled={isFavoritesEmpty}
@@ -63,6 +63,7 @@ const Navigation = ({toggleDialog, headerFocus}) => {
                         }`}> 
                         Favorites 
                     </button>
+                    <span> | </span>
                     <Link to="/about">
                         <button className="hover:underline focus:underline"> About </button>
                     </Link>
