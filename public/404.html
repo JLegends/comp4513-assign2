@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+    <title>COMP 4512 Assignment 2</title>
+    <script>
+      // this should redirect all requests to index.html with the correct path
+      const path = window.location.pathname.replace('/comp4513-assign2', '');
+      window.history.pushState({}, document.title, '/comp4513-assign2' + path);
+      window.location.href = '/comp4513-assign2' + path;
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
