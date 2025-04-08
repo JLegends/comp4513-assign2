@@ -4,6 +4,7 @@ import Header from './Header.jsx'
 import ArtistList from './ArtistList.jsx'
 import ArtistInfo from './ArtistInfo.jsx'
 import ArtistPaintingList from './ArtistPaintingList.jsx'
+import Footer from "./Footer.jsx";
 
 
 const ArtistView = ({toggleDialog}) => {
@@ -53,6 +54,7 @@ const ArtistView = ({toggleDialog}) => {
                 </button>
                 <PaintingPopup ref={dialogRef}/> */}
             </div>
+            <Footer></Footer>
         </article>
     )
 }

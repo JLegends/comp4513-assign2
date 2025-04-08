@@ -4,7 +4,7 @@ import Header from './Header.jsx'
 import GenreList from './GenreList.jsx'
 import GenreInfo from './GenreInfo.jsx'
 import GenrePaintingList from './GenrePaintingList.jsx'
-
+import Footer from "./Footer.jsx";
 
 const GenreView = ({toggleDialog}) => {
     const {genres, genrePaintings, fetchAndStoreGenrePaintings} = useData();
@@ -50,6 +50,7 @@ const GenreView = ({toggleDialog}) => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </article>
     )
 };
