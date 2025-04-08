@@ -8,6 +8,7 @@ const PaintingList = ({toggleDialog, paintings}) => {
     if (!paintings || paintings.length === 0) {
         return (
             <div className="w-full h-full flex items-center justify-center text-white text-lg">
+                No Paintings found for selected filter.
             </div>
         );
     }

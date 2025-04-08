@@ -146,8 +146,8 @@ const PaintingFilter = (props) => {
 
         <div className="flex flex-row justify-end space-x-4">
             
-            <button className="bg-button text-sm font-bold text-button-focus hover:bg-button-focus hover:text-white px-6 py-3 rounded-2xl" onClick={clearFilters}>Clear</button>
-            <button className="bg-button text-sm font-bold text-button-focus hover:bg-button-focus hover:text-white px-6 py-3 rounded-2xl" onClick={handleSubmit}>Filter</button>
+            <button type="button" className="bg-button text-sm font-bold text-button-focus hover:bg-button-focus hover:text-white px-6 py-3 rounded-2xl" onClick={clearFilters}>Clear</button>
+            <button type="button" className="bg-button text-sm font-bold text-button-focus hover:bg-button-focus hover:text-white px-6 py-3 rounded-2xl" onClick={handleSubmit}>Filter</button>
         </div>
     </form>)
 }
