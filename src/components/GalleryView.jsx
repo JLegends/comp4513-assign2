@@ -4,7 +4,7 @@ import Header from './Header.jsx'
 import GalleryList from './GalleryList.jsx'
 import GalleryInfo from './GalleryInfo.jsx'
 import GalleryPaintingList from './GalleryPaintingList.jsx'
-
+import Footer from "./Footer.jsx";
 
 const GalleryView = ({toggleDialog}) => {
     const { galleries, paintings, artists } = useData();
@@ -49,6 +49,7 @@ const GalleryView = ({toggleDialog}) => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </article>
     )
 }

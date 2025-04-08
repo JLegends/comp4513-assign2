@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from './Header.jsx'
 import PaintingFilter from "./PaintingFilter.jsx";
 import PaintingList from "./PaintingList.jsx";
+import Footer from "./Footer.jsx";
 
 const PaintingView = ({toggleDialog}) => {
 
@@ -25,8 +26,9 @@ const PaintingView = ({toggleDialog}) => {
                     <PaintingList toggleDialog={toggleDialog} paintings={filteredPaintings}/>
                 </div>
             </div>
-        </article>
-    )
+            <Footer/>
+        </article>    
+)
 }
 
 export default PaintingView
